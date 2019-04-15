@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Eventure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <style>
+    .container{
+    display: flex;
+    flex-flow: row;
+    border-bottom: 1px dotted black;
+   
+
+}
+ .card{
+     margin: 20px 30px ;
+     
+ }
+
+ .dash-nav{
+   
+ }
+    </style>
+    
+</head>
+<body>
+    <!--Entire width header/hero
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+
+            </div>
+        </div>
+    </div>-->
+    <!--Main Container with auto margins
+    <div class="container">
+
+    </div>-->
+ <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+    <script src="main.js"></script>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Eventure</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Events <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">News</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Members
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Dashboard</a>
+                <a class="dropdown-item" href="#">My Events</a>
+                <a class="dropdown-item" href="#">Create Event</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Log In</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" tabindex="-1" >Sign Up</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+    <div class="dash-nav">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">&#127380 Account Information</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">&#128197 My Events</a>
+            </li>
+            <li class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link" href="#">&#128204 Selected Catagories</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Sport</a>
+                  <a class="dropdown-item" href="#">Comedy</a>
+                  <a class="dropdown-item" href="#">Design</a>
+                  <a class="dropdown-item" href="#">Workout</a>
+                  <a class="dropdown-item" href="#">E-Sport</a>
+                  <a class="dropdown-item" href="#">Surfing</a>
+                  <a class="dropdown-item" href="#">Band</a>
+                  <a class="dropdown-item" href="#">HvZ</a>
+                </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">&#128226 Create New Event</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" tabindex="-1" >&#9742 Help</a>
+            </li>
+          </ul>  
+    </div>
+    
+      <div class="container">
+          <h2>My Events</h2>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="card" style="width: 18rem;">
+                  <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card" style="width: 18rem;">
+                  <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                  
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card" style="width: 18rem;">
+                  <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+              </div>
+            </div>
+          </div>  
+        </div>
+      <div class="container">
+              <h2>Events you may like..</h2>
+              <div class="card" style="width: 18rem;">
+                  <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                    
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>
