@@ -1,2 +1,2 @@
 # Eventure
-Group Project - Making an event website
+Group project - Developing an event website
