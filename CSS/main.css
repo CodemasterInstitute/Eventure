@@ -1,0 +1,80 @@
+/* .carousel-inner {
+    height: 70vh;
+} */
+body {
+     font-family: 'Raleway', sans-serif;
+     background-color: #f9f6f0;
+     padding-top: 56px;
+     text-align: center;
+}
+
+h1, h2, nav {
+    font-family: 'Montserrat', sans-serif;
+    color: #f9f6f0;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+h1 {
+    text-align: center;
+    
+}
+.carousel-item {
+    height: 100vh;
+}
+
+
+.search {
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    z-index: 10;
+}
+
+.form-control {
+    opacity: .6;
+}
+
+.btn-primary {
+    background-color: #3E4E50;
+    border-color: #3E4E50;
+    padding: 1rem 3em;
+    opacity: .75;
+}
+.btn-primary:hover {
+    opacity: 1;
+    background-color: #3E4E50;
+    border: #3E4E50;
+}
+#button-center{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+
+
+h1.categories {
+    color:  #3E4E50;
+    margin-top: 20px;
+}
+
+h1.carousel-title {
+   letter-spacing: 5px;
+    font-size: 8em;
+}
+
+
+.carousel-caption {
+    top: 45%;
+    left: 0;
+    width: 100%;
+}
+
+#explore .img-fluid {
+    height: 150px;
+    width: 100%;
+}
+
