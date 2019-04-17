@@ -1,0 +1,195 @@
+body {
+    background-color: #f9f6f0;
+    font-family: 'Raleway', sans-serif;
+  
+    
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Montserrat', sans-serif;
+}
+/* Links */
+
+a {
+    color: #f9f6f0;
+}
+
+a:hover {
+    font-weight: bold;
+    color: #f9f6f0;
+}
+/* Button styles */
+.btn {
+    background-color: #3E4E50;
+    border-color: #3E4E50;
+    color: #f9f6f0;
+    opacity: .9;
+}
+.btn:hover {
+    font-weight: bold;
+    background-color: #3E4E50;
+    border-color: #3E4E50;
+    opacity: 1;
+    
+
+}
+.eventJumbo {
+    background: url(img/placeholder_jumbo.jpg);
+    background-size: cover;
+    height: 50vh;
+}
+
+#eventInformation {
+    background: #E55934;
+    height: 50vh;
+}
+
+#eventInformation h1 {
+    font-size: 2em;
+}
+
+#socialButtons {
+    height: 50px;
+    background-color: #D9594C;
+    overflow: hidden;
+}
+
+#socialButtons h3 {
+    display: inline-block;
+}
+
+.fab {
+   font-size: 35px;
+   margin: 5px;
+   padding: 5px;
+}
+
+#map {
+    height: 400px;
+    margin: 0;
+    padding: 0;
+}
+
+.fa-twitter:hover {
+    color:  #1DA1F2;
+    cursor: pointer;
+}
+
+.fa-facebook:hover {
+    color:  #3b5998;
+    cursor: pointer;
+}
+
+.fa-instagram:hover {
+    color:  #bc2a8d;
+    cursor: pointer;
+
+
+}
+.navbar {
+    
+}
+footer {
+    background-color: #7EA8BE;
+    margin-top: 50px;
+}
+
+h5.logo{
+    color: #f9f6f0;
+}
+
+#createEventButton {
+    display: block;
+    margin: 0 auto;
+}
+
+.contactUsInner .form-row .form-group col-lg-4{
+    display: block;
+    margin: 0 auto;
+}
+
+/* Main search Bar */
+.search {
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    z-index: 10;
+ }
+.searchbar h1 {
+   text-align: center;  
+   color: #f9f6f0;
+}
+.searchbar .form-control {
+    opacity: .6;
+ }
+
+ .searchbar-btn {
+    padding: 1rem 3em;
+   
+ }
+
+
+ #button-center{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+ }
+ 
+ /* Homepage Carousel*/
+.event-slider .banner-slide {
+   height: 100vh;
+}
+
+.banner-slide h1 {
+  letter-spacing: 5px;
+   font-size: 8em;
+}
+
+.banner-slide .carousel-caption {
+   top: 45%;
+   left: 0;
+   width: 100%;
+}
+/* Find an Event Section */
+#explore .img-fluid {
+   height: 150px;
+   width: 100%;
+}
+
+#explore h1 {
+    color:  #3E4E50;
+    margin-top: 20px;
+ }
+ 
+#explore p {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+/*Member Dash components*/
+#cont-text{
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .dash-nav{
+    float: inherit;
+    margin-top: 70px;
+    overflow: hidden;
+    height: 90%;
+    flex-flow: column;
+    background-color: #7EA8BE;
+    background-size: cover;
+  
+  }
+
+  .dash-nav a{
+      color: rgb(110, 110, 184);
+  }
+
+ 
+  
+  #main-card{
+    margin: 20px;
+  }
+
