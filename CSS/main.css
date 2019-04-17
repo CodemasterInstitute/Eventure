@@ -128,6 +128,15 @@ h5.logo{
    
  }
 
+.btn.magnify-icon {
+    background-color: transparent;
+    border: 1px solid #f9f6f0;
+       
+}
+
+.btn.magnify-icon:hover {
+    font-weight: bolder;
+}
 
  #button-center{
     display: flex;
@@ -193,3 +202,8 @@ h5.logo{
     margin: 20px;
   }
 
+.searchforms {
+    background-color: transparent;
+    border: 1.5px solid #f9f6f0;
+    color:  #f9f6f0;
+}

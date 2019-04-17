@@ -18,62 +18,55 @@
 <body>
  
   <div class="row">
-      <nav class="navbar navbar-expand-lg fixed-top">
-          <a class="navbar-brand" href="#">Eventure</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-      
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Events <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">News</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  Members
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Dashboard</a>
-                  <a class="dropdown-item" href="#">My Events</a>
-                  <a class="dropdown-item" href="#">Create Event</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Log In</a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" tabindex="-1">Sign Up</a>
-              </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-          </div>
-        </nav>
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <a class="navbar-brand" href="#"><i>Eventure</i></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="#">Events <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">News</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link " href="#">
+              Members
+            </a>
+            
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#" tabindex="-1" >Log In/ Sign Up</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          
+          <button class="btn btn-outline-success my-2 my-sm-0 btn-lg magnify-icon" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+    </nav>
     <div class="search">
       <div class="container searchbar">
         <h1>Find an event!</h1>
         <div class="form-row">
           <div class="form-group col-lg-4">
             <label class="sr-only" for="location">Location</label>
-            <input type="text" class="form-control" id="location" placeholder="Location">
+            <input type="text" class="form-control searchforms" id="location" placeholder="Location">
           </div>
           <div class=" form-group col-lg-4">
             <label class="sr-only" for="date">When</label>
             <div class="input-group">
-              <input type="date" class="form-control" id="date" placeholder="Date">
+              <input type="date" class="form-control searchforms" id="date" placeholder="Date">
               <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
             </div>
           </div>
           <div class="form-group col-lg-4">
             <label class="sr-only" for="category">Event Categories</label>
-            <select id="category" name="category" class="form-control">
+            <select id="category" name="category" class="form-control searchforms">
               <option value="1">All</option>
               <option value="2">Free</option>
               <option value="3">Music</option>
