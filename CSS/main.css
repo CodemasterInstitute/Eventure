@@ -1,8 +1,6 @@
 body {
     background-color: #f9f6f0;
     font-family: 'Raleway', sans-serif;
-
-  
     
 }
 
@@ -35,13 +33,13 @@ a:hover {
 
 }
 .eventJumbo {
-    background: url(img/placeholder_jumbo.jpg);
+    background: url(images/placeholder_jumbo.jpg);
     background-size: cover;
     height: 50vh;
 }
 
 #eventInformation {
-    background: #E55934;
+    background: #70A9A1;
     height: 50vh;
 }
 
@@ -66,6 +64,12 @@ a:hover {
 }
 
 #map {
+    height: 400px;
+    margin: 0;
+    padding: 0;
+}
+
+#map2 {
     height: 400px;
     margin: 0;
     padding: 0;
