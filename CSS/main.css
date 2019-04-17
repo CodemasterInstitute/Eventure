@@ -1,7 +1,11 @@
 body {
     background-color: #f9f6f0;
     font-family: 'Raleway', sans-serif;
-    
+    padding-top: 56px;
+}
+
+.noPadding {
+    padding-top: 0;
 }
 
 h1, h2, h3, h4, h5 {
