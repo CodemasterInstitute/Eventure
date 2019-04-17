@@ -1,6 +1,7 @@
 body {
     background-color: #f9f6f0;
     font-family: 'Raleway', sans-serif;
+
   
     
 }
@@ -88,8 +89,9 @@ a:hover {
 }
 
 footer {
-    background-color: #7EA8BE;
+    background-color: #70A9A1;
     margin-top: 50px;
+    opacity: .7;
 }
 
 h5.logo{
