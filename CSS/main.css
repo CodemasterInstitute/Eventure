@@ -15,7 +15,8 @@ a {
 }
 
 a:hover {
-    color: #2A324B;
+    font-weight: bold;
+    color: #f9f6f0;
 }
 /* Button styles */
 .btn {
