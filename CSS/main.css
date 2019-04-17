@@ -187,8 +187,8 @@ h5.logo{
     overflow: hidden;
     height: 90%;
     flex-flow: column;
-    
-    
+    background-color: #7EA8BE;
+    background-size: cover;
   
   }
 
