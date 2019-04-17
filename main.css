@@ -58,4 +58,25 @@ h1, h2, h3, h4, h5 {
 .fa-instagram:hover {
     color:  #bc2a8d;
     cursor: pointer;
+
+
+}
+
+footer {
+    background-color: aliceblue;
+    margin-top: 50px;
+}
+
+body {
+    margin-top: 56px;
+}
+
+#createEventButton {
+    display: block;
+    margin: 0 auto;
+}
+
+.contactUsInner .form-row .form-group col-lg-4{
+    display: block;
+    margin: 0 auto;
 }
