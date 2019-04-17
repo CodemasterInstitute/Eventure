@@ -2,12 +2,36 @@ body {
     background-color: #f9f6f0;
     font-family: 'Raleway', sans-serif;
     padding-top: 56px;
+    
 }
 
 h1, h2, h3, h4, h5 {
     font-family: 'Montserrat', sans-serif;
 }
+/* Links */
 
+a {
+    color: #f9f6f0;
+}
+
+a:hover {
+    color: #2A324B;
+}
+/* Button styles */
+.btn {
+    background-color: #3E4E50;
+    border-color: #3E4E50;
+    color: #f9f6f0;
+    opacity: .9;
+}
+.btn:hover {
+    font-weight: bold;
+    background-color: #3E4E50;
+    border-color: #3E4E50;
+    opacity: 1;
+    
+
+}
 .eventJumbo {
     background: url(img/placeholder_jumbo.jpg);
     background-size: cover;
@@ -61,10 +85,16 @@ h1, h2, h3, h4, h5 {
 
 
 }
-
+.navbar {
+    background-color: #7EA8BE;
+}
 footer {
-    background-color: aliceblue;
+    background-color: #7EA8BE;
     margin-top: 50px;
+}
+
+h5.logo{
+    color: #f9f6f0;
 }
 
 #createEventButton {
@@ -86,23 +116,18 @@ footer {
  }
 .searchbar h1 {
    text-align: center;  
+   color: #f9f6f0;
 }
 .searchbar .form-control {
     opacity: .6;
  }
 
  .searchbar-btn {
-    background-color: #3E4E50;
-    border-color: #3E4E50;
     padding: 1rem 3em;
-    opacity: .75;
+   
  }
 
- .searchbar-btn:hover {
-    opacity: 1;
-    background-color: #3E4E50;
-    border: #3E4E50;
- }
+
  #button-center{
     display: flex;
     justify-content: center;
