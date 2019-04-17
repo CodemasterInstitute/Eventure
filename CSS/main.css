@@ -174,11 +174,17 @@ h5.logo{
   
   .dash-nav{
     float: inherit;
-    margin-top: 20px;
+    margin-top: 70px;
     overflow: hidden;
     height: 90%;
     flex-flow: column;
+    
+    
   
+  }
+
+  .dash-nav a{
+      color: rgb(110, 110, 184);
   }
 
  
