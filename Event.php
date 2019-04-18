@@ -95,7 +95,7 @@ include 'header.php';
         <div class="row">
             <div class="col-lg-3">
                 <div class="card text-center m-4">
-                    <img class="card-img-top" src="../CSS/images\uber.jpg">
+                    <img class="card-img-top" src="CSS/images\uber.jpg">
                     <div class="card-body">
                         <h4 class="card-title">Get there</h4>
                         <a href="routeToEvent.html" class="btn btn-primary">Find</a>
@@ -106,7 +106,7 @@ include 'header.php';
 
             <div class="col-lg-3">
                 <div class="card text-center m-4">
-                    <img class="card-img-top" src="../CSS/images\parking.jpg">
+                    <img class="card-img-top" src="CSS/images\parking.jpg">
                     <div class="card-body">
                         <h4 class="card-title">Parking</h4>
                         <a href="#" class="btn btn-primary">Find</a>
@@ -117,7 +117,7 @@ include 'header.php';
 
             <div class="col-lg-3">
                 <div class="card text-center m-4">
-                    <img class="card-img-top" src="../CSS/images\food2.jpg">
+                    <img class="card-img-top" src="CSS/images\food2.jpg">
                     <div class="card-body">
                         <h4 class="card-title">Food</h4>
                         <a href="#" class="btn btn-primary">Find</a>
@@ -128,7 +128,7 @@ include 'header.php';
 
             <div class="col-lg-3">
                 <div class="card text-center m-4">
-                    <img class="card-img-top" src="../CSS/images\sleep.jpg">
+                    <img class="card-img-top" src="CSS/images\sleep.jpg">
                     <div class="card-body">
                         <h4 class="card-title">Sleep</h4>
                         <a href="#" class="btn btn-primary">Find</a>

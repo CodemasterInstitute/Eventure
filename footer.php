@@ -90,7 +90,7 @@
 <ul class="list-unstyled list-inline text-center">
   <li class="list-inline-item">
     <a class="btn-floating btn-fb mx-1">
-      <i class="fab fa-facebook-f"> </i>
+      <i class="fab fa-facebook"> </i>
     </a>
   </li>
   <li class="list-inline-item">
@@ -99,18 +99,8 @@
     </a>
   </li>
   <li class="list-inline-item">
-    <a class="btn-floating btn-gplus mx-1">
-      <i class="fab fa-google-plus-g"> </i>
-    </a>
-  </li>
-  <li class="list-inline-item">
-    <a class="btn-floating btn-li mx-1">
-      <i class="fab fa-linkedin-in"> </i>
-    </a>
-  </li>
-  <li class="list-inline-item">
-    <a class="btn-floating btn-dribbble mx-1">
-      <i class="fab fa-dribbble"> </i>
+    <a class="btn-floating btn-inst mx-1">
+      <i class="fab fa-instagram"> </i>
     </a>
   </li>
 </ul>
