@@ -196,7 +196,7 @@
             <div class="carousel-inner row w-100 mx-auto">
               <div class="carousel-item col-md-4 active">
                 <div class="card">
-                  <img class="card-img-top img-fluid" src="C:\Users\ADAM\Documents\GitHub\Eventure\CSS\images\free-event.jpg"  alt="Card image cap">
+                  <img class="card-img-top img-fluid" src="CSS/images/free-event.jpg"  alt="Card image cap">
                   <div class="card-body">
                     <h4 class="card-title">Event 1</h4>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -206,7 +206,7 @@
               </div>
               <div class="carousel-item col-md-4">
                 <div class="card">
-                  <img class="card-img-top img-fluid" src="C:\Users\ADAM\Documents\GitHub\Eventure\CSS\images\carousel-sport.jpg"  alt="Card image cap">
+                  <img class="card-img-top img-fluid" src="CSS/images/carousel-sport.jpg"  alt="Card image cap">
                   <div class="card-body">
                     <h4 class="card-title">Event 2</h4>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -216,7 +216,7 @@
               </div>
               <div class="carousel-item col-md-4">
                 <div class="card">
-                  <img class="card-img-top img-fluid" src="C:\Users\ADAM\Documents\GitHub\Eventure\CSS\images\music.jpg"  alt="Card image cap">
+                  <img class="card-img-top img-fluid" src="CSS/images/music.jpg"  alt="Card image cap">
                   <div class="card-body">
                     <h4 class="card-title">Event 3</h4>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -226,7 +226,7 @@
               </div>
               <div class="carousel-item col-md-4">
                 <div class="card">
-                  <img class="card-img-top img-fluid" src="C:\Users\ADAM\Documents\GitHub\Eventure\CSS\images\laugh.jpg"  alt="Card image cap">
+                  <img class="card-img-top img-fluid" src="CSS/images/laugh.jpg"  alt="Card image cap">
                   <div class="card-body">
                     <h4 class="card-title">Event 4</h4>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -236,7 +236,7 @@
               </div>
               <div class="carousel-item col-md-4">
                 <div class="card">
-                  <img class="card-img-top img-fluid" src="C:\Users\ADAM\Documents\GitHub\Eventure\CSS\images\bubbles.jpg"  alt="Card image cap">
+                  <img class="card-img-top img-fluid" src="CSS/images/bubbles.jpg"  alt="Card image cap">
                   <div class="card-body">
                     <h4 class="card-title">Event 5</h4>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -246,7 +246,7 @@
               </div>
               <div class="carousel-item col-md-4">
                 <div class="card">
-                  <img class="card-img-top img-fluid" src="C:\Users\ADAM\Documents\GitHub\Eventure\CSS\images\carousel1.jpg"  alt="Card image cap">
+                  <img class="card-img-top img-fluid" src="CSS/images/carousel1.jpg"  alt="Card image cap">
                   <div class="card-body">
                     <h4 class="card-title">Event 6</h4>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -256,7 +256,7 @@
               </div>
               <div class="carousel-item col-md-4">
                 <div class="card">
-                  <img class="card-img-top img-fluid" src="C:\Users\ADAM\Documents\GitHub\Eventure\CSS\images\carousel4-laughter.jpg"  alt="Card image cap">
+                  <img class="card-img-top img-fluid" src="CSS/images/carousel4-laughter.jpg"  alt="Card image cap">
                   <div class="card-body">
                     <h4 class="card-title">Event 7</h4>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
