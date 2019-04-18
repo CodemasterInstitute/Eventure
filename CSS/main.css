@@ -230,6 +230,9 @@ h5.logo{
     font-size: 1.5em;
 }
 
+p.banner-tagline {
+    font-size: 1.5em;
+}
 /*Member Dash components*/
 #blktxt a{
     color: rgb(21, 22, 22);
