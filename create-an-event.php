@@ -12,7 +12,7 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
     <link rel="stylesheet" type="text/css" media="screen" href="CSS/main.css">
-
+    <script src="formValidation.js"></script>
 
 </head>
 
@@ -67,29 +67,29 @@
     ?>
     <!--Main Container with auto margins-->
     <div class="container">
-        <form name="createEventForm" method="POST" action="submit-event.php" onsubmit="return validateForm()">
+        <form name="createEventForm" method="POST" action="submit-event.php">
             <h1>Create Your Event!</h1>
             <div class="form-row">
 
                 <div class="form-group col-lg-6">
                     <label for="eventName">Event Name:</label>
                     <input type="text" class="form-control" id="eventName"
-                        placeholder="Add a short, clear name" name="eventName" value="<?php echo $eventName;?>"> <!--Without php echo does it clear the variables when the page is reloaded (otherwise the default variables are what has been previously entered-->
+                        placeholder="Add a short, clear name" name="eventName" value="<?php echo $eventName;?>" required> <!--Without php echo does it clear the variables when the page is reloaded (otherwise the default variables are what has been previously entered-->
                 </div>
                 <div class="form-group col-lg-6">
                     <label for="eventAddress">Event Address</label>
                     <input type="text" class="form-control" id="eventAddress"
-                        placeholder="Include a place or address" name = "eventAddress" value="<?php echo $eventAddress;?>">
+                        placeholder="Include a place or address" name = "eventAddress" value="<?php echo $eventAddress;?>" required>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-lg-6">
                     <label for="startDate">Event Start</label>
-                    <input type="datetime-local" class="form-control" name = "startDate" value="<?php echo $startDate;?>">
+                    <input type="datetime-local" class="form-control" name = "startDate" value="<?php echo $startDate;?>" required>
                 </div>
                 <div class="form-group col-lg-6">
                     <label for="endDate">Event End</label>
-                    <input type="datetime-local" class="form-control" name = "endDate" value="<?php echo $endDate;?>">
+                    <input type="datetime-local" class="form-control" name = "endDate" value="<?php echo $endDate;?>" required>
                 </div>
 
 
@@ -97,18 +97,18 @@
             <div class="form-row">
                 <div class="form-group col-lg-12">
                     <label for="eventDescription">Event Description</label>
-                    <textarea class="form-control rounded-0" class="md-textarea form-control" rows="8" name = "eventDescription" value="<?php echo $eventDescription;?>"></textarea>
+                    <textarea class="form-control rounded-0" class="md-textarea form-control" rows="8" name = "eventDescription" value="<?php echo $eventDescription;?>" required></textarea>
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group col-lg-4">
                     <label for="availableTickets">Available Tickets</label>
-                    <input type="number" class="form-control" name = "availableTickets" value="<?php echo $availableTickets;?>">
+                    <input type="number" class="form-control" name = "availableTickets" value="<?php echo $availableTickets;?>" required>
                 </div>
                 <div class="form-group col-lg-8">
                     <label for="organiserID">Organiser ID</label>
-                    <input type="number" class="form-control" name = "organiserID" value="<?php echo $organiserID;?>">
+                    <input type="number" class="form-control" name = "organiserID" value="<?php echo $organiserID;?>" required>
                 </div>
             </div>
             <div class="form-row">
@@ -118,17 +118,17 @@
                 <div class="form-group col-lg-4">
                     <label for="imgName">Upload Photo</label>
                     <input type="file" accept="image/x-png,image/gif,image/jpeg" class="form-control"
-                        id="imgName" name = "imgName" value="<?php echo $imgName;?>">
+                        id="imgName" name = "imgName" value="<?php echo $imgName;?>" required>
                 </div>
                 <div class="form-group col-lg-4">
                     <label for="price">Ticket Price</label>
-                    <input type="text" class="form-control" id="price" name = "price" value="<?php echo $price;?>">
+                    <input type="text" class="form-control" id="price" name = "price" value="<?php echo $price;?>" required>
                 </div>
                 <div class="form-group col-lg-4">
 
                     <h4>Type of Event</h4>
                     <h5>Check all that apply</h5>
-                    <div class="form-check">
+                    <div class="form-check" required>
                         <input class="form-check-input" type="checkbox" value="Free" id="Free" name = "eventType">
                         <label class="form-check-label" for="checkFree">
                             Free
@@ -186,8 +186,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
-    <script src="main.js"></script>
-    <script src="formValidation.js"></script>
+    
 </body>
 
 </html>
