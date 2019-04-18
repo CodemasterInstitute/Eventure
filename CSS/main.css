@@ -1,8 +1,11 @@
 body {
     background-color: #f9f6f0;
     font-family: 'Raleway', sans-serif;
-  
-    
+    padding-top: 56px;
+}
+
+.noPadding {
+    padding-top: 0;
 }
 
 h1, h2, h3, h4, h5 {
@@ -13,10 +16,39 @@ h1, h2, h3, h4, h5 {
 a {
     color: #f9f6f0;
 }
-
 a:hover {
+    text-decoration: underline;
+    text-decoration-color: #f9f6f0;
     font-weight: bold;
     color: #f9f6f0;
+    padding-bottom: 1px;
+}
+/* Navbar */
+.navbar-dark .navbar-brand {
+    color: #f9f6f0;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color:  #f9f6f0;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    text-decoration: underline;
+    text-decoration-color: #f9f6f0;
+}
+.navbar-dark .navbar-nav .active>.nav-link {
+    color: #f9f6f0;
+}
+
+.color-header {
+    background-color: #70A9A1;
+}
+/* Med-small screens */
+@media screen and (max-width: 992px) {
+    .navbar-collapse{
+        background-color: #3E4E50;
+        opacity: .9;
+    }
+
 }
 /* Button styles */
 .btn {
@@ -34,13 +66,14 @@ a:hover {
 
 }
 .eventJumbo {
-    background: url(img/placeholder_jumbo.jpg);
+    background: url(images/placeholder_jumbo.jpg);
     background-size: cover;
     height: 50vh;
 }
 
 #eventInformation {
-    background: #E55934;
+  
+   padding-top: 35px;
     height: 50vh;
 }
 
@@ -70,6 +103,21 @@ a:hover {
     padding: 0;
 }
 
+#map2 {
+    height: 400px;
+    margin: 0;
+    padding: 0;
+}
+
+#locationField, #controls {
+    position: relative;
+  }
+
+ .autocomplete {
+    position: absolute;
+    width: 50%;
+  }
+
 .fa-twitter:hover {
     color:  #1DA1F2;
     cursor: pointer;
@@ -86,12 +134,11 @@ a:hover {
 
 
 }
-.navbar {
-    
-}
+
 footer {
-    background-color: #7EA8BE;
+    background-color: #70A9A1;
     margin-top: 50px;
+    
 }
 
 h5.logo{
@@ -128,6 +175,15 @@ h5.logo{
    
  }
 
+.btn.magnify-icon {
+    background-color: transparent;
+    border: 1px solid #f9f6f0;
+       
+}
+
+.btn.magnify-icon:hover {
+    font-weight: bolder;
+}
 
  #button-center{
     display: flex;
@@ -167,6 +223,18 @@ h5.logo{
 }
 
 /*Member Dash components*/
+#blktxt a{
+    color: rgb(21, 22, 22);
+}
+
+#blktxt .btn.magnify-icon{
+    border: 1px solid black;
+}
+
+#blktxt .fa-search{
+    color: rgb(21, 22, 22);
+}
+
 #cont-text{
     text-align: center;
     overflow: hidden;
@@ -174,11 +242,17 @@ h5.logo{
   
   .dash-nav{
     float: inherit;
-    margin-top: 20px;
+    margin-top: 70px;
     overflow: hidden;
     height: 90%;
     flex-flow: column;
+    background-color: #7EA8BE;
+    background-size: cover;
   
+  }
+
+  .dash-nav a{
+      color: rgb(110, 110, 184);
   }
 
  
@@ -187,3 +261,8 @@ h5.logo{
     margin: 20px;
   }
 
+.searchforms {
+    background-color: transparent;
+    border: 1.5px solid #f9f6f0;
+    color:  #f9f6f0;
+}

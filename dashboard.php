@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="CSS/main.css">
     <style>
      
-    
+   
 
 
 
@@ -103,40 +103,12 @@
  <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <a class="navbar-brand" href="#"><i>Eventure</i></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item ">
-              <a class="nav-link" href="#">Events <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">News</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link " href="#">
-                Members
-              </a>
-              
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="#" tabindex="-1" >Log In/ Sign Up</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            
-            <button class="btn btn-outline-success my-2 my-sm-0 btn-lg" type="submit"><i class="fas fa-search"></i></button>
-          </form>
-        </div>
-      </nav>
+    <?php
+    include 'header.php';
+      ?>
 
     <div class="dash-nav">
+      <h2>Members Dashboard</h2>
         <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link active" href="#">&#127380 Account Information</a>
@@ -224,7 +196,7 @@
             <div class="carousel-inner row w-100 mx-auto">
               <div class="carousel-item col-md-4 active">
                 <div class="card">
-                  <img class="card-img-top img-fluid" src="http://placehold.it/200x150/f44242/fff" alt="Card image cap">
+                  <img class="card-img-top img-fluid" src="C:\Users\ADAM\Documents\GitHub\Eventure\CSS\images\free-event.jpg"  alt="Card image cap">
                   <div class="card-body">
                     <h4 class="card-title">Event 1</h4>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -234,7 +206,7 @@
               </div>
               <div class="carousel-item col-md-4">
                 <div class="card">
-                  <img class="card-img-top img-fluid" src="http://placehold.it/200x150/418cf4/fff" alt="Card image cap">
+                  <img class="card-img-top img-fluid" src="C:\Users\ADAM\Documents\GitHub\Eventure\CSS\images\carousel-sport.jpg"  alt="Card image cap">
                   <div class="card-body">
                     <h4 class="card-title">Event 2</h4>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -244,7 +216,7 @@
               </div>
               <div class="carousel-item col-md-4">
                 <div class="card">
-                  <img class="card-img-top img-fluid" src="http://placehold.it/200x150/3ed846/fff" alt="Card image cap">
+                  <img class="card-img-top img-fluid" src="C:\Users\ADAM\Documents\GitHub\Eventure\CSS\images\music.jpg"  alt="Card image cap">
                   <div class="card-body">
                     <h4 class="card-title">Event 3</h4>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -254,7 +226,7 @@
               </div>
               <div class="carousel-item col-md-4">
                 <div class="card">
-                  <img class="card-img-top img-fluid" src="http://placehold.it/200x150/42ebf4/fff" alt="Card image cap">
+                  <img class="card-img-top img-fluid" src="C:\Users\ADAM\Documents\GitHub\Eventure\CSS\images\laugh.jpg"  alt="Card image cap">
                   <div class="card-body">
                     <h4 class="card-title">Event 4</h4>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -264,7 +236,7 @@
               </div>
               <div class="carousel-item col-md-4">
                 <div class="card">
-                  <img class="card-img-top img-fluid" src="http://placehold.it/200x150/f49b41/fff" alt="Card image cap">
+                  <img class="card-img-top img-fluid" src="C:\Users\ADAM\Documents\GitHub\Eventure\CSS\images\bubbles.jpg"  alt="Card image cap">
                   <div class="card-body">
                     <h4 class="card-title">Event 5</h4>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -274,7 +246,7 @@
               </div>
               <div class="carousel-item col-md-4">
                 <div class="card">
-                  <img class="card-img-top img-fluid" src="http://placehold.it/200x150/f4f141/fff" alt="Card image cap">
+                  <img class="card-img-top img-fluid" src="C:\Users\ADAM\Documents\GitHub\Eventure\CSS\images\carousel1.jpg"  alt="Card image cap">
                   <div class="card-body">
                     <h4 class="card-title">Event 6</h4>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -284,7 +256,7 @@
               </div>
               <div class="carousel-item col-md-4">
                 <div class="card">
-                  <img class="card-img-top img-fluid" src="http://placehold.it/200x150/8e41f4/fff" alt="Card image cap">
+                  <img class="card-img-top img-fluid" src="C:\Users\ADAM\Documents\GitHub\Eventure\CSS\images\carousel4-laughter.jpg"  alt="Card image cap">
                   <div class="card-body">
                     <h4 class="card-title">Event 7</h4>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -303,179 +275,11 @@
             </a>
           </div>
         </div>
-        <script>
-                $(document).ready(function() {
-          $("#myCarousel").on("slide.bs.carousel", function(e) {
-            var $e = $(e.relatedTarget);
-            var idx = $e.index();
-            var itemsPerSlide = 3;
-            var totalItems = $(".carousel-item").length;
-
-            if (idx >= totalItems - (itemsPerSlide - 1)) {
-              var it = itemsPerSlide - (totalItems - idx);
-              for (var i = 0; i < it; i++) {
-                // append slides to end
-                if (e.direction == "left") {
-                  $(".carousel-item")
-                    .eq(i)
-                    .appendTo(".carousel-inner");
-                } else {
-                  $(".carousel-item")
-                    .eq(0)
-                    .appendTo($(this).find(".carousel-inner"));
-                }
-              }
-            }
-          });
-        });
-        </script>
-
-
-                  <!-- Footer -->
-      <footer class="page-footer font-small stylish-color-dark pt-4">
-        <!-- Footer Links -->
-        <div class="container text-center text-md-left">
-
-          <!-- Grid row -->
-          <div class="row">
-
-            <!-- Grid column -->
-            <div class="col-md-4 mx-auto">
-
-              <!-- Content -->
-              <h5 class="font-weight-bold text-uppercase mt-3 mb-4">EVENTURE</h5>
-              <p>Make Adventures Possible.</p>
-
-            </div>
-            <!-- Grid column -->
-
-            <hr class="clearfix w-100 d-md-none">
-
-            <!-- Grid column -->
-            <div class="col-md-2 mx-auto">
-
-              <!-- Links -->
-              <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Eventure</h5>
-
-              <ul class="list-unstyled">
-                <li>
-                  <a href="#!">Home</a>
-                </li>
-                <li>
-                  <a href="#!">FAQs</a>
-                </li>
-                <li>
-                  <a href="#!">Contact</a>
-                </li>
-              </ul>
-
-            </div>
-            <!-- Grid column -->
-
-            <hr class="clearfix w-100 d-md-none">
-
-            <!-- Grid column -->
-            <div class="col-md-2 mx-auto">
-
-              <!-- Links -->
-              <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Events</h5>
-
-              <ul class="list-unstyled">
-                <li>
-                  <a href="#!">Events By Category</a>
-                </li>
-                <li>
-                  <a href="#!">Events Near You</a>
-                </li>
-                <li>
-                  <a href="#!">Events This Week</a>
-                </li>
-              </ul>
-
-            </div>
-            <!-- Grid column -->
-
-            <hr class="clearfix w-100 d-md-none">
-
-            <!-- Grid column -->
-            <div class="col-md-2 mx-auto">
-
-              <!-- Links -->
-              <h5 class="font-weight-bold text-uppercase mt-3 mb-4">My Account</h5>
-
-              <ul class="list-unstyled">
-                <li>
-                  <a href="#!">Sign In</a>
-                </li>
-                <li>
-                  <a href="#!">My Dashboard</a>
-                </li>
-                <li>
-                  <a href="#!">Create An Event</a>
-                </li>
-            
-              </ul>
-
-            </div>
-            <!-- Grid column -->
-
-          </div>
-          <!-- Grid row -->
-
-        </div>
-        <!-- Footer Links -->
-
-        <hr>
-
-        <!-- Call to action -->
-        <ul class="list-unstyled list-inline text-center py-2">
-          <li class="list-inline-item">
-            <h5 class="mb-1">Register for free</h5>
-          </li>
-          <li class="list-inline-item">
-            <a href="#!" class="btn btn-danger btn-rounded">Sign up!</a>
-          </li>
-        </ul>
-        <!-- Call to action -->
-
-        <hr>
-
-        <!-- Social buttons -->
-        <ul class="list-unstyled list-inline text-center">
-          <li class="list-inline-item">
-            <a class="btn-floating btn-fb mx-1">
-              <i class="fab fa-facebook-f"> </i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a class="btn-floating btn-tw mx-1">
-              <i class="fab fa-twitter"> </i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a class="btn-floating btn-gplus mx-1">
-              <i class="fab fa-google-plus-g"> </i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a class="btn-floating btn-li mx-1">
-              <i class="fab fa-linkedin-in"> </i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a class="btn-floating btn-dribbble mx-1">
-              <i class="fab fa-dribbble"> </i>
-            </a>
-          </li>
-        </ul>
-        <!-- Social buttons -->
-
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2019 Copyright: AAA Team
-        </div>
-        <!-- Copyright -->
-
-      </footer>
+      
+    <?php
+    include 'footer.php';
+      ?>
+ 
 
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
