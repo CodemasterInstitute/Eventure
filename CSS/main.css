@@ -184,6 +184,14 @@ h5.logo{
 }
 
 /*Member Dash components*/
+#blktxt a, .fa-search{
+    color: rgb(21, 22, 22);
+}
+
+#blktxt .btn.magnify-icon{
+    border: 1px solid black;
+}
+
 #cont-text{
     text-align: center;
     overflow: hidden;
