@@ -1,6 +1,99 @@
 <?php
-include 'header.php';
-?>
+                    // define variables and set to empty values
+                    // variables do NOT need to have the same names as the DB names but it does make it easier to read
+                    $eventName = $organiserID = $startDate = $endDate = $eventAddress = $price = $eventDescription = $imgName = $availableTickets = $eventType = $error = "";
+                    
+                    if(isset($_POST['eventName'])) {
+                        $eventName = test_input($_POST["eventName"]);
+                        } else {
+                            $eventName = "";
+                        }
+                    
+                    if(isset($_POST['organiserID'])) {
+                        $organiserID = test_input($_POST["organiserID"]);
+                        } else {
+                            $organiserID = "";
+                        }
+                    
+                    if(isset($_POST['startDate'])) {
+                        $startDate = test_input($_POST["startDate"]);
+                        } else {
+                            $startDate = "";
+                        }
+                
+                    if(isset($_POST['endDate'])) {
+                        $endDate = test_input($_POST["endDate"]);
+                        } else {
+                            $endDate = "";
+                        }
+                    
+                    if(isset($_POST['eventAddress'])) {
+                        $eventAddress = test_input($_POST["eventAddress"]);
+                        } else {
+                            $eventAddress = "";
+                        }
+
+                    if(isset($_POST['price'])) {
+                        $price = test_input($_POST["price"]);
+                        } else {
+                            $price = "";
+                        }
+
+                    if(isset($_POST['eventDescription'])) {
+                        $eventDescription = test_input($_POST["eventDescription"]);
+                        } else {
+                            $eventDescription = "";
+                        }
+
+                    if(isset($_POST['imgName'])) {
+                        $imgName = test_input($_POST["imgName"]);
+                        } else {
+                            $imgName = "";
+                        }
+
+                    if(isset($_POST['availableTickets'])) {
+                        $availableTickets = test_input($_POST["availableTickets"]);
+                        } else {
+                            $availableTickets = "";
+                        }
+
+                    if(isset($_POST['eventType'])) {
+                        $availableTickets = test_input($_POST["eventType"]);
+                        } else {
+                            $eventType = "";
+                        }
+                    // add JS validation on input data, regEx too. validating email addresses will give structure of regEx structure in JS. regEx to remove $ and also to allow number and decimal point
+
+                        function test_input($data) {
+                            $data = trim($data);
+                            $data = stripslashes($data);
+                            $data = htmlspecialchars($data);
+                            return $data;
+                          }
+
+                    $mysqli = new mysqli ('localhost', 'root', '', 'events'); // localhost, username, password, database name 
+
+                    $sql = "INSERT INTO events (eventName, organiserID, startDate, endDate, eventAddress, price, eventDescription, imgName, availableTickets, eventType) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+                    
+                    if ($stmt = $mysqli->prepare($sql)){
+                        echo $mysqli->error;
+                    }
+
+                    $stmt->bind_param('sisssissis', $eventName, $organiserID, $startDate, $endDate, $eventAddress, $price, $eventDescription, $imgName, $availableTickets, $eventType);
+
+                    if($stmt->execute()) {
+                        $heading = "success";
+                      } else {
+                          $heading = "failure";
+                      }
+                        $stmt->close();
+                      
+                        $mysqli->close(); 
+
+                   
+                        
+                    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +113,7 @@ include 'header.php';
 
 <body>
     <!--Entire width header/hero-->
-    <!-- <div class="container-fluid">
+    <div class="container-fluid">
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
                 <a class="navbar-brand" href="#">Eventure</a>
@@ -62,115 +155,11 @@ include 'header.php';
                 </div>
             </nav>
         </header>
-    </div> -->
-
-    
-    <!--Main Container with auto margins-->
-    <div class="container">
-        <form name="createEventForm" method="POST" action="submit-event.php" onsubmit="return validateForm()">
-            <h1>Create Your Event!</h1>
-            <div class="form-row">
-
-                <div class="form-group col-lg-6">
-                    <label for="eventName">Event Name:</label>
-                    <input type="text" class="form-control" id="eventName"
-                        placeholder="Add a short, clear name" name="eventName" value="<?php echo $eventName;?>"> <!--Without php echo does it clear the variables when the page is reloaded (otherwise the default variables are what has been previously entered-->
-                </div>
-                <div class="form-group col-lg-6">
-                    <label for="eventAddress">Event Address</label>
-                    <input type="text" class="form-control" id="eventAddress"
-                        placeholder="Include a place or address" name = "eventAddress" value="<?php echo $eventAddress;?>">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-lg-6">
-                    <label for="startDate">Event Start</label>
-                    <input type="datetime-local" class="form-control" name = "startDate" value="<?php echo $startDate;?>">
-                </div>
-                <div class="form-group col-lg-6">
-                    <label for="endDate">Event End</label>
-                    <input type="datetime-local" class="form-control" name = "endDate" value="<?php echo $endDate;?>">
-                </div>
-
-
-            </div>
-            <div class="form-row">
-                <div class="form-group col-lg-12">
-                    <label for="eventDescription">Event Description</label>
-                    <textarea class="form-control rounded-0" class="md-textarea form-control" rows="8" name = "eventDescription" value="<?php echo $eventDescription;?>"></textarea>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group col-lg-4">
-                    <label for="availableTickets">Available Tickets</label>
-                    <input type="number" class="form-control" name = "availableTickets" value="<?php echo $availableTickets;?>">
-                </div>
-                <div class="form-group col-lg-8">
-                    <label for="organiserID">Organiser ID</label>
-                    <input type="number" class="form-control" name = "organiserID" value="<?php echo $organiserID;?>">
-                </div>
-            </div>
-            <div class="form-row">
-                
-
-                
-                <div class="form-group col-lg-4">
-                    <label for="imgName">Upload Photo</label>
-                    <input type="file" accept="image/x-png,image/gif,image/jpeg" class="form-control"
-                        id="imgName" name = "imgName" value="<?php echo $imgName;?>">
-                </div>
-                <div class="form-group col-lg-4">
-                    <label for="price">Ticket Price</label>
-                    <input type="text" class="form-control" id="price" name = "price" value="<?php echo $price;?>">
-                </div>
-                <div class="form-group col-lg-4">
-
-                    <h4>Type of Event</h4>
-                    <h5>Check all that apply</h5>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Free" id="Free" name = "eventType">
-                        <label class="form-check-label" for="checkFree">
-                            Free
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Comedy" id="Comedy" name = "eventType">
-                        <label class="form-check-label" for="checkComedy">
-                            Comedy
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Music" id="Music" name = "eventType"> 
-                        <label class="form-check-label" for="checkMusic">
-                            Music
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Sport" id="Sport" name = "eventType">
-                        <label class="form-check-label" for="checkSport">
-                            Sport
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Food" id="Food" name = "eventType">
-                        <label class="form-check-label" for="checkFood">
-                            Food
-                        </label>
-
-                    </div>
-        
-
-            </div>
-
-            <div class="form-row">
-                <div class="form-group col-lg-12">
-                    <button type="submit" class="btn btn-primary" id="createEventButton">Create Event!</button>
-                </div>
-            </div>
-        </form>
-      
     </div>
+<?php
+    echo $heading;
+?>
+
     <!-- Footer -->
     <footer class="page-footer font-small stylish-color-dark pt-4">
 
@@ -329,7 +318,6 @@ include 'header.php';
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
     <script src="main.js"></script>
-    <script src="formValidation.js"></script>
 </body>
 
 </html>
