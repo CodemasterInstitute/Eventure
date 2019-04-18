@@ -16,10 +16,29 @@ h1, h2, h3, h4, h5 {
 a {
     color: #f9f6f0;
 }
-
 a:hover {
     font-weight: bold;
     color: #f9f6f0;
+}
+/* Navbar */
+.navbar-dark .navbar-brand {
+    color: #f9f6f0;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color:  #f9f6f0;
+}
+
+.navbar-dark .navbar-nav .active>.nav-link {
+    color: #f9f6f0;
+}
+
+/* Med-small screens */
+@media screen and (max-width: 992px) {
+    .navbar-collapse{
+        background-color: #3E4E50;
+        opacity: .9;
+    }
+
 }
 /* Button styles */
 .btn {
