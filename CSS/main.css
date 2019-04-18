@@ -109,6 +109,15 @@ a:hover {
     padding: 0;
 }
 
+#locationField, #controls {
+    position: relative;
+  }
+
+ .autocomplete {
+    position: absolute;
+    width: 50%;
+  }
+
 .fa-twitter:hover {
     color:  #1DA1F2;
     cursor: pointer;
