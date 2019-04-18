@@ -11,8 +11,8 @@
     <div class="col-md-4 mx-auto">
 
       <!-- Content -->
-      <h5 class="font-weight-bold text-uppercase mt-3 mb-4">EVENTURE</h5>
-      <p>Make Adventures Possible.</p>
+      <img src="CSS/images/eventure logo 2.4(white).png" class="logo-icon footer">
+      <p style="padding-top: 20px">Make Adventures Possible.</p>
 
     </div>
     <!-- Grid column -->

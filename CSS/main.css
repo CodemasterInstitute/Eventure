@@ -46,6 +46,10 @@ a:hover {
 .logo-icon {
     width: 150px;
 }
+
+.logo-icon.footer {
+    padding-top: 20px;
+}
 /* Med-small screens */
 @media screen and (max-width: 992px) {
     .navbar-collapse{
