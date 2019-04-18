@@ -17,21 +17,31 @@ a {
     color: #f9f6f0;
 }
 a:hover {
+    text-decoration: underline;
+    text-decoration-color: #f9f6f0;
     font-weight: bold;
     color: #f9f6f0;
+    padding-bottom: 1px;
 }
 /* Navbar */
 .navbar-dark .navbar-brand {
     color: #f9f6f0;
 }
+
 .navbar-dark .navbar-nav .nav-link {
     color:  #f9f6f0;
 }
-
+.navbar-dark .navbar-nav .nav-link:hover {
+    text-decoration: underline;
+    text-decoration-color: #f9f6f0;
+}
 .navbar-dark .navbar-nav .active>.nav-link {
     color: #f9f6f0;
 }
 
+.color-header {
+    background-color: #70A9A1;
+}
 /* Med-small screens */
 @media screen and (max-width: 992px) {
     .navbar-collapse{
@@ -62,7 +72,8 @@ a:hover {
 }
 
 #eventInformation {
-    background: #70A9A1;
+  
+   padding-top: 35px;
     height: 50vh;
 }
 
