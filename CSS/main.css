@@ -42,6 +42,10 @@ a:hover {
 .color-header {
     background-color: #70A9A1;
 }
+
+.logo-icon {
+    width: 150px;
+}
 /* Med-small screens */
 @media screen and (max-width: 992px) {
     .navbar-collapse{
