@@ -203,6 +203,18 @@ h5.logo{
 }
 
 /*Member Dash components*/
+#blktxt a{
+    color: rgb(21, 22, 22);
+}
+
+#blktxt .btn.magnify-icon{
+    border: 1px solid black;
+}
+
+#blktxt .fa-search{
+    color: rgb(21, 22, 22);
+}
+
 #cont-text{
     text-align: center;
     overflow: hidden;
