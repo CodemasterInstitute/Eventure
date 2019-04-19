@@ -1,4 +1,27 @@
+<?php
+	require('config.php');
 
+	$id = mysqli_real_escape_string($conn, $_GET['id']);
+
+	// Create Query
+	$query = 'SELECT * FROM events WHERE id= '.$id;
+    
+    // -- WHERE id = '.$id;
+
+	// Get Result
+	$result = mysqli_query($conn, $query);
+
+	// Fetch Data
+	$event = mysqli_fetch_assoc($result);
+	// var_dump($event);
+
+	// Free Result
+    mysqli_free_result($result);
+    
+    mysqli_close($conn);
+
+    
+?>
 
 
 <!DOCTYPE html>
@@ -19,7 +42,7 @@
 </head>
 
 <body>
-<?php
+    <?php
 include 'header.php';
 ?>
 
@@ -27,13 +50,12 @@ include 'header.php';
         <div class="row">
             <div class="col-lg-8 jumbotron jumbotron-fluid eventJumbo">
             </div>
-    
+
 
             <div id="eventInformation" class="col-lg-4 text-center">
-                <h1 class="pt-2">Coding for dummies</h1>
-                <p class="text-center font-italic">15/05/2019</p>
-                <p>Coding instructions by Adam, Verity, Jill & Jeroen </p>
-                <p>$25,-</p>
+                <h1 class="pt-2"><?php echo $event['eventName']?></h1>
+                <p class="text-center font-italic"><?php echo $event['startDate']?></p>
+                <p><?php echo '$' . $event['price']?></p>
                 <button class="btn-block btn">Buy Tickets</button>
 
             </div>
@@ -46,38 +68,25 @@ include 'header.php';
 
         <div class="row">
             <div class="col-lg-8">
-                <h1>Coding for Dummies</h1>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem asperiores adipisci praesentium
-                    aliquam laudantium deleniti corporis a, magni perspiciatis? Ex sapiente autem ipsa nobis delectus
-                    pariatur reprehenderit quidem, nulla ut labore vero possimus repellat! Excepturi asperiores modi
-                    aliquid quia similique itaque maxime dolor. Possimus perferendis fugiat minima, qui consequatur a
-                    tempore perspiciatis aliquid, temporibus repudiandae tempora autem veniam. Magni esse dolore sint
-                    explicabo iusto magnam, aliquam id assumenda veritatis accusantium animi pariatur consequuntur harum
-                    dolorem.</p>
-                <h2>Speakers</h2>
-                <ul>
-                    <li>Adam</li>
-                    <li>Verity</li>
-                    <li>Jill</li>
-                    <li>Jeroen</li>
-                </ul>
+                <h1><?php echo $event['eventName']?></h1>
+                <p><?php echo $event['eventDescription']?></p>
 
 
             </div>
             <div class="col-lg-4">
 
                 <h2>Time & Date</h2>
-                <p>15/05/2019<br>
-                    3:00 PM - 5:00 PM AWST
-                </p>
+                <p>From<p>
+                        <p><?php echo $event['startDate']?><br></p>
+                        <p>Till</p>
+                        <p><?php echo $event['endDate']?><br></p>
+                        <h2>Location</h2>
+                        <p><?php echo $event['eventAddress']?></p>
 
-                <h2>Location</h2>
-                <p>278 Barker Rd, Subiaco WA 6008</p>
-
-                <h2>Share this Event!</h2>
-                <span><i class="fab fa-twitter text-center"></i></span>
-                <span><i class="fab fa-facebook text-center"></i></span>
-                <span><i class="fab fa-instagram text-center"></i></span>
+                        <h2>Share this Event!</h2>
+                        <span><i class="fab fa-twitter text-center"></i></span>
+                        <span><i class="fab fa-facebook text-center"></i></span>
+                        <span><i class="fab fa-instagram text-center"></i></span>
 
             </div>
 
@@ -98,7 +107,7 @@ include 'header.php';
                     <img class="card-img-top" src="CSS/images\uber.jpg">
                     <div class="card-body">
                         <h4 class="card-title">Get there</h4>
-                        <a href="routeToEvent.html" class="btn btn-primary">Find</a>
+                        <a href="routeToEvent.php?id=<?php echo $event['id']?> " class="btn btn-primary">Find</a>
                     </div>
                 </div>
 
@@ -150,19 +159,49 @@ include 'header.php';
 
                 <div id="map"></div>
                 <script>
+                    function initialize() {
+                        initMap();
+                        codeAddress();
+                    }
                     var map;
 
                     function initMap() {
+
+                        let createCenter = 
                         map = new google.maps.Map(document.getElementById('map'), {
                             center: {
                                 lat: -34.397,
                                 lng: 150.644
                             },
-                            zoom: 8
+                            zoom: 13
                         });
                     }
+
+
+                    function codeAddress() {
+                        geocoder = new google.maps.Geocoder()
+                        var address = "<?php echo $event['eventAddress']?>"
+
+
+                        geocoder.geocode({
+                            'address': address
+                        }, function (results, status) {
+                            if (status == 'OK') {
+                                map.setCenter(results[0].geometry.location);
+                                var marker = new google.maps.Marker({
+                                    map: map,
+                                    position: results[0].geometry.location
+                                });
+                            } 
+                        });
+                    }
+
+
+
                 </script>
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8fr1kqe2iBN30S0oX06Ff6FhwoJdloGg&callback=initMap" async defer>
+                <script
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8fr1kqe2iBN30S0oX06Ff6FhwoJdloGg&callback=initialize"
+                    async defer>
                 </script>
             </div>
         </div>

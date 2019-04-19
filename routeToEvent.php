@@ -1,3 +1,29 @@
+<?php
+	require('config.php');
+
+	$id = mysqli_real_escape_string($conn, $_GET['id']);
+
+	// Create Query
+	$query = 'SELECT * FROM events WHERE id= '.$id;
+    
+    // -- WHERE id = '.$id;
+
+	// Get Result
+	$result = mysqli_query($conn, $query);
+
+	// Fetch Data
+	$event = mysqli_fetch_assoc($result);
+	// var_dump($event);
+
+	// Free Result
+    mysqli_free_result($result);
+    
+    mysqli_close($conn);
+
+    
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,12 +43,12 @@
 
 <body>
 
- <?php
+  <?php
  include 'header.php';
  ?>
 
   <div class="container">
-    <h1 class="text-center p-2">Find your way to your event</h1>
+    <h1 class="text-center p-2">Find your way to: <?php echo $event['eventName']?></h1>
     <div class="container locationField text-center d-flex justify-content-center">
       <input id="start" class="form-control autocomplete" type="text" onFocus="geolocate()"
         placeholder="Enter your address">
@@ -33,22 +59,46 @@
 
     <div id="map2"></div>
   </div>
-  <script> 
-
+  <script>
     function initialize() {
       initMap();
       initAutocomplete();
     }
 
+    function codeAddress() {
+      geocoder = new google.maps.Geocoder()
+      var address = "<?php echo $event['eventAddress']?>"
+
+
+      geocoder.geocode({
+        'address': address
+      }, function (results, status) {
+        if (status == 'OK') {
+          map.setCenter(results[0].geometry.location);
+          var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+          });
+        }
+      });
+    }
+
     function initMap() {
+      geocoder = new google.maps.Geocoder()
+      var address = "<?php echo $event['eventAddress']?>"
+
+      geocoder.geocode({
+        'address': address
+      }, function (results, status) {
+        if (status == 'OK') {
+          map.setCenter(results[0].geometry.location);
+        }
+      });
+
       var directionsService = new google.maps.DirectionsService;
       var directionsDisplay = new google.maps.DirectionsRenderer;
       var map = new google.maps.Map(document.getElementById('map2'), {
-        zoom: 7,
-        center: {
-          lat: 41.85,
-          lng: -87.65
-        }
+        zoom: 12,
       });
       directionsDisplay.setMap(map);
 
@@ -56,9 +106,9 @@
         calculateAndDisplayRoute(directionsService, directionsDisplay);
       };
 
-      const start = document.getElementById('start').addEventListener('keyup', function(event){
+      const start = document.getElementById('start').addEventListener('keyup', function (event) {
         if (event.keyCode === 13) {
-        onChangeHandler();
+          onChangeHandler();
         }
       })
 
@@ -67,7 +117,7 @@
 
 
 
-    let endDestination = "278 Barker Rd, Subiaco WA 6008"
+    let endDestination = '<?php echo $event['eventAddress']?>';
 
 
 
@@ -129,7 +179,6 @@
         });
       }
     }
-
   </script>
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8fr1kqe2iBN30S0oX06Ff6FhwoJdloGg&callback=initMap"
                 async defer></script> -->
@@ -141,7 +190,7 @@
 
 
 
-    <?php
+  <?php
  include 'footer.php';
  ?>
 
@@ -158,7 +207,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
   </script>
-  <script src="../main.js"></script>
+  <script src="main.js"></script>
 </body>
 
 </html>
