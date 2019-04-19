@@ -50,10 +50,14 @@ a:hover {
 .logo-icon.footer {
     padding-top: 20px;
 }
+
+.active-header { 
+    background-color: #70A9A1;
+}
 /* Med-small screens */
 @media screen and (max-width: 992px) {
     .navbar-collapse{
-        background-color: #3E4E50;
+        background-color:#70A9A1;
         opacity: .9;
     }
 
@@ -277,3 +281,4 @@ p.banner-tagline {
     border: 1.5px solid #f9f6f0;
     color:  #f9f6f0;
 }
+

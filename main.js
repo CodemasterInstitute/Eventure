@@ -22,5 +22,16 @@
               }
             }
           });
+// Header background color on scroll
+          $(function() {
+            $(window).on("scroll", function() {
+                if($(window).scrollTop() > 200) {
+                    $(".navbar-scroll").addClass("active-header");
+                } else {
+                    //remove the background property so it comes transparent again 
+                   $(".navbar-scroll").removeClass("active-header");
+                }
+            });
         });
+    });
       
