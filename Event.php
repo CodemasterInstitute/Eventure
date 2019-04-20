@@ -20,6 +20,15 @@
     
     mysqli_close($conn);
 
+    $startDate = strtotime($event['startDate']);
+    $dt = new DateTime("@$startDate");
+    $convertedStartDate = $dt->format('d-m-Y H:i:s');
+  
+    $endDate = strtotime($event['endDate']);
+    $dt = new DateTime("@$endDate");
+    $convertedEndDate = $dt->format('d-m-Y H:i:s');
+
+
     
 ?>
 
@@ -54,7 +63,7 @@ include 'header.php';
 
             <div id="eventInformation" class="col-lg-4 text-center">
                 <h1 class="pt-2"><?php echo $event['eventName']?></h1>
-                <p class="text-center font-italic"><?php echo $event['startDate']?></p>
+                <p class="text-center font-italic"><?php echo $convertedStartDate?></p>
                 <p><?php echo '$' . $event['price']?></p>
                 <button class="btn-block btn">Buy Tickets</button>
 
@@ -77,9 +86,9 @@ include 'header.php';
 
                 <h2>Time & Date</h2>
                 <p>From<p>
-                        <p><?php echo $event['startDate']?><br></p>
+                        <p><?php echo $convertedStartDate?><br></p>
                         <p>Till</p>
-                        <p><?php echo $event['endDate']?><br></p>
+                        <p><?php echo $convertedEndDate?><br></p>
                         <h2>Location</h2>
                         <p><?php echo $event['eventAddress']?></p>
 
