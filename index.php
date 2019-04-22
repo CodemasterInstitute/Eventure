@@ -187,8 +187,8 @@ $query = 'SELECT * FROM events ORDER BY startDate ASC LIMIT 8';
         <p>Food & Wine</p>
       </div>
     </div>
-
-  </div>
+</div>
+ 
   <hr>
   <!--Upcoming Events Grid-->
   <div class="container" id="upcoming-events">
@@ -198,18 +198,18 @@ $query = 'SELECT * FROM events ORDER BY startDate ASC LIMIT 8';
       foreach($upcomingEvents as $event) : ?>
 
       <div class="col-lg-3">
-        <div class="card">
-          <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
+        <div id="cardHomePage" class="card">
+          <a href="Event.php?id=<?php echo $event['id']?>" ><img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap"></a>
           <div class="card-body">
-            <h5 class="card-title"><?php echo $event['eventName'] ?></h5>
-            <p class="card-text"><?php echo $event['eventDescription'] ?></p>
+            <h5 class="card-title font-weight-bold"><?php echo $event['eventName'] ?></h5>
+            <p class="card-text-homepage overflow-auto"><?php echo substr($event['eventDescription'], 0, 70) ?></p>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item"><?php echo $event['startDate'] ?></li>
-            <li class="list-group-item"><?php echo $event['eventDescription'] ?></li>
+            <li class="list-group-item"><?php echo $event['eventAddress'] ?></li>
           </ul>
-          <div class="card-body text-center">
-            <a href="#" class="btn btn-block">Buy tickets</a>
+          <div class="card-body text-center d-flex ">
+            <a href="#" class="btn btn-block align-self-end">Buy tickets</a>
           </div>
         </div>
       </div>
@@ -218,25 +218,10 @@ $query = 'SELECT * FROM events ORDER BY startDate ASC LIMIT 8';
     </div>
   </div>
   <hr>
+  <div class="container">
   <h3 id="test">New Events</h3>
   <div class="row">
     <div class="col-lg-3">
-      <div id="cardHomePage" class="card">
-        <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Event Name</h5>
-          <p class="card-text">Event description</p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Date & Time</li>
-          <li class="list-group-item">Location</li>
-        </ul>
-        <div class="card-body text-center">
-          <a href="#" class="btn btn-block">Buy tickets</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3">
       <div class="card">
         <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
         <div class="card-body">
@@ -284,6 +269,23 @@ $query = 'SELECT * FROM events ORDER BY startDate ASC LIMIT 8';
         </div>
       </div>
     </div>
+    <div class="col-lg-3">
+      <div class="card">
+        <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Event Name</h5>
+          <p class="card-text">Event description</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Date & Time</li>
+          <li class="list-group-item">Location</li>
+        </ul>
+        <div class="card-body text-center">
+          <a href="#" class="btn btn-block">Buy tickets</a>
+        </div>
+      </div>
+    </div>
+  </div>
   </div>
   </div>
 
