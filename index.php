@@ -1,3 +1,27 @@
+<?php
+require('config.php');
+
+// Getting upcoming events
+
+
+$query = 'SELECT * FROM events ORDER BY startDate ASC LIMIT 8';
+    
+
+
+	// Get Result
+	$result = mysqli_query($conn, $query);
+
+	// Fetch Data
+	$upcomingEvents = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+
+	// Free Result
+    mysqli_free_result($result);
+    
+    mysqli_close($conn);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,17 +34,18 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-  <link rel="stylesheet" type="text/css" media="screen" href="CSS/main.css">
-
+  <!-- <link rel="stylesheet" type="text/css" href="CSS/main.css"> -->
+  <link rel="stylesheet" href="CSS/main.css">
 
 </head>
 
 <body class="noPadding">
- 
+
   <div class="row">
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark navbar-scroll">
       <a class="navbar-brand" href="index.html"><img src="CSS/images/eventure logo 2.3.png" class="logo-icon"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -164,75 +189,103 @@
     </div>
 
   </div>
-
+  <hr>
   <!--Upcoming Events Grid-->
   <div class="container" id="upcoming-events">
+    <h3>Upcoming Events</h3>
     <div class="row">
-      <div class="col-lg-4">
-        <img scr-"" class=img-fluid alt="">
-        <h3>Event Name</h3>
-        <h4>Date</h4>
-        <p>Description</p>
-        <a href="#">Book Now</a>
+      <?php
+      foreach($upcomingEvents as $event) : ?>
+
+      <div class="col-lg-3">
+        <div class="card">
+          <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><?php echo $event['eventName'] ?></h5>
+            <p class="card-text"><?php echo $event['eventDescription'] ?></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><?php echo $event['startDate'] ?></li>
+            <li class="list-group-item"><?php echo $event['eventDescription'] ?></li>
+          </ul>
+          <div class="card-body text-center">
+            <a href="#" class="btn btn-block">Buy tickets</a>
+          </div>
+        </div>
       </div>
-      <div class="col-lg-4">
-        <img scr-"" class=img-fluid alt="">
-        <h3>Event Name</h3>
-        <h4>Date</h4>
-        <p>Description</p>
-        <a href="#">Book Now</a>
-      </div>
-      <div class="col-lg-4">
-        <img scr-"" class=img-fluid alt="">
-        <h3>Event Name</h3>
-        <h4>Date</h4>
-        <p>Description</p>
-        <a href="#">Book Now</a>
-      </div>
-      <div class="col-lg-4">
-        <img scr-"" class=img-fluid alt="">
-        <h3>Event Name</h3>
-        <h4>Date</h4>
-        <p>Description</p>
-        <a href="#">Book Now</a>
-      </div>
-      <div class="col-lg-4">
-        <img scr-"" class=img-fluid alt="">
-        <h3>Event Name</h3>
-        <h4>Date</h4>
-        <p>Description</p>
-        <a href="#">Book Now</a>
-      </div>
-      <div class="col-lg-4">
-        <img scr-"" class=img-fluid alt="">
-        <h3>Event Name</h3>
-        <h4>Date</h4>
-        <p>Description</p>
-        <a href="#">Book Now</a>
-      </div>
-      <div class="col-lg-4">
-        <img scr-"" class=img-fluid alt="">
-        <h3>Event Name</h3>
-        <h4>Date</h4>
-        <p>Description</p>
-        <a href="#">Book Now</a>
-      </div>
-      <div class="col-lg-4">
-        <img scr-"" class=img-fluid alt="">
-        <h3>Event Name</h3>
-        <h4>Date</h4>
-        <p>Description</p>
-        <a href="#">Book Now</a>
-      </div>
-      <div class="col-lg-4">
-        <img scr-"" class=img-fluid alt="">
-        <h3>Event Name</h3>
-        <h4>Date</h4>
-        <p>Description</p>
-        <a href="#">Book Now</a>
-      </div>
+      <?php endforeach; ?>
 
     </div>
+  </div>
+  <hr>
+  <h3 id="test">New Events</h3>
+  <div class="row">
+    <div class="col-lg-3">
+      <div id="cardHomePage" class="card">
+        <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Event Name</h5>
+          <p class="card-text">Event description</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Date & Time</li>
+          <li class="list-group-item">Location</li>
+        </ul>
+        <div class="card-body text-center">
+          <a href="#" class="btn btn-block">Buy tickets</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="card">
+        <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Event Name</h5>
+          <p class="card-text">Event description</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Date & Time</li>
+          <li class="list-group-item">Location</li>
+        </ul>
+        <div class="card-body text-center">
+          <a href="#" class="btn btn-block">Buy tickets</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="card">
+        <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Event Name</h5>
+          <p class="card-text">Event description</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Date & Time</li>
+          <li class="list-group-item">Location</li>
+        </ul>
+        <div class="card-body text-center">
+          <a href="#" class="btn btn-block">Buy tickets</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="card">
+        <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Event Name</h5>
+          <p class="card-text">Event description</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Date & Time</li>
+          <li class="list-group-item">Location</li>
+        </ul>
+        <div class="card-body text-center">
+          <a href="#" class="btn btn-block">Buy tickets</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
 
 
 
@@ -257,9 +310,9 @@
 
           <!-- Content -->
           <!-- <h5 class="font-weight-bold text-uppercase mt-3 mb-4 logo-icon">EVENTURE</h5> -->
-          
+
           <img src="CSS/images/eventure logo 2.4(white).png" class="logo-icon footer">
-            <p style="padding-top: 20px">Make Adventures Possible.</p>
+          <p style="padding-top: 20px">Make Adventures Possible.</p>
 
         </div>
         <!-- Grid column -->

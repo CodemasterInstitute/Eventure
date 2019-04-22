@@ -13,7 +13,7 @@
 
 	// Fetch Data
 	$event = mysqli_fetch_assoc($result);
-	// var_dump($event);
+
 
 	// Free Result
     mysqli_free_result($result);
