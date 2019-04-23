@@ -67,29 +67,49 @@
     ?>
     <!--Main Container with auto margins-->
     <div class="container">
-        <form name="createEventForm" method="POST" action="submit-event.php">
+        <form name="createEventForm" method="POST" action="submit-event.php" enctype = "multipart/form-data">
             <h1>Create Your Event!</h1>
             <div class="form-row">
 
-                <div class="form-group col-lg-6">
+                <div class="form-group col-lg-12">
                     <label for="eventName">Event Name:</label>
                     <input type="text" class="form-control" id="eventName"
-                        placeholder="Add a short, clear name" name="eventName" value="<?php echo $eventName;?>" required> <!--Without php echo does it clear the variables when the page is reloaded (otherwise the default variables are what has been previously entered-->
+                        placeholder="Add a short, clear name" name="eventName" required> <!--Without php echo does it clear the variables when the page is reloaded (otherwise the default variables are what has been previously entered-->
                 </div>
+                </div>
+                <div class = "form-row">
                 <div class="form-group col-lg-6">
                     <label for="eventAddress">Event Address</label>
                     <input type="text" class="form-control" id="eventAddress"
-                        placeholder="Include a place or address" name = "eventAddress" value="<?php echo $eventAddress;?>" required>
+                        placeholder="278 Barker Rd Subiaco" name = "eventAddress" required>
+                </div>
+                <div class="form-group col-lg-3">
+                    <label for="eventCity">Event City</label>
+                    <input type="text" class="form-control" id="eventCity"
+                        placeholder = "Perth" name = "eventCity" required>
+                </div>
+                <div class="form-group col-lg-3">
+                    <label for="eventPostcode">Event Postcode</label>
+                    <input type="text" class="form-control" id="eventPostcode"
+                        placeholder="6008" name = "eventPostcode" required>
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group col-lg-6">
-                    <label for="startDate">Event Start</label>
-                    <input type="datetime-local" class="form-control" name = "startDate" value="<?php echo $startDate;?>" required>
+                <div class="form-group col-lg-3">
+                    <label for="startDate">Event Start Date</label>
+                    <input type="date" class="form-control" name = "startDate" required>
                 </div>
-                <div class="form-group col-lg-6">
-                    <label for="endDate">Event End</label>
-                    <input type="datetime-local" class="form-control" name = "endDate" value="<?php echo $endDate;?>" required>
+                <div class="form-group col-lg-3">
+                    <label for="startTime">Event Start Time</label>
+                    <input type="time" class="form-control" name = "startTime" required>
+                </div>
+                <div class="form-group col-lg-3">
+                    <label for="endDate">Event End Date</label>
+                    <input type="date" class="form-control" name = "endDate" required>
+                </div>
+                <div class="form-group col-lg-3">
+                    <label for="endTime">Event End Time</label>
+                    <input type="time" class="form-control" name = "endTime" required>
                 </div>
 
 
@@ -97,19 +117,33 @@
             <div class="form-row">
                 <div class="form-group col-lg-12">
                     <label for="eventDescription">Event Description</label>
-                    <textarea class="form-control rounded-0" class="md-textarea form-control" rows="8" name = "eventDescription" value="<?php echo $eventDescription;?>" required></textarea>
+                    <textarea class="form-control rounded-0" class="md-textarea form-control" rows="8" name = "eventDescription" required></textarea>
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group col-lg-4">
                     <label for="availableTickets">Available Tickets</label>
-                    <input type="number" class="form-control" name = "availableTickets" value="<?php echo $availableTickets;?>" required>
+                    <input type="number" class="form-control" name = "availableTickets" required>
                 </div>
                 <div class="form-group col-lg-8">
                     <label for="organiserID">Organiser ID</label>
-                    <input type="number" class="form-control" name = "organiserID" value="<?php echo $organiserID;?>" required>
+                    <input type="number" class="form-control" name = "organiserID" required>
                 </div>
+            </div>
+            <div class = "form-row">
+            <div class = "form-group col-lg-4">
+            <label for="eventTwitter">Twitter Link</label>
+            <input type = "text" class = "form-control" name = "eventTwitter">
+            </div>
+            <div class = "form-group col-lg-4">
+            <label for="eventFacebook">Facebook Link</label>
+            <input type = "text" class = "form-control" name = "eventFacebook">
+            </div>
+            <div class = "form-group col-lg-4">
+            <label for="eventInstagram">Instagram Link</label>
+            <input type = "text" class = "form-control" name = "eventInstagram">
+            </div>
             </div>
             <div class="form-row">
                 
@@ -118,42 +152,42 @@
                 <div class="form-group col-lg-4">
                     <label for="imgName">Upload Photo</label>
                     <input type="file" accept="image/x-png,image/gif,image/jpeg" class="form-control"
-                        id="imgName" name = "imgName" value="<?php echo $imgName;?>" required>
+                        id="imgName" name = "imgName" required>
                 </div>
                 <div class="form-group col-lg-4">
                     <label for="price">Ticket Price</label>
-                    <input type="text" class="form-control" id="price" name = "price" value="<?php echo $price;?>" required>
+                    <input type="text" class="form-control" id="price" name = "price"  required>
                 </div>
                 <div class="form-group col-lg-4">
 
                     <h4>Type of Event</h4>
                     <h5>Check all that apply</h5>
                     <div class="form-check" required>
-                        <input class="form-check-input" type="checkbox" value="Free" id="Free" name = "eventType">
+                        <input class="form-check-input" type="checkbox" value="Free" name = "eventType[]">
                         <label class="form-check-label" for="checkFree">
                             Free
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Comedy" id="Comedy" name = "eventType">
+                        <input class="form-check-input" type="checkbox" value="Comedy" name = "eventType[]">
                         <label class="form-check-label" for="checkComedy">
                             Comedy
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Music" id="Music" name = "eventType"> 
+                        <input class="form-check-input" type="checkbox" value="Music" name = "eventType[]"> 
                         <label class="form-check-label" for="checkMusic">
                             Music
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Sport" id="Sport" name = "eventType">
+                        <input class="form-check-input" type="checkbox" value="Sport" name = "eventType[]">
                         <label class="form-check-label" for="checkSport">
                             Sport
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Food" id="Food" name = "eventType">
+                        <input class="form-check-input" type="checkbox" value="Food" name = "eventType[]">
                         <label class="form-check-label" for="checkFood">
                             Food
                         </label>
@@ -165,7 +199,7 @@
 
             <div class="form-row">
                 <div class="form-group col-lg-12">
-                    <button type="submit" class="btn btn-primary" id="createEventButton">Create Event!</button>
+                    <button type="submit" class="btn btn-primary" id="createEventButton" name = "submit">Create Event!</button>
                 </div>
             </div>
         </form>
