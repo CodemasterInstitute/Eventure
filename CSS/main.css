@@ -334,3 +334,13 @@ p.banner-tagline {
     padding: 5px 10px;
 }
 
+#all-event-image {
+    height: 200px;
+}
+
+.all-event-card {
+    border: 2px black solid;
+}
+.card {
+box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.75)!important;
+}

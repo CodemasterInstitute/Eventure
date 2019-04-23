@@ -54,30 +54,41 @@ $query = 'SELECT * FROM events';
 
 <body>
     <div class="container" id="all-events">
-      
-      <div class="row">
+    
+    
       <?php
         foreach($allEvents as $event) : ?>
+        <div class="card mb-3">
+       <div class="row no-gutters">
         <div class="col-lg-4">
-          <div id="all-event-image" class="card">
-            <img src="https://via.placeholder.com/150">
-            <a href="Event.php?id=<?php echo $event['id']?>" ><img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap"></a>
-          </div>
+            <a href="Event.php?id=<?php echo $event['id']?>" ><img class="card-img" src="https://via.placeholder.com/150" alt="Card image cap"></a>
         </div>
         <div class="col-lg-8">
-          <div class="event-details">
-              <h1 class="card-title font-weight-bold"><?php echo $event['eventName'] ?></h1>
-              <h3 class="event-date"><?php echo $event['startDate'] ?></h3>
-              <p class="event-location"><?php echo $event['eventAddress'] ?></p>
-              <p class="event-description"><?php echo substr($event['eventDescription'], 0, 70) ?></p>
+          <div class="event-details card-body">
+              <h1 class="event-title font-weight-bold card-title"><?php echo $event['eventName'] ?></h1>
+              <h3 class="event-date card-title"><?php 
+         
+            
+            $startDate = strtotime($event['startDate']);
+            $dt = new DateTime("@$startDate");
+            $convertedStartDate = $dt->format('d-M-Y H:i');
+
+            echo $convertedStartDate 
+                ?></h3>
+              <p class="event-location card-text"><?php echo $event['eventAddress'] ?></p>
+              <p class="event-description card-text"><?php echo substr($event['eventDescription'], 0, 70) ?></p>
           </div>
           <a href="#" class="btn align-self-center">Buy tickets</a>
         </div>
-          
+    
+        </div>
+      </div>
+
+   
          
         <?php endforeach; ?>
            
-      </div>
+    
     </div>
       
      
