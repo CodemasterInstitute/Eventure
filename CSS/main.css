@@ -301,11 +301,6 @@ p.banner-tagline {
     color: #f9f6f0;
 }
 
-#cardHomePage {
-    -webkit-box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.75) !important;
-    -moz-box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.75)!important;
-    box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.75)!important;
-}
 
 #cardHomePage .list-group-item {
     padding: 5px 10px;
@@ -323,6 +318,9 @@ p.banner-tagline {
 #cardHomePage .card {
     height: 450px;
     margin: 20px 0;
+    -webkit-box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.75) !important;
+    -moz-box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.75)!important;
+    box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.75)!important;
 }
 
 #cardHomePage .card-img-top {

@@ -213,8 +213,8 @@ $locationquery = 'SELECT DISTINCT eventAddress FROM events';
       <?php
       foreach($upcomingEvents as $event) : ?>
 
-      <div class="col-lg-3">
-        <div id="cardHomePage" class="card">
+      <div id="cardHomePage" class="col-lg-3">
+        <div  class="card">
           <a href="Event.php?id=<?php echo $event['id']?>"><img class="card-img-top"
               src="https://via.placeholder.com/150" alt="Card image cap"></a>
           <div class="card-body">
