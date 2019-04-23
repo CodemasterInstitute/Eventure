@@ -82,12 +82,13 @@ a:hover {
 }
 
 .btn:hover {
-    font-weight: bold;
+    /* font-weight: bold; */
     background-color: #3E4E50;
     border-color: #3E4E50;
     opacity: 1;
-
-
+    color:  #f9f6f0 !important;
+    text-decoration: underline;
+    font-size: 1.5em;
 }
 
 .eventJumbo {
