@@ -1,7 +1,7 @@
 <?php
                     // define variables and set to empty values
                     // variables do NOT need to have the same names as the DB names but it does make it easier to read
-                    $eventName = $organiserID = $startDate = $startTime = $endDate = $endTime = $eventAddress = $eventCity = $eventPostcode = $price = $eventDescription = $imgName = $availableTickets = $eventType = $error = $eventTwitter = $eventFacebook = $eventInstagram = "";
+                    $eventName = $organiserID = $startDate = $endDate = $eventAddress = $price = $eventDescription = $imgName = $availableTickets = $eventType = $error = "";
                     
                     if(isset($_POST['eventName'])) {
                         $eventName = test_input($_POST["eventName"]);
@@ -21,42 +21,17 @@
                             $startDate = "";
                         }
                 
-
-                        if(isset($_POST['startTime'])) {
-                            $startTime = test_input($_POST["startTime"]);
-                            } else {
-                                $startTime = "";
-                            }
-
                     if(isset($_POST['endDate'])) {
                         $endDate = test_input($_POST["endDate"]);
                         } else {
                             $endDate = "";
                         }
-
-                        if(isset($_POST['endTime'])) {
-                            $endTime = test_input($_POST["endTime"]);
-                            } else {
-                                $endTime = "";
-                            }
                     
                     if(isset($_POST['eventAddress'])) {
                         $eventAddress = test_input($_POST["eventAddress"]);
                         } else {
                             $eventAddress = "";
                         }
-
-                        if(isset($_POST['eventCity'])) {
-                            $eventCity = test_input($_POST["eventCity"]);
-                            } else {
-                                $eventCity = "";
-                            }
-
-                            if(isset($_POST['eventPostcode'])) {
-                                $eventPostcode = test_input($_POST["eventPostcode"]);
-                                } else {
-                                    $eventPostcode = "";
-                                }
 
                     if(isset($_POST['price'])) {
                         $price = test_input($_POST["price"]);
@@ -70,7 +45,11 @@
                             $eventDescription = "";
                         }
 
-                
+                    if(isset($_POST['imgName'])) {
+                        $imgName = test_input($_POST["imgName"]);
+                        } else {
+                            $imgName = "";
+                        }
 
                     if(isset($_POST['availableTickets'])) {
                         $availableTickets = test_input($_POST["availableTickets"]);
@@ -78,77 +57,11 @@
                             $availableTickets = "";
                         }
 
-                        if(isset($_POST['eventFacebook'])) {
-                            $eventFacebook = test_input($_POST["eventFacebook"]);
-                            } else {
-                                $eventFacebook = "";
-                            }
-
-                            if(isset($_POST['eventTwitter'])) {
-                                $eventTwitter = test_input($_POST["eventTwitter"]);
-                                } else {
-                                    $eventTwitter = "";
-                                }
-
-                                if(isset($_POST['eventInstagram'])) {
-                                    $eventInstagram = test_input($_POST["eventInstagram"]);
-                                    } else {
-                                        $eventInstagram = "";
-                                    }
-
                     if(isset($_POST['eventType'])) {
-                        $counter = 0;
-                        $eventType = "";
-                        foreach($_POST['eventType'] as $event) {
-                            $counter++;
-                            if($counter < sizeof($_POST['eventType'])) {
-                                $eventType .= $event . ",";
-
-                            } else {
-                                $eventType .= $event;
-                            }
-                            
+                        $availableTickets = test_input($_POST["eventType"]);
+                        } else {
+                            $eventType = "";
                         }
-                    }else {
-                           $eventType = "";
-                       }
-
-
-
-
-                    
-
-
-                    // Check if image file is a actual image uploading or not
-
-                    if(isset($_POST["submit"])) { // change this if statement to : if there's stuff in the files array, do something else do not 
-
-
-                        // Image # and image resizing, need to pass hashed image name into the $imgName, $upload_image will change
-
-                        
-                    $target_dir = "imagepath/uploads/"; //Directory Name
-
-                    $upload_image=$_FILES["imgName"][ "name" ]; // still use this value, but set a little hash of 5 char and prepend it to imgName, upload would be $#.$_FILESimgNameName
-                        
-                        move_uploaded_file($_FILES["imgName"]["tmp_name"], "$target_dir".$_FILES["imgName"]["name"]);
-
-                        $imgName = $target_dir . $upload_image;
-
-                        
-
-                    }
-                    // if($check !== false) {
-
-                    //     $insert_path="INSERT INTO events ('imgName') VALUES ('$target_dir','$upload_image')";
-
-                    //     $var=mysql_query($insert_path);
-
-                    //     }
-
-                    
-
-                        
                     // add JS validation on input data, regEx too. validating email addresses will give structure of regEx structure in JS. regEx to remove $ and also to allow number and decimal point
 
                         function test_input($data) {
@@ -160,14 +73,14 @@
 
                     $mysqli = new mysqli ('localhost', 'root', '', 'events'); // localhost, username, password, database name 
 
-                    $sql = "INSERT INTO events (eventName, organiserID, startDate, startTime, endDate , endTime, eventAddress, eventCity, eventPostcode, price, eventDescription, imgName, availableTickets, eventType, eventFacebook, eventTwitter, eventInstagram) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                    $sql = "INSERT INTO events (eventName, organiserID, startDate, endDate, eventAddress, price, eventDescription, imgName, availableTickets, eventType) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
                     
                     if ($stmt = $mysqli->prepare($sql)){
                         echo $mysqli->error;
                     }
 
-                    $stmt->bind_param('sisssssssississss', $eventName, $organiserID, $startDate, $startTime, $endDate, $endTime, $eventAddress, $eventCity, $eventPostcode, $price, $eventDescription, $imgName, $availableTickets, $eventType, $eventFacebook, $eventTwitter, $eventInstagram);
+                    $stmt->bind_param('sisssissis', $eventName, $organiserID, $startDate, $endDate, $eventAddress, $price, $eventDescription, $imgName, $availableTickets, $eventType);
 
                     if($stmt->execute()) {
                         $heading = "success";
