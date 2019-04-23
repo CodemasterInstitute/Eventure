@@ -22,11 +22,11 @@
 
     $startDate = strtotime($event['startDate']);
     $dt = new DateTime("@$startDate");
-    $convertedStartDate = $dt->format('d-m-Y H:i:s');
+    $convertedStartDate = $dt->format('d-M-Y H:i');
   
     $endDate = strtotime($event['endDate']);
     $dt = new DateTime("@$endDate");
-    $convertedEndDate = $dt->format('d-m-Y H:i:s');
+    $convertedEndDate = $dt->format('d-M-Y H:i');
 
 
     
