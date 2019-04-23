@@ -109,8 +109,11 @@
     <?php
     include 'header.php';
       ?>
-
-    <div class="dash-nav">
+  
+  <div class="container-fluid">
+  <h2 class="text-center mb-3">My Events:</h2>
+  <div class="row">
+    <div class="dash-nav col-lg-3">
       <h2>Members Dashboard</h2>
         <ul class="nav flex-column">
             <li class="nav-item">
@@ -140,12 +143,11 @@
             </li>
           </ul>  
     </div>
-    
-      <div class="container">
-          <h2 id="cont-text">My Events</h2>
-          <div class="row">
-            <div class="col-sm-6">
-              <div class="card" id="main-card" style="width: 18rem;">
+  
+          <!--<h3>My Events:</h3>-->
+        
+            <div class="col-lg-3">
+              <div class="card" id="main-card" >
                   <img src="https://picsum.photos/200" class="card-img-top" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">Fyre Festival</h5>
@@ -154,8 +156,8 @@
                   </div>
                 </div>
             </div>
-            <div class="col-sm-6">
-                <div class="card" id="main-card" style="width: 18rem;">
+            <div class="col-lg-3">
+                <div class="card" id="main-card" >
                     <img src="https://picsum.photos/200" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">ITTA Table Tennis Championship 2019</h5>
@@ -164,8 +166,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6">
-              <div class="card" id="main-card" style="width: 18rem;">
+            <div class="col-lg-3">
+              <div class="card" id="main-card" >
                   <img src="https://picsum.photos/200" class="card-img-top" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">SOTA Festival 2019 (After Party)</h5>
@@ -176,11 +178,11 @@
               </div>
             </div>
             
-
+            
           </div>
-          <div class="row">
-            <div class="col-sm-6">
-              <div class="card" id="main-card" style="width: 18rem;">
+          <div class="row" id="slideRow">
+            <div class="col-lg-3 offset-md-3">
+              <div class="card" id="main-card" >
                   <img src="https://picsum.photos/200" class="card-img-top" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">Fyre Festival</h5>
@@ -189,8 +191,8 @@
                   </div>
                 </div>
             </div>
-            <div class="col-sm-6">
-                <div class="card" id="main-card" style="width: 18rem;">
+            <div class="col-lg-3">
+                <div class="card" id="main-card" >
                     <img src="https://picsum.photos/200" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">ITTA Table Tennis Championship 2019</h5>
@@ -199,8 +201,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6">
-              <div class="card" id="main-card" style="width: 18rem;">
+            <div class="col-lg-3">
+              <div class="card" id="main-card" >
                   <img src="https://picsum.photos/200" class="card-img-top" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">SOTA Festival 2019 (After Party)</h5>
@@ -211,13 +213,12 @@
               </div>
             </div>
             
-
-          </div>  
+            
+          </div>
+            
         </div>
 
-
-
-
+        <hr>
 
         <!--Events you might like container-->
         <div class="container-fluid">
