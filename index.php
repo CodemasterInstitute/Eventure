@@ -80,7 +80,7 @@ $query = 'SELECT * FROM events ORDER BY startDate ASC LIMIT 8';
         </ul>
         <form class="form-inline float-right">
 
-              <input id='SearchHomePage' class="addSearchInput" type="text" name="search" placeholder="Search..">    
+              <input id='SearchHomePage' class="addSearchInput" type="text" name="search" placeholder="Search your Eventure">    
               <i class="fas fa-search btn"></i>
         </form>
       </div>
