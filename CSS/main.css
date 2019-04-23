@@ -28,7 +28,7 @@ a:hover {
     text-decoration-color: #f9f6f0;
     font-weight: bold;
     color: #f9f6f0;
-    padding-bottom: 1px;
+    /* padding-bottom: 1px; */
 }
 
 /* Navbar */
@@ -89,7 +89,7 @@ a:hover {
     opacity: 1;
     color:  #f9f6f0 !important;
     text-decoration: underline;
-    font-size: 1.5em;
+   
 }
 
 .eventJumbo {
@@ -333,5 +333,4 @@ p.banner-tagline {
 .card-body {
     padding: 5px 10px;
 }
-
 
