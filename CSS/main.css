@@ -320,16 +320,16 @@ p.banner-tagline {
    position: relative;
 }
 
-.card {
+#cardHomePage .card {
     height: 450px;
     margin: 20px 0;
 }
 
-.card-img-top {
+#cardHomePage .card-img-top {
     height: 150px;
 }
 
-.card-body {
+#cardHomePage .card-body {
     padding: 5px 10px;
 }
 
