@@ -78,10 +78,10 @@ $query = 'SELECT * FROM events ORDER BY startDate ASC LIMIT 8';
             <a class="nav-link" href="#" tabindex="-1">Log In/ Sign Up</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <form class="form-inline float-right">
 
-          <button class="btn btn-outline-success my-2 my-sm-0 btn-lg magnify-icon" type="submit"><i
-              class="fas fa-search"></i></button>
+              <input id='SearchHomePage' class="addSearchInput" type="text" name="search" placeholder="Search..">    
+              <i class="fas fa-search btn"></i>
         </form>
       </div>
     </nav>

@@ -33,5 +33,15 @@
                 }
             });
         });
+
+
+        // show search bar on click
+        $('.fa-search').click(function() {
+          $('#SearchHomePage').addClass('addSearchInput');
+        })
+
+
     });
+
+
       
