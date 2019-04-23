@@ -114,13 +114,13 @@
       <h2>Members Dashboard</h2>
         <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link active" href="#">&#127380 Account Information</a>
+              <a class="nav-link active" href="#"><i class="fas fa-user-edit"></i> Account Information</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">&#128197 My Events</a>
+              <a class="nav-link" href="#"><i class="fas fa-calendar-week"></i> My Events</a>
             </li>
             <li class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <a class="nav-link" href="#">&#128204 Selected Catagories</a>
+              <a class="nav-link" href="#"><i class="fas fa-map-pin"></i> Selected Catagories</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="#">Sport</a>
                   <a class="dropdown-item" href="#">Comedy</a>
@@ -148,9 +148,9 @@
               <div class="card" id="main-card" style="width: 18rem;">
                   <img src="https://picsum.photos/200" class="card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">Fyre Festival</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="#" class="btn btn-primary">Look at Event</a>
                   </div>
                 </div>
             </div>
@@ -158,9 +158,9 @@
                 <div class="card" id="main-card" style="width: 18rem;">
                     <img src="https://picsum.photos/200" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
+                      <h5 class="card-title">ITTA Table Tennis Championship 2019</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      <a href="#" class="btn btn-primary">Look at Event</a>
                     </div>
                 </div>
             </div>
@@ -168,23 +168,50 @@
               <div class="card" id="main-card" style="width: 18rem;">
                   <img src="https://picsum.photos/200" class="card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">SOTA Festival 2019 (After Party)</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="#" class="btn btn-primary">Look at Event</a>
                   </div>
                   
               </div>
+            </div>
+            
+
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="card" id="main-card" style="width: 18rem;">
+                  <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Fyre Festival</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Look at Event</a>
+                  </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card" id="main-card" style="width: 18rem;">
+                    <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">ITTA Table Tennis Championship 2019</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Look at Event</a>
+                    </div>
+                </div>
             </div>
             <div class="col-sm-6">
               <div class="card" id="main-card" style="width: 18rem;">
                   <img src="https://picsum.photos/200" class="card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">SOTA Festival 2019 (After Party)</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="#" class="btn btn-primary">Look at Event</a>
                   </div>
+                  
               </div>
             </div>
+            
+
           </div>  
         </div>
 
