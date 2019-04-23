@@ -175,16 +175,43 @@
                   
               </div>
             </div>
+            
+
+          </div>
+          <div class="row">
             <div class="col-sm-6">
               <div class="card" id="main-card" style="width: 18rem;">
                   <img src="https://picsum.photos/200" class="card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">Shangrilah Aus Tour 2019</h5>
+                    <h5 class="card-title">Fyre Festival</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <a href="#" class="btn btn-primary">Look at Event</a>
                   </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card" id="main-card" style="width: 18rem;">
+                    <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">ITTA Table Tennis Championship 2019</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Look at Event</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card" id="main-card" style="width: 18rem;">
+                  <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">SOTA Festival 2019 (After Party)</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Look at Event</a>
+                  </div>
+                  
               </div>
             </div>
+            
+
           </div>  
         </div>
 
