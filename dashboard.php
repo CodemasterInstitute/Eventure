@@ -114,13 +114,13 @@
       <h2>Members Dashboard</h2>
         <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link active" href="#">&#127380 Account Information</a>
+              <a class="nav-link active" href="#"><i class="fas fa-user-edit"></i> Account Information</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">&#128197 My Events</a>
+              <a class="nav-link" href="#"><i class="fas fa-calendar-week"></i> My Events</a>
             </li>
             <li class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <a class="nav-link" href="#">&#128204 Selected Catagories</a>
+              <a class="nav-link" href="#"><i class="fas fa-map-pin"></i> Selected Catagories</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="#">Sport</a>
                   <a class="dropdown-item" href="#">Comedy</a>
