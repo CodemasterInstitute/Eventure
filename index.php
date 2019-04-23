@@ -54,9 +54,19 @@ $query = 'SELECT * FROM events ORDER BY startDate ASC LIMIT 8';
           <li class="nav-item ">
             <a class="nav-link" href="#">Events <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">News</a>
-          </li>
+          <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="categories.php" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Categories
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Free</a>
+                        <a class="dropdown-item" href="#">Music</a>
+                        <a class="dropdown-item" href="#">Comedy</a>
+                        <a class="dropdown-item" href="#">Sport</a>
+                        <a class="dropdown-item" href="#">Food & Wine</a>
+                    </div>
+                </li>
           <li class="nav-item active">
             <a class="nav-link " href="#">
               Members
