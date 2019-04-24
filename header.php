@@ -1,6 +1,6 @@
 <header>
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark color-header">
-        <a class="navbar-brand" href="index.php"><img src="CSS/images/eventure logo 2.3.png" class="logo-icon"></a>
+        <a class="navbar-brand" href="index.php"><img src="CSS/images/eventure logo 3.2.png" class="logo-icon"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -37,8 +37,8 @@
             </ul>
             <form class="form-inline my-2 my-lg-0">
 
-                <button class="btn btn-outline-success my-2 my-sm-0 btn-lg magnify-icon" type="submit"><i
-                        class="fas fa-search"></i></button>
+                <input id="searchNav" type="text" name="search" placeholder="Start your eventure.."><i id="magnGlass"
+                    class="fas fa-search btn"></i>
             </form>
         </div>
     </nav>

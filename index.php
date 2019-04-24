@@ -3,25 +3,51 @@ require('config.php');
 
 // Getting upcoming events
 
+$search_query = "SELECT * FROM events WHERE 1";
+
+if ($_POST['eventAddress'] != "") {
+  $by_location = $_POST['eventAddress']; 
+  $search_query .= " AND eventAddress LIKE '%$by_location%'";
+}
+
+$by_date = $_POST['startDate'];
+$by_eventType = $_POST['eventType'];
+
 
 $query = 'SELECT * FROM events ORDER BY startDate ASC LIMIT 8';
+
+
+
     
 $locationquery = 'SELECT DISTINCT eventAddress FROM events';
 
 	// Get Result
   $result = mysqli_query($conn, $query);
   $locationresult = mysqli_query($conn, $locationquery);
+  $searchresult = mysqli_query($conn, $search_query);
 
 	// Fetch Data
 	$upcomingEvents = mysqli_fetch_all($result, MYSQLI_ASSOC);
   $locationEvents = mysqli_fetch_all($locationresult, MYSQLI_ASSOC);
-
+  $searchEvents = mysqli_fetch_all($searchresult, MYSQLI_ASSOC);
 	// Free Result
     mysqli_free_result($result);
     mysqli_free_result($locationresult);
-    
-    mysqli_close($conn);
+    mysqli_free_result($searchresult);
 
+    
+        
+
+
+/*OR startDate LIKE '$by_date' OR eventType LIKE '%$by_eventType%'*/
+  
+  
+
+  // return $searchresult;
+
+
+
+    mysqli_close($conn); 
     
 
 ?>
@@ -49,7 +75,7 @@ $locationquery = 'SELECT DISTINCT eventAddress FROM events';
 
   <div class="row">
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark navbar-scroll">
-      <a class="navbar-brand" href="index.html"><img src="CSS/images/eventure logo 2.3.png" class="logo-icon"></a>
+      <a class="navbar-brand" href="index.html"><img src="CSS/images/eventure logo 3.2.png" class="logo-icon"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -86,41 +112,43 @@ $locationquery = 'SELECT DISTINCT eventAddress FROM events';
         </ul>
         <form class="form-inline my-2 my-lg-0">
 
-          <button class="btn btn-outline-success my-2 my-sm-0 btn-lg magnify-icon" type="submit"><i
-              class="fas fa-search"></i></button>
+          <input id="searchNav" type="text" name="search" placeholder="Start your eventure.."><i id="magnGlass"
+              class="fas fa-search btn"></i>
         </form>
       </div>
     </nav>
     <div class="search">
       <div class="container searchbar">
         <h1>Find an event!</h1>
+        <form action="searchresults.php" method = "post">
         <div class="form-row">
           <div class="form-group col-lg-4">
             <label class="sr-only" for="location">Location</label>
-            <input type="text" class="form-control searchforms" id="location" placeholder="Location">
+            <input type="text" class="form-control searchforms" id="location" name="location" placeholder="Location">
           </div>
           <div class=" form-group col-lg-4">
             <label class="sr-only" for="date">When</label>
             <div class="input-group">
-              <input type="date" class="form-control searchforms" id="date" placeholder="Date">
+              <input type="date" class="form-control searchforms" id="date" placeholder="Date" name="date">
               <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
             </div>
           </div>
           <div class="form-group col-lg-4">
             <label class="sr-only" for="category">Event Categories</label>
             <select id="category" name="category" class="form-control searchforms">
-              <option value="1">All</option>
-              <option value="2">Free</option>
-              <option value="3">Music</option>
-              <option value="4">Comedy</option>
-              <option value="5">Sport</option>
-              <option value="6">Food</option>
+              <option value="all">All</option>
+              <option value="free">Free</option>
+              <option value="music">Music</option>
+              <option value="comedy">Comedy</option>
+              <option value="sport">Sport</option>
+              <option value="food">Food</option>
             </select>
           </div>
         </div>
         <div class="col-lg-12" id="button-center">
           <button type="submit" class="btn btn-default btn-primary searchbar-btn">Search</button>
         </div>
+        </form>
       </div>
     </div>
 
@@ -216,7 +244,7 @@ $locationquery = 'SELECT DISTINCT eventAddress FROM events';
       <div id="cardHomePage" class="col-lg-3">
         <div  class="card">
           <a href="Event.php?id=<?php echo $event['id']?>"><img class="card-img-top"
-              src="https://via.placeholder.com/150" alt="Card image cap"></a>
+              src="<?php echo $event['imgName'] ?>" alt="Card image cap"></a>
           <div class="card-body">
             <h5 class="card-title font-weight-bold"><?php echo $event['eventName'] ?></h5>
             <p class="card-text-homepage overflow-auto"><?php echo substr($event['eventDescription'], 0, 70) ?></p>

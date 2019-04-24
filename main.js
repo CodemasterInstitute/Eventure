@@ -33,6 +33,22 @@
                 }
             });
         });
+
+        // NAV search bar animation
+
+        $("#magnGlass").click(function(){
+          if ($("#searchNav").css('visibility', 'hidden')){
+            $("#searchNav").css('visibility', 'visible');   
+            $("#searchNav").css('width', '300px');
+          } else if ($("#searchNav").css('visibility', 'visible')) {
+            $("#searchNav").css('visibility', 'hidden');   
+
+          }
+              
+        });
+
+
+
     });
       
 
