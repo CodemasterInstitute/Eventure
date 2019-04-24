@@ -8,12 +8,20 @@ $search_query = "SELECT * FROM events WHERE 1";
 if ($_POST['location'] != "") {
   $by_location = $_POST['location']; 
   $search_query .= " AND eventAddress LIKE '%$by_location%'";
+  if ($_GET['category'] != "all") {
+    $by_eventType = $_GET['category']; 
+    $search_query .= " AND eventType LIKE '%$by_eventType%'";
+}
 }
 
 if ($_POST['category'] != "all") {
     $by_eventType = $_POST['category']; 
     $search_query .= " AND eventType LIKE '%$by_eventType%'";
+    if ($_GET['category'] != "all") {
+        $by_eventType = $_GET['category']; 
+        $search_query .= " AND eventType LIKE '%$by_eventType%'";
   }
+}
  
   
 if ($_POST['date'] != ""){
