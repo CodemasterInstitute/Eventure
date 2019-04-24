@@ -14,13 +14,21 @@ if ($_POST['category'] != "all") {
     $by_eventType = $_POST['category']; 
     $search_query .= " AND eventType LIKE '%$by_eventType%'";
   }
+  var_dump($_POST['date']);
+  echo "date is";
+if ($_POST['date'] != ""){
 
+$StartDate = $_POST['startDate'];
+
+$search_query .= " AND startDate = '$StartDate'";
+
+}
 var_dump($search_query);
 
 echo "<br><br>";
 
-$by_date = $_POST['startDate'];
-$by_eventType = $_POST['eventType'];
+// $by_date = $_POST['startDate'];
+
 
 	// Get Result
   
