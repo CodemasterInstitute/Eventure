@@ -360,3 +360,58 @@ p.banner-tagline {
     border-radius: 15%;
 }
 
+#resultsTable {
+        border-collapse: collapse;
+        width: 240px;
+      }
+
+#rating {
+        font-size: 13px;
+        font-family: Arial Unicode MS;
+      }
+.iw_table_row {
+        height: 18px;
+      }
+.iw_attribute_name {
+        font-weight: bold;
+        text-align: right;
+      }
+.iw_table_icon {
+        text-align: right;
+      }
+#country {
+        width: 100%;
+      }
+.placeIcon {
+        width: 20px;
+        height: 34px;
+        margin: 4px;
+      }
+.hotelIcon {
+        width: 24px;
+        height: 24px;
+      }
+
+ul.locations-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap
+}
+
+ul.locations-list li {
+    list-style-type: none;
+    flex: 1 0 25%
+}
+
+@media screen and (max-width: 992px) {
+    ul.locations-list li {
+        flex: 1 0 50%
+    }
+}
+
+@media screen and (max-width: 768px) {
+    ul.locations-list li {
+        flex: 1 0 100%
+    }
+}
