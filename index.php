@@ -86,8 +86,8 @@ $locationquery = 'SELECT DISTINCT eventAddress FROM events';
         </ul>
         <form class="form-inline my-2 my-lg-0">
 
-          <button class="btn btn-outline-success my-2 my-sm-0 btn-lg magnify-icon" type="submit"><i
-              class="fas fa-search"></i></button>
+          <input id="searchNav" type="text" name="search" placeholder="Start your eventure.."><i id="magnGlass"
+              class="fas fa-search btn"></i>
         </form>
       </div>
     </nav>

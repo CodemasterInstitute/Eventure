@@ -334,3 +334,16 @@ p.banner-tagline {
     padding: 5px 10px;
 }
 
+#searchNav {
+    visibility: hidden;
+    width: 0;
+    -webkit-transition: width 1.5s;
+    transition: width 1.5s;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.fa-search {
+    cursor: pointer;
+}
+
