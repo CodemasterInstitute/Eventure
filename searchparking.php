@@ -1,10 +1,36 @@
+<?php
+	require('config.php');
+
+	$id = mysqli_real_escape_string($conn, $_GET['id']);
+
+	// Create Query
+	$query = 'SELECT * FROM events WHERE id= '.$id;
+    
+    // -- WHERE id = '.$id;
+
+	// Get Result
+	$result = mysqli_query($conn, $query);
+
+	// Fetch Data
+	$event = mysqli_fetch_assoc($result);
+	
+
+	// Free Result
+    mysqli_free_result($result);
+    
+    mysqli_close($conn);
+
+    
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Eventure | Find the nearest parkings</title>
+  <title>Eventure</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -22,7 +48,7 @@
  ?>
 
   <div class="container">
-    <h1 class="text-center p-2">Find the nearest parkings in:</h1>
+    <h1 class="text-center p-2">Find the nearest parking near: <?php echo $event['eventName']?></h1>
 <!--
     <div class="container locationField text-center d-flex justify-content-center">
       <input id="autocomplete" class="autocomplete" type="text" 
@@ -93,16 +119,32 @@
       };
 
     
-    function startMap(){
-        initMap();
-        search();
-        //addResult();
+    // function startMap(){
+    //     initMap();
+    //     // search();
         
-    }
+    // }
       function initMap() {
+      geocoder = new google.maps.Geocoder()
+      var address = "<?php echo $event['eventAddress'] . ' ' . $event['eventCity'] . ' ' . $event['eventPostcode'] ?>";
+
+      geocoder.geocode({
+        'address': address
+      }, function (results, status) {
+        if (status == 'OK') {
+          map.setCenter(results[0].geometry.location);
+          search({
+            lat: results[0].geometry.location.lat(),
+            lng: results[0].geometry.location.lng()
+          });
+
+        } 
+      });
+
+    
+
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: countries['au'].zoom,
-          center: countries['au'].center,
           mapTypeControl: false,
           panControl: false,
           zoomControl: false,
@@ -113,40 +155,13 @@
           content: document.getElementById('info-content')
         });
 
-        // Create the autocomplete object and associate it with the UI input control.
-        // Restrict the search to the default country, and to place type "cities".
-        autocomplete = new google.maps.places.Autocomplete(
-            /** @type {!HTMLInputElement} */ (
-                document.getElementById('autocomplete')), {
-              types: ['(cities)'],
-              componentRestrictions: countryRestrict
-            });
         places = new google.maps.places.PlacesService(map);
 
-        autocomplete.addListener('place_changed', onPlaceChanged);
-
-        // Add a DOM event listener to react when the user selects a country.
-        //document.getElementById('country').addEventListener(
-        //    'change', setAutocompleteCountry);
       }
 
-      // When the user selects a city, get the place details for the city and
-      // zoom the map in on the city.
-      function onPlaceChanged() {
-        var place = autocomplete.getPlace();
-        if (place.geometry) {
-          map.panTo(place.geometry.location);
-          map.setZoom(15);
-          search();
-        } else {
-          document.getElementById('autocomplete').placeholder = 'Enter a city';
-        }
-      }
-
-      // Search for hotels in the selected city, within the viewport of the map.
-      function search() {
+      function search(location) {
         var search = {
-            location: countries['au'].center,
+            location: location || countries['au'].center,
             radius: '500',
           bounds: map.getBounds(),
           types: ['parking']
@@ -187,52 +202,16 @@
         markers = [];
       }
 
-      // Set the country restriction based on user input.
-      // Also center and zoom the map on the given country.
-      function setAutocompleteCountry() {
-        var country = document.getElementById('country').value;
-        if (country == 'all') {
-          autocomplete.setComponentRestrictions({'country': []});
-          map.setCenter({lat: 15, lng: 0});
-          map.setZoom(2);
-        } else {
-          autocomplete.setComponentRestrictions({'country': country});
-          map.setCenter(countries[country].center);
-          map.setZoom(countries[country].zoom);
-        }
-        clearResults();
-        clearMarkers();
-      }
-
       function dropMarker(i) {
         return function() {
           markers[i].setMap(map);
         };
       }
 
+  
+
       function addResult(result, i) {
-//        var results = document.getElementById('results');
-//        var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
-//        var markerIcon = MARKER_PATH + markerLetter + '.png';
-//
-//        var tr = document.createElement('tr');
-//        tr.style.backgroundColor = (i % 2 === 0 ? '#F0F0F0' : '#FFFFFF');
-//        tr.onclick = function() {
-//          google.maps.event.trigger(markers[i], 'click');
-//        };
-//
-//        var iconTd = document.createElement('td');
-//        var nameTd = document.createElement('td');
-//        var icon = document.createElement('img');
-//        icon.src = markerIcon;
-//        icon.setAttribute('class', 'placeIcon');
-//        icon.setAttribute('className', 'placeIcon');
-//        var name = document.createTextNode(result.name);
-//        iconTd.appendChild(icon);
-//        nameTd.appendChild(name);
-//        tr.appendChild(iconTd);
-//        tr.appendChild(nameTd);
-//        results.appendChild(tr);
+
           var results = document.getElementById('results2');
           var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
           var markerIcon = MARKER_PATH + markerLetter + '.png';
@@ -324,13 +303,12 @@
           document.getElementById('iw-website-row').style.display = 'none';
         }
       }
-
 </script>
 <!-------end of SearchTheHotels------------>
 
 
   <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8fr1kqe2iBN30S0oX06Ff6FhwoJdloGg&signed_in=true&libraries=places&callback=startMap"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8fr1kqe2iBN30S0oX06Ff6FhwoJdloGg&signed_in=true&libraries=places&callback=initMap"
     async defer></script>
 
     <?php
