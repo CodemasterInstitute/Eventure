@@ -216,7 +216,7 @@ $locationquery = 'SELECT DISTINCT eventAddress FROM events';
       <div id="cardHomePage" class="col-lg-3">
         <div  class="card">
           <a href="Event.php?id=<?php echo $event['id']?>"><img class="card-img-top"
-              src="https://via.placeholder.com/150" alt="Card image cap"></a>
+              src="<?php echo $event['imgName'] ?>" alt="Card image cap"></a>
           <div class="card-body">
             <h5 class="card-title font-weight-bold"><?php echo $event['eventName'] ?></h5>
             <p class="card-text-homepage overflow-auto"><?php echo substr($event['eventDescription'], 0, 70) ?></p>

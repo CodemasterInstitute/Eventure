@@ -92,14 +92,17 @@ a:hover {
    
 }
 
+
 .eventJumbo {
-    background: url(images/placeholder_jumbo.jpg);
     background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
     height: 50vh;
+    /* position: absolute; */
 }
 
-#eventInformation {
 
+#eventInformation {
     padding-top: 35px;
     height: 50vh;
 }
