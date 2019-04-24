@@ -67,14 +67,14 @@
     ?>
     <!--Main Container with auto margins-->
     <div class="container">
-        <form name="createEventForm" method="POST" action="submit-event.php" enctype = "multipart/form-data">
+        <form name="createEventForm" method="POST" action="submit-event.php" enctype = "multipart/form-data" onsubmit="validate()" >
             <h1>Create Your Event!</h1>
             <div class="form-row">
 
                 <div class="form-group col-lg-12">
                     <label for="eventName">Event Name:</label>
                     <input type="text" class="form-control" id="eventName"
-                        placeholder="Add a short, clear name" name="eventName" required> <!--Without php echo does it clear the variables when the page is reloaded (otherwise the default variables are what has been previously entered-->
+                        placeholder="Add a short, clear name" name="eventName" pattern="[a-z]" required> <!--Without php echo does it clear the variables when the page is reloaded (otherwise the default variables are what has been previously entered-->
                 </div>
                 </div>
                 <div class = "form-row">
@@ -97,19 +97,19 @@
             <div class="form-row">
                 <div class="form-group col-lg-3">
                     <label for="startDate">Event Start Date</label>
-                    <input type="date" class="form-control" name = "startDate" required>
+                    <input type="date" class="form-control" name = "startDate" id = "startDate" required>
                 </div>
                 <div class="form-group col-lg-3">
                     <label for="startTime">Event Start Time</label>
-                    <input type="time" class="form-control" name = "startTime" required>
+                    <input type="time" class="form-control" name = "startTime" id = "startTime" required>
                 </div>
                 <div class="form-group col-lg-3">
                     <label for="endDate">Event End Date</label>
-                    <input type="date" class="form-control" name = "endDate" required>
+                    <input type="date" class="form-control" name = "endDate" id = "endDate" required>
                 </div>
                 <div class="form-group col-lg-3">
                     <label for="endTime">Event End Time</label>
-                    <input type="time" class="form-control" name = "endTime" required>
+                    <input type="time" class="form-control" name = "endTime" id = "endTime" required>
                 </div>
 
 
@@ -117,32 +117,32 @@
             <div class="form-row">
                 <div class="form-group col-lg-12">
                     <label for="eventDescription">Event Description</label>
-                    <textarea class="form-control rounded-0" class="md-textarea form-control" rows="8" name = "eventDescription" required></textarea>
+                    <textarea class="form-control rounded-0" class="md-textarea form-control" rows="8" name = "eventDescription" id = "eventDescription" required></textarea>
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group col-lg-4">
                     <label for="availableTickets">Available Tickets</label>
-                    <input type="number" class="form-control" name = "availableTickets" required>
+                    <input type="number" class="form-control" name = "availableTickets" id = "availableTickets" required>
                 </div>
                 <div class="form-group col-lg-8">
                     <label for="organiserID">Organiser ID</label>
-                    <input type="number" class="form-control" name = "organiserID" required>
+                    <input type="number" class="form-control" name = "organiserID" id = "organiserID" required>
                 </div>
             </div>
             <div class = "form-row">
             <div class = "form-group col-lg-4">
             <label for="eventTwitter">Twitter Link</label>
-            <input type = "text" class = "form-control" name = "eventTwitter">
+            <input type = "text" class = "form-control" name = "eventTwitter" id = "eventTwitter" pattern="^(http[s]?:\/\/)?([-\w\d]+)(\.[-\w\d]+)*(\.([a-zA-Z]{2,5}|[\d]{1,3})){1,2}(\/([-~%\.\(\)\w\d]*\/*)*(#[-\w\d]+)?)?$">
             </div>
             <div class = "form-group col-lg-4">
             <label for="eventFacebook">Facebook Link</label>
-            <input type = "text" class = "form-control" name = "eventFacebook">
+            <input type = "text" class = "form-control" name = "eventFacebook" id = "eventFacebook" pattern="^(http[s]?:\/\/)?([-\w\d]+)(\.[-\w\d]+)*(\.([a-zA-Z]{2,5}|[\d]{1,3})){1,2}(\/([-~%\.\(\)\w\d]*\/*)*(#[-\w\d]+)?)?$">
             </div>
             <div class = "form-group col-lg-4">
             <label for="eventInstagram">Instagram Link</label>
-            <input type = "text" class = "form-control" name = "eventInstagram">
+            <input type = "text" class = "form-control" name = "eventInstagram" id = "eventInstagram" pattern="^(http[s]?:\/\/)?([-\w\d]+)(\.[-\w\d]+)*(\.([a-zA-Z]{2,5}|[\d]{1,3})){1,2}(\/([-~%\.\(\)\w\d]*\/*)*(#[-\w\d]+)?)?$">
             </div>
             </div>
             <div class="form-row">
@@ -163,31 +163,31 @@
                     <h4>Type of Event</h4>
                     <h5>Check all that apply</h5>
                     <div class="form-check" required>
-                        <input class="form-check-input" type="checkbox" value="Free" name = "eventType[]">
+                        <input class="form-check-input" type="checkbox" value="Free" name = "eventType[]" id = "free">
                         <label class="form-check-label" for="checkFree">
                             Free
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Comedy" name = "eventType[]">
+                        <input class="form-check-input" type="checkbox" value="Comedy" name = "eventType[]" id = "comedy">
                         <label class="form-check-label" for="checkComedy">
                             Comedy
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Music" name = "eventType[]"> 
+                        <input class="form-check-input" type="checkbox" value="Music" name = "eventType[]" id = "music"> 
                         <label class="form-check-label" for="checkMusic">
                             Music
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Sport" name = "eventType[]">
+                        <input class="form-check-input" type="checkbox" value="Sport" name = "eventType[]" id = "sport">
                         <label class="form-check-label" for="checkSport">
                             Sport
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Food" name = "eventType[]">
+                        <input class="form-check-input" type="checkbox" value="Food" name = "eventType[]" id = "food">
                         <label class="form-check-label" for="checkFood">
                             Food
                         </label>
