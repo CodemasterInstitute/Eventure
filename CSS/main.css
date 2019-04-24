@@ -338,14 +338,6 @@ p.banner-tagline {
     padding: 5px 10px;
 }
 
-/*Login Form Page*/
-
-#login-form{
-    padding: 30px;
-    margin: 50px 0;
-    border: 3px dashed aquamarine;
-    border-radius: 15%;
-}
 #searchNav {
     visibility: hidden;
     width: 0;
@@ -358,6 +350,16 @@ p.banner-tagline {
 .fa-search {
     cursor: pointer;
 }
+
+/*Login Form Page*/
+
+#login-form{
+    padding: 30px;
+    margin: 50px 0;
+    border: 3px dashed aquamarine;
+    border-radius: 15%;
+}
+
 
 
 /*Sign Up Page*/
