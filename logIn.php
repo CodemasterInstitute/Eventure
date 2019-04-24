@@ -33,8 +33,9 @@
     include 'header.php';
       ?>
   
-    <div class="container-fluid">
-            <form>
+    <div class="container">
+        <h1>Member Log In:</h1>
+            <form id="login-form">
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -46,7 +47,7 @@
             </div>
             <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                <label class="form-check-label" for="exampleCheck1">Remember Me</label>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
             </form>
