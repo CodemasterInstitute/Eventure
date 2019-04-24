@@ -67,7 +67,7 @@
 
     function codeAddress() {
       geocoder = new google.maps.Geocoder()
-      var address = "<?php echo $event['eventAddress']?>"
+      var address = "<?php echo $event['eventAddress'] . ' ' . $event['eventCity'] . ' ' . $event['eventPostcode']?>"
 
 
       geocoder.geocode({
@@ -85,7 +85,7 @@
 
     function initMap() {
       geocoder = new google.maps.Geocoder()
-      var address = "<?php echo $event['eventAddress']?>"
+      var address = "<?php echo $event['eventAddress'] . $event['eventCity'] . $event['eventPostcode'] ?>";
 
       geocoder.geocode({
         'address': address
@@ -94,6 +94,8 @@
           map.setCenter(results[0].geometry.location);
         }
       });
+
+     
 
       var directionsService = new google.maps.DirectionsService;
       var directionsDisplay = new google.maps.DirectionsRenderer;
