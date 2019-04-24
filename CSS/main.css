@@ -92,14 +92,17 @@ a:hover {
    
 }
 
+
 .eventJumbo {
-    background: url(images/placeholder_jumbo.jpg);
     background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
     height: 50vh;
+    /* position: absolute; */
 }
 
-#eventInformation {
 
+#eventInformation {
     padding-top: 35px;
     height: 50vh;
 }
@@ -333,5 +336,18 @@ p.banner-tagline {
 
 #cardHomePage .card-body {
     padding: 5px 10px;
+}
+
+#searchNav {
+    visibility: hidden;
+    width: 0;
+    -webkit-transition: width 1.5s;
+    transition: width 1.5s;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.fa-search {
+    cursor: pointer;
 }
 

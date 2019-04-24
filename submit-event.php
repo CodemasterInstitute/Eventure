@@ -158,7 +158,7 @@
                             return $data;
                           }
 
-                    $mysqli = new mysqli ('localhost', 'root', '', 'events'); // localhost, username, password, database name 
+                    $mysqli = new mysqli ('localhost', 'root', 'root', 'events'); // localhost, username, password, database name 
 
                     $sql = "INSERT INTO events (eventName, organiserID, startDate, startTime, endDate , endTime, eventAddress, eventCity, eventPostcode, price, eventDescription, imgName, availableTickets, eventType, eventFacebook, eventTwitter, eventInstagram) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
