@@ -404,7 +404,7 @@ $locationquery = 'SELECT DISTINCT eventAddress FROM events';
               <a href="HTML/dashboard.html">My Dashboard</a>
             </li>
             <li>
-              <a href="HTML/create-an-event.html">Create An Event</a>
+              <a href="create-an-event.php">Create An Event</a>
             </li>
 
           </ul>

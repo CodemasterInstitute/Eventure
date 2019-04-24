@@ -167,10 +167,10 @@
                         echo $mysqli->error;
                     }
 
-                    $stmt->bind_param('sisssssssississss', $eventName, $organiserID, $startDate, $startTime, $endDate, $endTime, $eventAddress, $eventCity, $eventPostcode, $price, $eventDescription, $imgName, $availableTickets, $eventType, $eventFacebook, $eventTwitter, $eventInstagram);
+                    $stmt->bind_param('sissssssssssissss', $eventName, $organiserID, $startDate, $startTime, $endDate, $endTime, $eventAddress, $eventCity, $eventPostcode, $price, $eventDescription, $imgName, $availableTickets, $eventType, $eventFacebook, $eventTwitter, $eventInstagram);
 
-                    if($stmt->execute()) {
-                        $heading = "success";
+                    if($stmt->execute()) { ?>
+                        <html><h1>Your event has been successfully created.</h1></html><?php;
                       } else {
                           $heading = "failure";
                       }
