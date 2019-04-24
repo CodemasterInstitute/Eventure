@@ -92,14 +92,17 @@ a:hover {
    
 }
 
+
 .eventJumbo {
-    background: url(images/placeholder_jumbo.jpg);
     background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
     height: 50vh;
+    /* position: absolute; */
 }
 
-#eventInformation {
 
+#eventInformation {
     padding-top: 35px;
     height: 50vh;
 }
@@ -305,11 +308,6 @@ p.banner-tagline {
     color: #f9f6f0;
 }
 
-#cardHomePage {
-    -webkit-box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.75) !important;
-    -moz-box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.75)!important;
-    box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.75)!important;
-}
 
 #cardHomePage .list-group-item {
     padding: 5px 10px;
@@ -327,6 +325,9 @@ p.banner-tagline {
 #cardHomePage .card {
     height: 450px;
     margin: 20px 0;
+    -webkit-box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.75) !important;
+    -moz-box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.75)!important;
+    box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.75)!important;
 }
 
 #cardHomePage .card-img-top {
@@ -345,3 +346,16 @@ p.banner-tagline {
     border: 3px dashed aquamarine;
     border-radius: 15%;
 }
+#searchNav {
+    visibility: hidden;
+    width: 0;
+    -webkit-transition: width 1.5s;
+    transition: width 1.5s;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.fa-search {
+    cursor: pointer;
+}
+

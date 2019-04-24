@@ -60,9 +60,19 @@ $locationquery = 'SELECT DISTINCT eventAddress FROM events';
           <li class="nav-item ">
             <a class="nav-link" href="#">Events <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">News</a>
-          </li>
+          <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="categories.php" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Categories
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Free</a>
+                        <a class="dropdown-item" href="#">Music</a>
+                        <a class="dropdown-item" href="#">Comedy</a>
+                        <a class="dropdown-item" href="#">Sport</a>
+                        <a class="dropdown-item" href="#">Food & Wine</a>
+                    </div>
+                </li>
           <li class="nav-item active">
             <a class="nav-link " href="#">
               Members
@@ -76,8 +86,8 @@ $locationquery = 'SELECT DISTINCT eventAddress FROM events';
         </ul>
         <form class="form-inline my-2 my-lg-0">
 
-          <button class="btn btn-outline-success my-2 my-sm-0 btn-lg magnify-icon" type="submit"><i
-              class="fas fa-search"></i></button>
+          <input id="searchNav" type="text" name="search" placeholder="Start your eventure.."><i id="magnGlass"
+              class="fas fa-search btn"></i>
         </form>
       </div>
     </nav>
@@ -203,10 +213,10 @@ $locationquery = 'SELECT DISTINCT eventAddress FROM events';
       <?php
       foreach($upcomingEvents as $event) : ?>
 
-      <div class="col-lg-3">
-        <div id="cardHomePage" class="card">
+      <div id="cardHomePage" class="col-lg-3">
+        <div  class="card">
           <a href="Event.php?id=<?php echo $event['id']?>"><img class="card-img-top"
-              src="https://via.placeholder.com/150" alt="Card image cap"></a>
+              src="<?php echo $event['imgName'] ?>" alt="Card image cap"></a>
           <div class="card-body">
             <h5 class="card-title font-weight-bold"><?php echo $event['eventName'] ?></h5>
             <p class="card-text-homepage overflow-auto"><?php echo substr($event['eventDescription'], 0, 70) ?></p>
