@@ -50,7 +50,7 @@ a:hover {
 }
 
 .color-header {
-    background-color: #70A9A1;
+    background-color: #778ba5;
 }
 
 .logo-icon {
@@ -62,13 +62,13 @@ a:hover {
 }
 
 .active-header {
-    background-color: #70A9A1;
+    background-color: #778ba5;
 }
 
 /* Med-small screens */
 @media screen and (max-width: 992px) {
     .navbar-collapse {
-        background-color: #70A9A1;
+        background-color: #778ba5;
        
     }
 
@@ -164,7 +164,7 @@ a:hover {
 }
 
 footer {
-    background-color: #70A9A1;
+    background-color: #778ba5;
     margin-top: 50px;
 
 }
