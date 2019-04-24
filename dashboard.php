@@ -110,10 +110,10 @@
     include 'header.php';
       ?>
   
-  <div class="container-fluid">
-  <h2 class="text-center mb-3">My Events:</h2>
+  <div class="container-fluid" >
+  <h2 class="text-center mb-3" style="margin-top: 20px;">My Events:</h2>
   <div class="row">
-    <div class="dash-nav col-lg-3">
+    <div class="dash-nav col-lg-3" id="mainDash">
       <h2>Members Dashboard</h2>
         <ul class="nav flex-column">
             <li class="nav-item">
@@ -136,10 +136,10 @@
                 </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">&#128226 Create New Event</a>
+              <a class="nav-link" href="#"><i class="fas fa-bullhorn"></i> Create New Event</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" tabindex="-1" >&#9742 Help</a>
+              <a class="nav-link" href="#" tabindex="-1" ><i class="fas fa-question"></i> Help</a>
             </li>
           </ul>  
     </div>
