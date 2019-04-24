@@ -3,25 +3,51 @@ require('config.php');
 
 // Getting upcoming events
 
+$search_query = "SELECT * FROM events WHERE 1";
+
+if ($_POST['eventAddress'] != "") {
+  $by_location = $_POST['eventAddress']; 
+  $search_query .= " AND eventAddress LIKE '%$by_location%'";
+}
+
+$by_date = $_POST['startDate'];
+$by_eventType = $_POST['eventType'];
+
 
 $query = 'SELECT * FROM events ORDER BY startDate ASC LIMIT 8';
+
+
+
     
 $locationquery = 'SELECT DISTINCT eventAddress FROM events';
 
 	// Get Result
   $result = mysqli_query($conn, $query);
   $locationresult = mysqli_query($conn, $locationquery);
+  $searchresult = mysqli_query($conn, $search_query);
 
 	// Fetch Data
 	$upcomingEvents = mysqli_fetch_all($result, MYSQLI_ASSOC);
   $locationEvents = mysqli_fetch_all($locationresult, MYSQLI_ASSOC);
-
+  $searchEvents = mysqli_fetch_all($searchresult, MYSQLI_ASSOC);
 	// Free Result
     mysqli_free_result($result);
     mysqli_free_result($locationresult);
-    
-    mysqli_close($conn);
+    mysqli_free_result($searchresult);
 
+    
+        
+
+
+/*OR startDate LIKE '$by_date' OR eventType LIKE '%$by_eventType%'*/
+  
+  
+
+  // return $searchresult;
+
+
+
+    mysqli_close($conn); 
     
 
 ?>
@@ -94,33 +120,35 @@ $locationquery = 'SELECT DISTINCT eventAddress FROM events';
     <div class="search">
       <div class="container searchbar">
         <h1>Find an event!</h1>
+        <form action="searchresults.php" method = "post">
         <div class="form-row">
           <div class="form-group col-lg-4">
             <label class="sr-only" for="location">Location</label>
-            <input type="text" class="form-control searchforms" id="location" placeholder="Location">
+            <input type="text" class="form-control searchforms" id="location" name="location" placeholder="Location">
           </div>
           <div class=" form-group col-lg-4">
             <label class="sr-only" for="date">When</label>
             <div class="input-group">
-              <input type="date" class="form-control searchforms" id="date" placeholder="Date">
+              <input type="date" class="form-control searchforms" id="date" placeholder="Date" name="date">
               <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
             </div>
           </div>
           <div class="form-group col-lg-4">
             <label class="sr-only" for="category">Event Categories</label>
             <select id="category" name="category" class="form-control searchforms">
-              <option value="1">All</option>
-              <option value="2">Free</option>
-              <option value="3">Music</option>
-              <option value="4">Comedy</option>
-              <option value="5">Sport</option>
-              <option value="6">Food</option>
+              <option value="all">All</option>
+              <option value="free">Free</option>
+              <option value="music">Music</option>
+              <option value="comedy">Comedy</option>
+              <option value="sport">Sport</option>
+              <option value="food">Food</option>
             </select>
           </div>
         </div>
         <div class="col-lg-12" id="button-center">
           <button type="submit" class="btn btn-default btn-primary searchbar-btn">Search</button>
         </div>
+        </form>
       </div>
     </div>
 
@@ -404,7 +432,7 @@ $locationquery = 'SELECT DISTINCT eventAddress FROM events';
               <a href="HTML/dashboard.html">My Dashboard</a>
             </li>
             <li>
-              <a href="HTML/create-an-event.html">Create An Event</a>
+              <a href="create-an-event.php">Create An Event</a>
             </li>
 
           </ul>
