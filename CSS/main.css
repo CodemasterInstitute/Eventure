@@ -370,6 +370,9 @@ box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.75)!important;
     border-radius: 15%;
 }
 
+.test {
+    
+}
 #resultsTable {
         border-collapse: collapse;
         width: 240px;
