@@ -7,10 +7,10 @@ $search_query = "SELECT * FROM events WHERE 1";
 
 if ($_POST['location'] != "") {
   $by_location = $_POST['location']; 
-  $search_query .= " AND eventAddress LIKE '%$by_location%'";
-  if ($_GET['category'] != "all") {
-    $by_eventType = $_GET['category']; 
-    $search_query .= " AND eventType LIKE '%$by_eventType%'";
+  $search_query .= " AND eventCity LIKE '%$by_location%'";
+  if ($_GET['location'] != "") {
+    $by_location = $_GET['location']; 
+    $search_query .= " AND eventCity LIKE '%$by_location%'";
 }
 }
 
@@ -22,7 +22,7 @@ if ($_POST['category'] != "all") {
         $search_query .= " AND eventType LIKE '%$by_eventType%'";
   }
 }
- 
+// var_dump($search_query);
   
 if ($_POST['date'] != ""){
 
@@ -31,9 +31,17 @@ $StartDate = $_POST['startDate'];
 $search_query .= " AND startDate = '$StartDate'";
 
 }
-var_dump($search_query);
+
 
 echo "<br><br>";
+
+ $sql = "SELECT * FROM events WHERE eventName LIKE ? AND eventType LIKE ? AND startDate = ?"; // AND organiserID = ?";
+
+
+
+
+
+// $res = $stmt->get_result();
 
 // $by_date = $_POST['startDate'];
 
@@ -45,14 +53,19 @@ echo "<br><br>";
 	// Fetch Data
 
   $searchEvents = mysqli_fetch_all($searchresult, MYSQLI_ASSOC);
-	// Free Result
-    var_dump($searchEvents);
+  // Free Result
+     var_dump($searchEvents);
+  if (!($stmt = $conn->prepare($sql))) {
+    echo "Prepare failed: (" . $conn->errno . ") " . $conn->error;
+ }
+ $stmt->bind_param('ss', $by_location, $by_eventType);
+ $stmt->execute();
+
+// var_dump($stmt);
+
     mysqli_free_result($searchresult);
 
-    
-        
-
-
+ 
 /*OR startDate LIKE '$by_date' OR eventType LIKE '%$by_eventType%'*/
   
   
@@ -85,7 +98,8 @@ echo "<br><br>";
 
 </head>
 
-
+<?php include 'header.php'
+?>
 <body>
     <div class="container" id="all-events">
     
