@@ -42,7 +42,7 @@
                     <input type="firstname" class="form-control" id="newFName" placeholder="First Name">
                     </div>
                     <div class="form-group col-md-6">
-                    <label for="newLName">Password:</label>
+                    <label for="newLName">Last Name:</label>
                     <input type="lastname" class="form-control" id="newLName" placeholder="Last Name">
                     </div>
                 </div>
@@ -67,6 +67,29 @@
                     </div>
                     
                 </div>
+                <div class="form-group">
+                    <div class="col-sm-2">Favourite Categories:</div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="freeCheckbox" value="option1">
+                            <label class="form-check-label" for="freeCheckbox">Free</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="comedyCheckbox" value="option2">
+                            <label class="form-check-label" for="comedyCheckbox2">Comedy</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="foodCheckbox" value="option3">
+                            <label class="form-check-label" for="foodCheckbox">Food & Wine</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="sportCheckbox" value="option4">
+                            <label class="form-check-label" for="sportCheckbox">Sport</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="musicCheckbox" value="option5">
+                            <label class="form-check-label" for="musicCheckbox">Music</label>
+                        </div>
+                    </div>
                 <div class="form-group">
                     <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="gridCheck">
