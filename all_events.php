@@ -51,7 +51,9 @@ $query = 'SELECT * FROM events';
 
 </head>
 
-
+<?php
+    include 'header.php';
+      ?>
 <body>
     <div class="container" id="all-events">
     
@@ -108,5 +110,7 @@ $query = 'SELECT * FROM events';
 
 
   </body>
-
+  <?php
+    include 'footer.php';
+      ?>
 </html>
