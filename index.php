@@ -246,7 +246,7 @@ $locationquery = 'SELECT DISTINCT eventAddress FROM events';
           <a href="Event.php?id=<?php echo $event['id']?>"><img class="card-img-top"
               src="imagepath/uploads/<?php echo $event['imgName'] ?>" alt="Card image cap"></a>
           <div class="card-body">
-            <h5 class="card-title font-weight-bold"><?php echo $event['eventName'] ?></h5>
+            <a href="Event.php?id=<?php echo $event['id']?>"><h5 class="card-title font-weight-bold"><?php echo $event['eventName'] ?></h5></a>
             <p class="card-text-homepage overflow-auto"><?php echo substr($event['eventDescription'], 0, 70) ?></p>
           </div>
           <ul class="list-group list-group-flush">
@@ -260,7 +260,7 @@ $locationquery = 'SELECT DISTINCT eventAddress FROM events';
             <li class="list-group-item"><?php echo $event['eventAddress'] ?></li>
           </ul>
           <div class="card-body text-center d-flex ">
-            <a href="#" class="btn btn-block align-self-end">Buy tickets</a>
+            <a href="Event.php?id=<?php echo $event['id']?>" class="btn btn-block align-self-end">More info</a>
           </div>
         </div>
       </div>
