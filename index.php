@@ -5,9 +5,9 @@ require('config.php');
 
 $search_query = "SELECT * FROM events WHERE 1";
 
-if ($_POST['eventAddress'] != "") {
-  $by_location = $_POST['eventAddress']; 
-  $search_query .= " AND eventAddress LIKE '%$by_location%'";
+if ($_POST['eventCity'] != "") {
+  $by_location = $_POST['eventCity']; 
+  $search_query .= " AND eventCity LIKE '%$by_location%'";
 }
 
 $by_date = $_POST['startDate'];
@@ -19,7 +19,7 @@ $query = 'SELECT * FROM events ORDER BY startDate ASC LIMIT 8';
 
 
     
-$locationquery = 'SELECT DISTINCT eventAddress FROM events';
+$locationquery = 'SELECT DISTINCT eventCity FROM events';
 
 	// Get Result
   $result = mysqli_query($conn, $query);
@@ -504,7 +504,7 @@ $locationquery = 'SELECT DISTINCT eventAddress FROM events';
   $( function() {
     var cities = [ <?php 
     foreach($locationEvents as $city){
-     $cityList .= "\"". $city["eventAddress"] . "\",";
+     $cityList .= "\"". $city["eventCity"] . "\",";
     
     
     }
