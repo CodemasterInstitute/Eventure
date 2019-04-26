@@ -228,9 +228,9 @@
           icon.setAttribute('class', 'placeIcon');
           icon.setAttribute('className', 'placeIcon');
           
-          li.appendChild(icon);
-          li.appendChild(name);
-          results.appendChild(li);
+//          li.appendChild(icon);
+//          li.appendChild(name);
+//          results.appendChild(li);
       }
 
       function clearResults() {
