@@ -122,18 +122,18 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
         <h1>Find an event!</h1>
         <form action="searchresults.php" method = "post">
         <div class="form-row">
-          <div class="form-group col-lg-4">
+          <div class="form-group col-sm-4">
             <label class="sr-only" for="location">Location</label>
             <input type="text" class="form-control searchforms" id="location" name="location" placeholder="Location">
           </div>
-          <div class=" form-group col-lg-4">
+          <div class=" form-group col-sm-4">
             <label class="sr-only" for="date">When</label>
             <div class="input-group">
               <input type="date" class="form-control searchforms" id="date" placeholder="Date" name="date">
               <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
             </div>
           </div>
-          <div class="form-group col-lg-4">
+          <div class="form-group col-sm-4">
             <label class="sr-only" for="category">Event Categories</label>
             <select id="category" name="category" class="form-control searchforms">
               <option value="all">All</option>
@@ -145,7 +145,7 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
             </select>
           </div>
         </div>
-        <div class="col-lg-12" id="button-center">
+        <div class="col-sm-12" id="button-center">
           <button type="submit" class="btn btn-default btn-primary searchbar-btn">Search</button>
         </div>
         </form>
@@ -198,34 +198,34 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
   <div class="container" id="explore">
     <h1>Events to Explore</h1>
     <div class="row">
-      <div class="col-lg-2">
+      <div class="col-6 col-lg-2">
         <img src="CSS/images/bubbles.jpg" class="img-fluid" alt="fireworks image">
         <p>Explore All</p>
       </div>
-      <div class="col-lg-2">
+      <div class="col-6 col-lg-2">
         <img src="CSS/images/free.jpg" class="img-fluid" alt="free image">
         <p>Free</p>
       </div>
 
 
-      <div class="col-lg-2">
+      <div class="col-6 col-lg-2">
 
         <img src="CSS/images/music.jpg" class="img-fluid" alt="concert">
         <p>Music</p>
       </div>
-      <div class="col-lg-2">
+      <div class="col-6 col-lg-2">
 
         <img src="CSS/images/laugh.jpg" class="img-fluid" alt="laugh">
         <p>Comedy</p>
 
       </div>
-      <div class="col-lg-2">
+      <div class="col-6 col-lg-2">
 
         <img src="CSS/images/sport.jpg" class="img-fluid" alt="tennis game">
         <p>Sport</p>
 
       </div>
-      <div class="col-lg-2">
+      <div class="col-6 col-lg-2">
 
         <img src="CSS/images/food.jpg" class="img-fluid" alt="tacos">
         <p>Food & Wine</p>
