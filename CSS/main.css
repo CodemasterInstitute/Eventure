@@ -3,6 +3,7 @@ body {
     font-family: 'Raleway', sans-serif;
     padding-top: 56px;
     overflow-x: hidden;
+    line-height: 1.5;
 }
 
 .noPadding {
@@ -94,11 +95,11 @@ a:hover {
 
 
 .eventJumbo {
-    background-size: cover;
+    background-size: contain;
     background-position: center; 
     background-repeat: no-repeat;
     height: 50vh;
-    /* position: absolute; */
+    background-color: #f9f6f0;
 }
 
 
@@ -347,7 +348,16 @@ p.banner-tagline {
 }
 .card {
 box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.75)!important;
+transition: all .2s ease-in-out;
 }
+
+.card a {
+    color: black;
+}
+.card:hover{
+transform: scale(1.1);
+}
+
 #searchNav {
     visibility: hidden;
     width: 0;
@@ -369,4 +379,50 @@ box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.75)!important;
     border: 3px dashed aquamarine;
     border-radius: 15%;
 }
+
+
+#resultsTable {
+        border-collapse: collapse;
+        width: 240px;
+      }
+
+#rating {
+        font-size: 13px;
+        font-family: Arial Unicode MS;
+      }
+.iw_table_row {
+        height: 18px;
+      }
+.iw_attribute_name {
+        font-weight: bold;
+        text-align: right;
+      }
+.iw_table_icon {
+        text-align: right;
+      }
+#country {
+        width: 100%;
+      }
+.placeIcon {
+        width: 20px;
+        height: 34px;
+        margin: 4px;
+      }
+.hotelIcon {
+        width: 24px;
+        height: 24px;
+      }
+
+ul.locations-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap
+}
+
+.socialMedia {
+    color: black !important;
+}
+
+
 
