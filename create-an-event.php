@@ -74,7 +74,7 @@
                 <div class="form-group col-lg-12">
                     <label for="eventName">Event Name:</label>
                     <input type="text" class="form-control" id="eventName"
-                        placeholder="Add a short, clear name" name="eventName" pattern="[a-z]" required> <!--Without php echo does it clear the variables when the page is reloaded (otherwise the default variables are what has been previously entered-->
+                        placeholder="Add a short, clear name" name="eventName" required> <!--Without php echo does it clear the variables when the page is reloaded (otherwise the default variables are what has been previously entered-->
                 </div>
                 </div>
                 <div class = "form-row">
@@ -134,15 +134,15 @@
             <div class = "form-row">
             <div class = "form-group col-lg-4">
             <label for="eventTwitter">Twitter Link</label>
-            <input type = "text" class = "form-control" name = "eventTwitter" id = "eventTwitter" pattern="^(http[s]?:\/\/)?([-\w\d]+)(\.[-\w\d]+)*(\.([a-zA-Z]{2,5}|[\d]{1,3})){1,2}(\/([-~%\.\(\)\w\d]*\/*)*(#[-\w\d]+)?)?$">
+            <input type = "text" class = "form-control" name = "eventTwitter" id = "eventTwitter">
             </div>
             <div class = "form-group col-lg-4">
             <label for="eventFacebook">Facebook Link</label>
-            <input type = "text" class = "form-control" name = "eventFacebook" id = "eventFacebook" pattern="^(http[s]?:\/\/)?([-\w\d]+)(\.[-\w\d]+)*(\.([a-zA-Z]{2,5}|[\d]{1,3})){1,2}(\/([-~%\.\(\)\w\d]*\/*)*(#[-\w\d]+)?)?$">
+            <input type = "text" class = "form-control" name = "eventFacebook" id = "eventFacebook">
             </div>
             <div class = "form-group col-lg-4">
             <label for="eventInstagram">Instagram Link</label>
-            <input type = "text" class = "form-control" name = "eventInstagram" id = "eventInstagram" pattern="^(http[s]?:\/\/)?([-\w\d]+)(\.[-\w\d]+)*(\.([a-zA-Z]{2,5}|[\d]{1,3})){1,2}(\/([-~%\.\(\)\w\d]*\/*)*(#[-\w\d]+)?)?$">
+            <input type = "text" class = "form-control" name = "eventInstagram" id = "eventInstagram">
             </div>
             </div>
             <div class="form-row">
