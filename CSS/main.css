@@ -20,14 +20,14 @@ h5 {
 /* Links */
 
 a {
-    color: #f9f6f0;
+    color: black;
 }
 
 a:hover {
     text-decoration: underline;
-    text-decoration-color: #f9f6f0;
+/*    text-decoration-color: #f9f6f0;*/
     font-weight: bold;
-    color: #f9f6f0;
+    color: black;
     /* padding-bottom: 1px; */
 }
 
