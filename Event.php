@@ -58,7 +58,7 @@ include 'header.php';
     <div class="container-fluid">
         <div class="row">
             <div class="parentDiv col-lg-8">
-                        <div style="background-image: url('<?php echo $event['imgName']?>')"
+                        <div style="background-image: url('imagepath/uploads/<?php echo $event['imgName']?>')"
                             class=" jumbotron jumbotron-fluid eventJumbo">
                         </div>
                             
@@ -94,13 +94,13 @@ include 'header.php';
                                 <p>Till</p>
                                 <p><?php echo $convertedEndDate?><br></p>
                                 <h2>Location</h2>
-                                <p><?php echo $event['eventAddress']?></p>
+                                <p><?php echo $event['eventAddress'] . '<br> ' . $event['eventCity'] . ' ' . $event['eventPostcode']?></p>
 
                                 <h2>Share this Event!</h2>
-                                <span><i class="fab fa-twitter text-center"></i></span>
-                                <span><i class="fab fa-facebook text-center"></i></span>
-                                <span><i class="fab fa-instagram text-center"></i></span>
-
+                                <a class="socialMedia" target="_blank" href="<?php echo $event['eventTwitter']?>"><span><i class="fab fa-twitter text-center"></i></span></a>
+                                <a class="socialMedia" target="_blank" href="<?php echo $event['eventFacebook']?>"><span><i class="fab fa-facebook text-center"></i></span></a>
+                                <a class="socialMedia" target="_blank" href="<?php echo $event['eventInstagram']?>"><span><i class="fab fa-instagram text-center"></i></span></a>
+        
                     </div>
 
                 </div>
@@ -132,7 +132,8 @@ include 'header.php';
                             <img class="card-img-top" src="CSS/images\parking.jpg">
                             <div class="card-body">
                                 <h4 class="card-title">Parking</h4>
-                                <a href="#" class="btn btn-primary">Find</a>
+                                <a href="searchparking.php?id=<?php echo $event['id']?> "
+                                    class="btn btn-primary">Find</a>
                             </div>
                         </div>
 
@@ -143,7 +144,8 @@ include 'header.php';
                             <img class="card-img-top" src="CSS/images\food2.jpg">
                             <div class="card-body">
                                 <h4 class="card-title">Food</h4>
-                                <a href="#" class="btn btn-primary">Find</a>
+                                <a href="restaurantsearch.php?id=<?php echo $event['id']?> "
+                                    class="btn btn-primary">Find</a>
                             </div>
                         </div>
 
@@ -154,7 +156,8 @@ include 'header.php';
                             <img class="card-img-top" src="CSS/images\sleep.jpg">
                             <div class="card-body">
                                 <h4 class="card-title">Sleep</h4>
-                                <a href="#" class="btn btn-primary">Find</a>
+                                <a href="searchthehotels.php?id=<?php echo $event['id']?> "
+                                    class="btn btn-primary">Find</a>
                             </div>
                         </div>
 
@@ -194,7 +197,7 @@ include 'header.php';
 
                             function codeAddress() {
                                 geocoder = new google.maps.Geocoder()
-                                var address = "<?php echo $event['eventAddress']?>"
+                                var address = "<?php echo $event['eventAddress'] . ' ' . $event['eventCity'] . ' ' . $event['eventPostcode']?>"
 
 
                                 geocoder.geocode({
