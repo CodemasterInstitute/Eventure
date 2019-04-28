@@ -22,21 +22,21 @@ if ($_POST['category'] != "all") {
         $search_query .= " AND eventType LIKE '%$by_eventType%'";
   }
 }
-// var_dump($search_query);
+// 
   
-if ($_POST['date'] != ""){
+// if ($_POST['date'] != ""){
+// $startDate = $_POST['date'];
+// $search_query .= " AND startDate = '$startDate'";
+// }
 
-$StartDate = $_POST['startDate'];
 
-$search_query .= " AND startDate = '$StartDate'";
-
-}
-
+// var_dump($search_query);
 
 echo "<br><br>";
 
- $sql = "SELECT * FROM events WHERE eventName LIKE ? AND eventType LIKE ? AND startDate = ?"; // AND organiserID = ?";
+ $sql = "SELECT * FROM events WHERE eventName LIKE ? AND eventType LIKE ?"; 
 
+ $datesql = "SELECT * FROM events WHERE startDate = ?";
 
 
 
@@ -48,16 +48,18 @@ echo "<br><br>";
 
 	// Get Result
   
-  $searchresult = mysqli_query($conn, $search_query);
+  $searchResult = mysqli_query($conn, $search_query);
 
 	// Fetch Data
 
-  $searchEvents = mysqli_fetch_all($searchresult, MYSQLI_ASSOC);
+  $searchEvents = mysqli_fetch_all($searchResult, MYSQLI_ASSOC);
   // Free Result
-     var_dump($searchEvents);
-  if (!($stmt = $conn->prepare($sql))) {
+    //  var_dump($searchEvents);
+  
+    if (!($stmt = $conn->prepare($sql))) {
     echo "Prepare failed: (" . $conn->errno . ") " . $conn->error;
  }
+//  $stmt->bind_param('ss', $by_location, $by_eventType);
  $stmt->bind_param('ss', $by_location, $by_eventType);
  $stmt->execute();
 
@@ -105,13 +107,13 @@ echo "<br><br>";
     
     
       <?php
-        foreach($allEvents as $event) : ?>
+        foreach($searchEvents as $event) : ?>
         <div class="card mb-3">
        <div class="row no-gutters">
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <a href="Event.php?id=<?php echo $event['id']?>" ><img class="card-img" src="https://via.placeholder.com/150" alt="Card image cap"></a>
         </div>
-        <div class="col-lg-8">
+        <div class="col-lg-5">
           <div class="event-details card-body">
               <h1 class="event-title font-weight-bold card-title"><?php echo $event['eventName'] ?></h1>
               <h3 class="event-date card-title"><?php 
@@ -135,6 +137,9 @@ echo "<br><br>";
    
          
         <?php endforeach; ?>
+      
+
+     
            
     
     </div>
@@ -153,7 +158,9 @@ echo "<br><br>";
     
     
  
-
+<?php 
+include'footer.php';
+?>
 
   </body>
 
