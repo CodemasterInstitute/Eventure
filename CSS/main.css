@@ -3,6 +3,7 @@ body {
     font-family: 'Raleway', sans-serif;
     padding-top: 56px;
     overflow-x: hidden;
+    line-height: 1.5;
 }
 
 .noPadding {
@@ -94,11 +95,11 @@ a:hover {
 
 
 .eventJumbo {
-    background-size: cover;
+    background-size: contain;
     background-position: center; 
     background-repeat: no-repeat;
     height: 50vh;
-    /* position: absolute; */
+    background-color: #f9f6f0;
 }
 
 
@@ -347,7 +348,16 @@ p.banner-tagline {
 }
 .card {
 box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.75)!important;
+transition: all .2s ease-in-out;
 }
+
+.card a {
+    color: black;
+}
+.card:hover{
+transform: scale(1.1);
+}
+
 #searchNav {
     visibility: hidden;
     width: 0;
@@ -370,9 +380,7 @@ box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.75)!important;
     border-radius: 15%;
 }
 
-.test {
-    
-}
+
 #resultsTable {
         border-collapse: collapse;
         width: 240px;
@@ -412,19 +420,9 @@ ul.locations-list {
     flex-wrap: wrap
 }
 
-ul.locations-list li {
-    list-style-type: none;
-    flex: 1 0 25%
+.socialMedia {
+    color: black !important;
 }
 
-@media screen and (max-width: 992px) {
-    ul.locations-list li {
-        flex: 1 0 50%
-    }
-}
 
-@media screen and (max-width: 768px) {
-    ul.locations-list li {
-        flex: 1 0 100%
-    }
-}
+
