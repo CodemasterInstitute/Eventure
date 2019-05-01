@@ -102,21 +102,23 @@ echo "<br><br>";
 
 <?php include 'header.php'
 ?>
+
 <body>
-    <div class="container" id="all-events">
-    
-    
-      <?php
+  <div class="container" id="all-events">
+
+
+    <?php
         foreach($searchEvents as $event) : ?>
-        <div class="card mb-3">
-       <div class="row no-gutters">
+    <div class="card search-events mb-3">
+      <div class="row no-gutters">
         <div class="col-lg-3">
-            <a href="Event.php?id=<?php echo $event['id']?>" ><img class="card-img" src="https://via.placeholder.com/150" alt="Card image cap"></a>
+          <a href="Event.php?id=<?php echo $event['id']?>"><img class="card-img" src="https://via.placeholder.com/150"
+              alt="Card image cap"></a>
         </div>
         <div class="col-lg-5">
           <div class="event-details card-body">
-              <h1 class="event-title font-weight-bold card-title"><?php echo $event['eventName'] ?></h1>
-              <h3 class="event-date card-title"><?php 
+            <h1 class="event-title font-weight-bold card-title"><?php echo $event['eventName'] ?></h1>
+            <h3 class="event-date card-title"><?php 
          
             
             $startDate = strtotime($event['startDate']);
@@ -125,43 +127,47 @@ echo "<br><br>";
 
             echo $convertedStartDate 
                 ?></h3>
-              <p class="event-location card-text"><?php echo $event['eventAddress'] ?></p>
-              <p class="event-description card-text"><?php echo substr($event['eventDescription'], 0, 70) ?></p>
+            <p class="event-location card-text"><?php echo $event['eventAddress'] ?></p>
+            <p class="event-description card-text"><?php echo substr($event['eventDescription'], 0, 70) ?></p>
           </div>
           <a href="#" class="btn align-self-center">Buy tickets</a>
         </div>
-    
-        </div>
-      </div>
-
-   
-         
-        <?php endforeach; ?>
-      
-
-     
-           
-    
-    </div>
-      
-     
-       
         
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
- 
-<?php 
+
+      </div>
+      <div class="col-lg-4">
+          <h1>Aside</h1>
+        </div>
+    </div>
+
+
+
+    <?php endforeach; ?>
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <?php 
 include'footer.php';
 ?>
 
-  </body>
+</body>
 
 </html>

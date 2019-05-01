@@ -260,7 +260,17 @@ h5.logo {
 p.banner-tagline {
     font-size: 1.5em;
 }
+#explore col {
+    margin: 10px;
+}
 
+.category-text {
+    position: absolute;
+    z-index: 10;
+    color: white;
+    top: 5%;
+
+}
 /*Member Dash components*/
 #blktxt a {
     color: rgb(21, 22, 22);
@@ -426,3 +436,6 @@ ul.locations-list {
 
 
 
+.search-events {
+    width: 66%;
+}
