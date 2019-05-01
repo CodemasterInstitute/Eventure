@@ -4,8 +4,7 @@ require('config.php');
 // Getting upcoming events
 
 $search_query = "SELECT * FROM events WHERE 1";
-
-if ($_POST['location'] != "") {
+if (isset($_POST['location']) != "") {
   $by_location = $_POST['location']; 
   $search_query .= " AND eventCity LIKE '%$by_location%'";
   if ($_GET['location'] != "") {
@@ -14,7 +13,7 @@ if ($_POST['location'] != "") {
 }
 }
 
-if ($_POST['category'] != "all") {
+if (isset($_POST['category']) != "all") {
     $by_eventType = $_POST['category']; 
     $search_query .= " AND eventType LIKE '%$by_eventType%'";
     if ($_GET['category'] != "all") {
@@ -136,7 +135,7 @@ echo "<br><br>";
 
       </div>
       <div class="col-lg-4">
-          <h1>Aside</h1>
+          
         </div>
     </div>
 

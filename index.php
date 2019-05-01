@@ -5,13 +5,13 @@ require('config.php');
 
 $search_query = "SELECT * FROM events WHERE 1";
 
-if ($_POST['location'] != "") {
+if (isset($_POST['location']) != "") {
   $by_location = $_POST['location']; 
   $search_query .= " AND eventCity LIKE '%$by_location%'";
 }
 
-$by_date = $_POST['startDate'];
-$by_eventType = $_POST['eventType'];
+// $by_date = $_POST['startDate'];
+// $by_eventType = $_POST['eventType'];
 
 
 $query = 'SELECT * FROM events ORDER BY startDate ASC LIMIT 8';
