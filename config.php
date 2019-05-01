@@ -1,8 +1,8 @@
 <?php
-	define('DB_HOST', 'localhost');
-	define('DB_USER', 'root');
-	define('DB_PASS', 'root');
-    define('DB_NAME', 'events');
+	define('DB_HOST', '54.153.169.253:3306');
+	define('DB_USER', 'jeroen');
+	define('DB_PASS', 'wwwquhiquq');
+    define('DB_NAME', 'jeroen_events');
     
     	// Create Connection
 	$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
