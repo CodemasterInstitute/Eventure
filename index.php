@@ -257,7 +257,7 @@ $locationquery = 'SELECT DISTINCT eventAddress FROM events';
             $convertedStartDate = $dt->format('d-M-Y H:i');
 
             echo $convertedStartDate ?></li>
-            <li class="list-group-item"><?php echo $event['eventAddress'] ?></li>
+            <li class="list-group-item"><?php echo $event['eventAddress'] . ' ' . $event['eventCity'] ?></li>
           </ul>
           <div class="card-body text-center d-flex ">
             <a href="Event.php?id=<?php echo $event['id']?>" class="btn btn-block align-self-end">More info</a>
