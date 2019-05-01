@@ -7,7 +7,7 @@ $search_query = "SELECT * FROM events WHERE 1";
 if (isset($_POST['location']) != "") {
   $by_location = $_POST['location']; 
   $search_query .= " AND eventCity LIKE '%$by_location%'";
-  if ($_GET['location'] != "") {
+  if (isset($_GET['location']) != "") {
     $by_location = $_GET['location']; 
     $search_query .= " AND eventCity LIKE '%$by_location%'";
 }
@@ -16,7 +16,7 @@ if (isset($_POST['location']) != "") {
 if (isset($_POST['category']) != "all") {
     $by_eventType = $_POST['category']; 
     $search_query .= " AND eventType LIKE '%$by_eventType%'";
-    if ($_GET['category'] != "all") {
+    if (isset($_GET['category']) != "all") {
         $by_eventType = $_GET['category']; 
         $search_query .= " AND eventType LIKE '%$by_eventType%'";
   }
