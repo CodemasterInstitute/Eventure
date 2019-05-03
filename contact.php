@@ -40,6 +40,12 @@
                 </div>
             </div>
             <!--Need to add textarea and centre all the form things col4 in centre of page-->
+            <div class="form-row">
+                <div class="form-group col-lg-4">
+                    <textarea class="form-control" rows="4" placeholder="Write something..."></textarea> 
+                </div>
+            </div>
+            <input class="btn btn-primary" type="submit" value="Submit">
 </form>
 </div>
 </div>
