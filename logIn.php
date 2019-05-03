@@ -38,12 +38,12 @@
             <form id="login-form">
             <div class="form-group">
                 <label for="InputEmail1">Email address</label>
-                <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
                 <label for="InputPassword1">Password</label>
-                <input type="password" class="form-control" id="InputPassword1" placeholder="Password">
+                <input type="password" class="form-control" id="InputPassword1" placeholder="Password" required>
             </div>
             <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -52,7 +52,7 @@
             <button type="login" class="btn btn-primary">Login</button>
             <div class="form-group">
                 <label for="signUpButton">Don't have an account yet? Make one today!!</label>
-                <button class="btn btn-primary" href="#" id="signUpButton">Create New Account</button>
+                <button class="btn btn-primary" href="signUp.php" id="signUpButton">Create New Account</button>
             </div>
             </form>
 
