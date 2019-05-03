@@ -35,7 +35,7 @@
           </div>
           <div id="collapseOne" class="collapse show" data-parent="#accordion">
             <div class="card-body">
-              To create your event, go to Create a event page.
+              To create your event, go to Create an event page.
             </div>
           </div>
         </div>
