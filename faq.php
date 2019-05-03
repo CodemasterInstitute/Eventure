@@ -22,9 +22,53 @@
   ?>
   <div class="container">
 
-    <h1>User-based Questions</h1>
+    <!-- <h1>User-based Questions</h1>
     <h2>How do I create an event?</h2>
-    <p>Create an event using our create an event page.</p>
+    <p>Create an event using our create an event page.</p> -->
+
+    <h2>FAQs</h2>
+        <div class="card">
+          <div class="card-header">
+            <a class="card-link" data-toggle="collapse" href="#collapseOne">
+              How do I create an event?
+            </a>
+          </div>
+          <div id="collapseOne" class="collapse show" data-parent="#accordion">
+            <div class="card-body">
+              To create your event, go to Create a event page.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+              Can I use eventure to create free events?
+            </a>
+          </div>
+          <div id="collapseTwo" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+            It's free for organizers to use eventure if you're not 
+            charging for tickets! There are no monthly charges, 
+            enrollment costs, or setup fees. 
+            If you're charging for ticket sales, our fees vary by package.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+              How much does it cost to use eventure?
+            </a>
+          </div>
+          <div id="collapseThree" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+              It's free!!!!
+            </div>
+          </div>
+        </div>
+
   </div>
   <?php
   include 'footer.php';
