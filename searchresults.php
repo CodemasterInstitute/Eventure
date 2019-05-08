@@ -4,38 +4,44 @@ require('config.php');
 // Getting upcoming events
 
 $search_query = "SELECT * FROM events WHERE 1";
-if (isset($_POST['location']) != "") {
+if (isset($_POST['location']) && $_POST['location'] != "") {
   $by_location = $_POST['location']; 
   $search_query .= " AND eventCity LIKE '%$by_location%'";
-  if (isset($_GET['location']) != "") {
+  if (isset($_GET['location'])) {
     $by_location = $_GET['location']; 
     $search_query .= " AND eventCity LIKE '%$by_location%'";
-}
+  }
 }
 
-if (isset($_POST['category']) != "all") {
+if ($_POST['category'] != "all") {
     $by_eventType = $_POST['category']; 
     $search_query .= " AND eventType LIKE '%$by_eventType%'";
-    if (isset($_GET['category']) != "all") {
+    if ($_GET['category'] != "all") {
         $by_eventType = $_GET['category']; 
         $search_query .= " AND eventType LIKE '%$by_eventType%'";
   }
 }
 // 
   
-// if ($_POST['date'] != ""){
-// $startDate = $_POST['date'];
-// $search_query .= " AND startDate = '$startDate'";
-// }
+if ($_POST['date'] != ""){
+$startDate = $_POST['date'];
+$search_query .= " AND startDate = '$startDate'";
 
+}
+// search field by keyword //
+
+if ($_POST['search'] != "") {
+  $by_search = $_POST['search'];
+  $search_query .= " AND eventName LIKE '%$by_search%' AND eventDescription LIKE '%$by_search%'";
+}
 
 // var_dump($search_query);
 
-echo "<br><br>";
+// echo "<br><br>";
 
- $sql = "SELECT * FROM events WHERE eventName LIKE ? AND eventType LIKE ?"; 
+//  $sql = "SELECT * FROM events WHERE eventName LIKE ? AND eventType LIKE ?"; 
 
- $datesql = "SELECT * FROM events WHERE startDate = ?";
+//  $datesql = "SELECT * FROM events WHERE startDate = ?";
 
 
 
@@ -55,12 +61,12 @@ echo "<br><br>";
   // Free Result
     //  var_dump($searchEvents);
   
-    if (!($stmt = $conn->prepare($sql))) {
-    echo "Prepare failed: (" . $conn->errno . ") " . $conn->error;
- }
-//  $stmt->bind_param('ss', $by_location, $by_eventType);
- $stmt->bind_param('ss', $by_location, $by_eventType);
- $stmt->execute();
+//     if (!($stmt = $conn->prepare($sql))) {
+//     echo "Prepare failed: (" . $conn->errno . ") " . $conn->error;
+//  }
+// //  $stmt->bind_param('ss', $by_location, $by_eventType);
+//  $stmt->bind_param('ss', $by_location, $startDate, $by_eventType);
+//  $stmt->execute();
 
 // var_dump($stmt);
 
@@ -116,7 +122,9 @@ echo "<br><br>";
         </div>
         <div class="col-lg-5">
           <div class="event-details card-body">
+            <div class="event-title">
             <h1 class="event-title font-weight-bold card-title"><?php echo $event['eventName'] ?></h1>
+
             <h3 class="event-date card-title"><?php 
          
             
@@ -127,6 +135,7 @@ echo "<br><br>";
             echo $convertedStartDate 
                 ?></h3>
             <p class="event-location card-text"><?php echo $event['eventAddress'] ?></p>
+            <p class="event-location card-text"><?php echo $event['eventCity'] ?></p>
             <p class="event-description card-text"><?php echo substr($event['eventDescription'], 0, 70) ?></p>
           </div>
           <a href="#" class="btn align-self-center">Buy tickets</a>
@@ -138,7 +147,7 @@ echo "<br><br>";
           
         </div>
     </div>
-
+  </div>
 
 
     <?php endforeach; ?>

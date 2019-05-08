@@ -36,46 +36,67 @@
   
     <div class="container-fluid">
         <h1>Sign Up:</h1>
-            <form id="signup-form" method = "POST" action = "">
+            <form id="signup-form" method = "POST" action = "" class="needs-validation" id="signup-form" novalidate>
             <?php include ('errors.php') ?>
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-6 mb-3">
                     <label for="newFName">First Name:</label>
                     <input type="firstname" class="form-control" id="newFName" placeholder="First Name" name = "fName" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-6 mb-3">
                     <label for="newLName">Last Name:</label>
                     <input type="lastname" class="form-control" id="newLName" placeholder="Last Name" name = "lName" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <label for="newEmailAddress">E-mail Address:</label>
                     <input type="email" class="form-control" id="newEmailAddress" placeholder="name@email.com" name = "email" required>
+                        <div class="invalid-feedback">
+                            Please enter valid email address!
+                        </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <label for="newUsername">Username:</label>
                     <input type="username" class="form-control" id="newUsername" placeholder="eventurer1234567" name = "username" required>
+                    <div class="invalid-feedback">
+                        Please apply unique Username!
+                    </div>
                 </div>
                 
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-6 mb-3">
                         <label for="newPassword">Password:</label>
                         <input type="text" class="form-control" id="newPassword" name = "password_1" required>
+                        <div class="invalid-feedback">
+                            Please apply password!
+                        </div>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-6 mb-3">
                         <label for="confirmPass">Confirm Password:</label>
                         <input type="text" class="form-control" id="confirmPass" name = "password_2" required>
+                        <div class="invalid-feedback">
+                            Please re-enter password!
+                        </div>
                     </div>
                     
                 </div>
                 
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <input class="form-check-input" type="checkbox" id="gridCheck" required>
                     <label class="form-check-label" for="gridCheck">
                         I Agree to the Terms and Conditions.
                     </label>
+                    <div class="invalid-feedback">
+                        Need to agree to T&C before submitting!
+                    </div>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary" name = "reg_user">Sign Up</button>
