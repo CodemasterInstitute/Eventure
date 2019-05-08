@@ -17,7 +17,6 @@ if (isset($_POST['location']) != "") {
 $query = 'SELECT * FROM events ORDER BY startDate ASC LIMIT 8';
 
 
-
     
 $locationquery = 'SELECT DISTINCT eventCity FROM events';
 
@@ -111,7 +110,6 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0" method="post" action="searchresults.php">
-
           <input id="searchNav" type="text" name="search" placeholder="Start your eventure.."><i id="magnGlass"
             class="fas fa-search btn"></i>
         </form>
