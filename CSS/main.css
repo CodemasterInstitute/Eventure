@@ -4,6 +4,7 @@ body {
     padding-top: 56px;
     overflow-x: hidden;
     line-height: 1.5;
+
 }
 
 .noPadding {
@@ -81,6 +82,7 @@ a:hover {
     border-color: #3E4E50;
     color: #f9f6f0;
     opacity: .9;
+    font-weight: 700;
 }
 
 .btn:hover {
@@ -321,16 +323,20 @@ p.banner-tagline {
 
 
 #cardHomePage .list-group-item {
-    padding: 5px 10px;
+    padding: 5px 5px;
 }
 
 #cardHomePage .card-body {
-    padding: 5px 10px;
+    padding: 5px 5px;
 }
 
 #cardHomePage .btn {
     bottom: 5px;
    position: relative;
+}
+
+#cardHomePage h5 {
+ font-size: 1em;
 }
 
 #cardHomePage .card {
@@ -343,10 +349,15 @@ p.banner-tagline {
 
 #cardHomePage .card-img-top {
     height: 150px;
+    object-fit: cover;
 }
 
 #cardHomePage .card-body {
-    padding: 5px 10px;
+    padding: 5px 5px;
+}
+
+.readMore {
+    color: blue !important;
 }
 
 #all-event-image {
@@ -368,6 +379,9 @@ transition: all .2s ease-in-out;
 transform: scale(1.1);
 }
 
+h1.event-title {
+    font-size: 1em;
+}
 #searchNav {
     visibility: hidden;
     width: 0;
@@ -447,3 +461,4 @@ ul.locations-list {
 .search-events {
     width: 66%;
 }
+
