@@ -116,7 +116,9 @@ echo "<br><br>";
         </div>
         <div class="col-lg-5">
           <div class="event-details card-body">
+            <div class="event-title">
             <h1 class="event-title font-weight-bold card-title"><?php echo $event['eventName'] ?></h1>
+            
             <h3 class="event-date card-title"><?php 
          
             
@@ -127,6 +129,7 @@ echo "<br><br>";
             echo $convertedStartDate 
                 ?></h3>
             <p class="event-location card-text"><?php echo $event['eventAddress'] ?></p>
+            <p class="event-location card-text"><?php echo $event['eventCity'] ?></p>
             <p class="event-description card-text"><?php echo substr($event['eventDescription'], 0, 70) ?></p>
           </div>
           <a href="#" class="btn align-self-center">Buy tickets</a>

@@ -81,6 +81,7 @@ a:hover {
     border-color: #3E4E50;
     color: #f9f6f0;
     opacity: .9;
+    font-weight: 700;
 }
 
 .btn:hover {
@@ -368,6 +369,9 @@ transition: all .2s ease-in-out;
 transform: scale(1.1);
 }
 
+h1.event-title {
+    font-size: 1em;
+}
 #searchNav {
     visibility: hidden;
     width: 0;
