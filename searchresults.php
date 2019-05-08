@@ -109,11 +109,14 @@ if ($_POST['search'] != "") {
 ?>
 
 <body>
-  <div class="container" id="all-events">
-
-
+  <div class="container-fluid" id="all-events">
+    <div class="search-banner">
+      <h1>Find your Eventure</h1>
+  </div>
+  <h1>Event Search Results</h1>
     <?php
         foreach($searchEvents as $event) : ?>
+        
     <div class="card search-events mb-3">
       <div class="row no-gutters">
         <div class="col-lg-3">

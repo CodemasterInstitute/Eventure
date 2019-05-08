@@ -199,161 +199,186 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
     <h1>Events to Explore</h1>
     <div class="row">
       <div class="col-12 col-lg-4 category">
-        <img src="CSS/images/bubbles.jpg" class="img-fluid" alt="fireworks image">
-        <div class="category-text">
-          <p>Explore All</p>
+        <img src="CSS/images/pineapple-all.jpg" class="img-fluid" alt="fireworks image">
+        <div class="category-content">
+          <div class="category-text">
+            <p>Explore All</p>
+          </div>
+          <div class="search-bar">
+            <a href="all_events.php" class="fas fa-search"></a>
+          </div>
         </div>
       </div>
       <div class="col-12 col-lg-4 category">
         <img src="CSS/images/free.jpg" class="img-fluid" alt="free image">
-        <div class="category-text">
-          <p>Free</p>
-        </div>
-      </div>
-
-
-      <div class="col-12 col-lg-4 category">
-
-        <img src="CSS/images/music.jpg" class="img-fluid" alt="concert">
-        <div class="category-text">
-          <p>Music</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12 col-lg-4 category">
-
-        <img src="CSS/images/laugh.jpg" class="img-fluid" alt="laugh">
-        <div class="category-text">
-          <p>Comedy</p>
-        </div>
-
-      </div>
-      <div class="col-12 col-lg-4 category">
-
-        <img src="CSS/images/sport.jpg" class="img-fluid" alt="tennis game">
-        <div class="category-text">
-          <p>Sport</p>
-        </div>
-      </div>
-      <div class="col-12 col-lg-4 category">
-
-        <img src="CSS/images/food.jpg" class="img-fluid" alt="tacos">
-        <div class="category-text">
-          <p>Food & Wine</p>
-          <div>
+        <div class="category-content">
+          <div class="category-text">
+            <p>Free</p>
+          </div>
+          <div class="search-bar">
+            <a href="/free" class="fas fa-search"></a>
           </div>
         </div>
       </div>
+      <div class="col-12 col-lg-4 category">
 
-      <hr>
-      <!--Upcoming Events Grid-->
-      <div class="container" id="upcoming-events">
-        <h3>Upcoming Events</h3>
-        <div class="row">
-          <?php
+      <img src="CSS/images/music.jpg" class="img-fluid" alt="concert">
+      <div class="category-content">
+        <div class="category-text">
+          <p>Music</p>
+        </div>
+        <div class="search-bar">
+          <a href="/music" class="fas fa-search"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-lg-4 category">
+
+      <img src="CSS/images/laugh.jpg" class="img-fluid" alt="laugh">
+      <div class="category-content">
+        <div class="category-text">
+          <p>Comedy</p>
+        </div>
+        <div class="search-bar">
+          <a href="/comedy" class="fas fa-search"></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 category">
+
+      <img src="CSS/images/sport.jpg" class="img-fluid" alt="tennis game">
+      <div class="category-content">
+        <div class="category-text">
+          <p>Sport</p>
+        </div>
+        <div class="search-bar">
+          <a href="/sport" class="fas fa-search"></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 category">
+
+      <img src="CSS/images/food.jpg" class="img-fluid" alt="tacos">
+      <div class="category-content">
+        <div class="category-text">
+          <p>Food & Wine</p>
+        </div>
+        <div class="search-bar">
+          <a href="/food" class="fas fa-search"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <!--Upcoming Events Grid-->
+  <div class="container" id="upcoming-events">
+    <h3>Upcoming Events</h3>
+    <div class="row">
+      <?php
       foreach($upcomingEvents as $event) : ?>
 
-          <div id="cardHomePage" class="col-lg-3">
-            <div class="card">
-              <a href="Event.php?id=<?php echo $event['id']?>"><img class="card-img-top"
-                  src="imagepath/uploads/<?php echo $event['imgName'] ?>" alt="Card image cap"></a>
-              <div class="card-body">
-                <a href="Event.php?id=<?php echo $event['id']?>">
-                  <h5 class="card-title font-weight-bold"><?php echo $event['eventName'] ?></h5>
-                </a>
-                <p class="card-text-homepage overflow-auto"><?php echo substr($event['eventDescription'], 0, 70) ?></p>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item"><?php 
+      <div id="cardHomePage" class="col-lg-3">
+        <div class="card">
+          <a href="Event.php?id=<?php echo $event['id']?>"><img class="card-img-top"
+              src="imagepath/uploads/<?php echo $event['imgName'] ?>" alt="Card image cap"></a>
+          <div class="card-body">
+            <a href="Event.php?id=<?php echo $event['id']?>">
+              <h5 class="card-title font-weight-bold"><?php echo $event['eventName'] ?></h5>
+            </a>
+            <p class="card-text-homepage overflow-auto"><?php echo substr($event['eventDescription'], 0, 70) ?></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><?php 
             
             $startDate = strtotime($event['startDate']);
             $dt = new DateTime("@$startDate");
             $convertedStartDate = $dt->format('d-M-Y H:i');
 
             echo $convertedStartDate ?></li>
-                <li class="list-group-item"><?php echo $event['eventAddress'] ?></li>
-              </ul>
-              <div class="card-body text-center d-flex ">
-                <a href="Event.php?id=<?php echo $event['id']?>" class="btn btn-block align-self-end">More info</a>
-              </div>
-            </div>
+            <li class="list-group-item"><?php echo $event['eventAddress'] ?></li>
+          </ul>
+          <div class="card-body text-center d-flex ">
+            <a href="Event.php?id=<?php echo $event['id']?>" class="btn btn-block align-self-end">More info</a>
           </div>
-          <?php endforeach; ?>
-
         </div>
       </div>
-      <hr>
-      <div class="container">
-        <h3 id="test">New Events</h3>
-        <div class="row">
-          <div class="col-lg-3">
-            <div class="card">
-              <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Event Name</h5>
-                <p class="card-text">Event description</p>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Date & Time</li>
-                <li class="list-group-item">Location</li>
-              </ul>
-              <div class="card-body text-center">
-                <a href="#" class="btn btn-block">Buy tickets</a>
-              </div>
-            </div>
+      <?php endforeach; ?>
+
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <h3 id="test">New Events</h3>
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="card">
+          <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Event Name</h5>
+            <p class="card-text">Event description</p>
           </div>
-          <div class="col-lg-3">
-            <div class="card">
-              <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Event Name</h5>
-                <p class="card-text">Event description</p>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Date & Time</li>
-                <li class="list-group-item">Location</li>
-              </ul>
-              <div class="card-body text-center">
-                <a href="#" class="btn btn-block">Buy tickets</a>
-              </div>
-            </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Date & Time</li>
+            <li class="list-group-item">Location</li>
+          </ul>
+          <div class="card-body text-center">
+            <a href="#" class="btn btn-block">Buy tickets</a>
           </div>
-          <div class="col-lg-3">
-            <div class="card">
-              <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Event Name</h5>
-                <p class="card-text">Event description</p>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Date & Time</li>
-                <li class="list-group-item">Location</li>
-              </ul>
-              <div class="card-body text-center">
-                <a href="#" class="btn btn-block">Buy tickets</a>
-              </div>
-            </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card">
+          <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Event Name</h5>
+            <p class="card-text">Event description</p>
           </div>
-          <div class="col-lg-3">
-            <div class="card">
-              <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Event Name</h5>
-                <p class="card-text">Event description</p>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Date & Time</li>
-                <li class="list-group-item">Location</li>
-              </ul>
-              <div class="card-body text-center">
-                <a href="#" class="btn btn-block">Buy tickets</a>
-              </div>
-            </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Date & Time</li>
+            <li class="list-group-item">Location</li>
+          </ul>
+          <div class="card-body text-center">
+            <a href="#" class="btn btn-block">Buy tickets</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card">
+          <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Event Name</h5>
+            <p class="card-text">Event description</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Date & Time</li>
+            <li class="list-group-item">Location</li>
+          </ul>
+          <div class="card-body text-center">
+            <a href="#" class="btn btn-block">Buy tickets</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card">
+          <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Event Name</h5>
+            <p class="card-text">Event description</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Date & Time</li>
+            <li class="list-group-item">Location</li>
+          </ul>
+          <div class="card-body text-center">
+            <a href="#" class="btn btn-block">Buy tickets</a>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  </div>
 
 
 
@@ -517,17 +542,18 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
     $(function () {
-      var cities = [<?php
+      var cities = [ < ? php
 
-  foreach($locationEvents as $city){
-  if ($city["eventCity"] != "") {
-     $cityList .= "\"". $city["eventCity"] . "\",";
-     
-    }
-  }
-    echo $cityList;
-    ?>
-   
+        foreach($locationEvents as $city) {
+          if ($city["eventCity"] != "") {
+            $cityList. = "\"".$city["eventCity"].
+            "\",";
+
+          }
+        }
+        echo $cityList; ?
+        >
+
 
       ]
       $("#location").autocomplete({
@@ -539,5 +565,3 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
 </body>
 
 </html>
-
-    
