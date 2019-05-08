@@ -110,7 +110,7 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
             <a class="nav-link" href="#" tabindex="-1">Log In/ Sign Up</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <form class="form-inline my-2 my-lg-0" method="post" action="searchresults.php">
 
           <input id="searchNav" type="text" name="search" placeholder="Start your eventure.."><i id="magnGlass"
             class="fas fa-search btn"></i>
@@ -517,14 +517,19 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
     $(function () {
-      var cities = [<?php 
-    foreach($locationEvents as $city){
+      var cities = [<?php
+
+  foreach($locationEvents as $city){
+  if ($city["eventCity"] != "") {
      $cityList .= "\"". $city["eventCity"] . "\",";
-    
-    
+     
     }
+  }
     echo $cityList;
-      ?>]
+    ?>
+   
+
+      ]
       $("#location").autocomplete({
         source: cities
       });
@@ -534,3 +539,5 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
 </body>
 
 </html>
+
+    
