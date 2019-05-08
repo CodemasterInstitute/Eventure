@@ -114,6 +114,7 @@
     
     <?php
     include 'header.php';
+    include 'registrationLogin.php';
       ?>
   
   <div class="container-fluid" >
