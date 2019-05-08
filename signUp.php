@@ -31,39 +31,41 @@
     
     <?php
     include 'header.php';
+    include 'registrationLogin.php';
       ?>
   
     <div class="container-fluid">
         <h1>Sign Up:</h1>
-            <form id="signup-form">
+            <form id="signup-form" method = "POST" action = "">
+            <?php include ('errors.php') ?>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                     <label for="newFName">First Name:</label>
-                    <input type="firstname" class="form-control" id="newFName" placeholder="First Name">
+                    <input type="firstname" class="form-control" id="newFName" placeholder="First Name" name = "fName" required>
                     </div>
                     <div class="form-group col-md-6">
                     <label for="newLName">Last Name:</label>
-                    <input type="lastname" class="form-control" id="newLName" placeholder="Last Name">
+                    <input type="lastname" class="form-control" id="newLName" placeholder="Last Name" name = "lName" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="newEmailAddress">E-mail Address:</label>
-                    <input type="email" class="form-control" id="newEmailAddress" placeholder="name@email.com">
+                    <input type="email" class="form-control" id="newEmailAddress" placeholder="name@email.com" name = "email" required>
                 </div>
 
                 <div class="form-group">
                     <label for="newUsername">Username:</label>
-                    <input type="username" class="form-control" id="newUsername" placeholder="eventurer1234567">
+                    <input type="username" class="form-control" id="newUsername" placeholder="eventurer1234567" name = "username" required>
                 </div>
                 
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="newPassword">Password:</label>
-                        <input type="text" class="form-control" id="newPassword">
+                        <input type="text" class="form-control" id="newPassword" name = "password_1" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="confirmPass">Confirm Password:</label>
-                        <input type="text" class="form-control" id="confirmPass">
+                        <input type="text" class="form-control" id="confirmPass" name = "password_2" required>
                     </div>
                     
                 </div>
@@ -76,7 +78,7 @@
                     </label>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Sign Up</button>
+                <button type="submit" class="btn btn-primary" name = "reg_user">Sign Up</button>
             </form>
 
     
