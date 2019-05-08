@@ -256,6 +256,9 @@ h5.logo {
 #explore p {
     text-align: center;
     font-size: 1em;
+    background-color: black;
+    opacity: .7;
+    padding: 0 50px;
 }
 
 p.banner-tagline {
