@@ -35,11 +35,11 @@ a:hover {
 
 /* Navbar */
 .navbar-dark .navbar-brand {
-    color: #f9f6f0;
+    color: black;
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: #f9f6f0;
+    color: black;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
@@ -48,11 +48,11 @@ a:hover {
 }
 
 .navbar-dark .navbar-nav .active>.nav-link {
-    color: #f9f6f0;
+    color: black;
 }
 
 .color-header {
-    background-color: #778ba5;
+    background-color: #fee789;
 }
 
 .logo-icon {
@@ -64,7 +64,7 @@ a:hover {
 }
 
 .active-header {
-    background-color: #778ba5;
+    background-color: #fee789;
 }
 
 /* Med-small screens */
@@ -257,22 +257,45 @@ h5.logo {
 #explore p {
     text-align: center;
     font-size: 1em;
+    background-color: black;
+    opacity: .7;
+    padding: 0 50px;
 }
 
 p.banner-tagline {
     font-size: 1.5em;
 }
-#explore col {
+#explore .col- {
     margin: 10px;
 }
+.category {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5em;
+    justify-content: center;
+}
 
+.category-content {
+    position: absolute;
+}
 .category-text {
+    z-index: 10;
+    color: white;
+
+}
+
+.search-bar a {
     position: absolute;
     z-index: 10;
     color: white;
-    top: 5%;
-
 }
+
+.search-bar {
+    text-align: center;
+}
+
 /*Member Dash components*/
 #blktxt a {
     color: rgb(21, 22, 22);
@@ -462,3 +485,13 @@ ul.locations-list {
     width: 66%;
 }
 
+/* Search Result Page */
+
+ .search-banner {
+    background-image: url('images/banner-search.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    margin: 10px;
+    color: #f9f6f0;
+}
