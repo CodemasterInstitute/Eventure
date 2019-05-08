@@ -391,6 +391,14 @@ transform: scale(1.1);
 }
 
 
+/*Sign Up Page*/
+
+#signup-form{
+    padding: 45px;
+}
+
+
+
 #resultsTable {
         border-collapse: collapse;
         width: 240px;
