@@ -4,6 +4,7 @@ body {
     padding-top: 56px;
     overflow-x: hidden;
     line-height: 1.5;
+
 }
 
 .noPadding {
@@ -322,16 +323,20 @@ p.banner-tagline {
 
 
 #cardHomePage .list-group-item {
-    padding: 5px 10px;
+    padding: 5px 5px;
 }
 
 #cardHomePage .card-body {
-    padding: 5px 10px;
+    padding: 5px 5px;
 }
 
 #cardHomePage .btn {
     bottom: 5px;
    position: relative;
+}
+
+#cardHomePage h5 {
+ font-size: 1em;
 }
 
 #cardHomePage .card {
@@ -344,10 +349,15 @@ p.banner-tagline {
 
 #cardHomePage .card-img-top {
     height: 150px;
+    object-fit: cover;
 }
 
 #cardHomePage .card-body {
-    padding: 5px 10px;
+    padding: 5px 5px;
+}
+
+.readMore {
+    color: blue !important;
 }
 
 #all-event-image {
@@ -390,9 +400,17 @@ h1.event-title {
 #login-form{
     padding: 30px;
     margin: 50px 0;
-    border: 3px dashed aquamarine;
-    border-radius: 15%;
+    /*border: 3px dashed aquamarine;
+    border-radius: 15%;*/
 }
+
+
+/*Sign Up Page*/
+
+#signup-form{
+    padding: 45px;
+}
+
 
 
 #resultsTable {
@@ -443,3 +461,4 @@ ul.locations-list {
 .search-events {
     width: 66%;
 }
+
