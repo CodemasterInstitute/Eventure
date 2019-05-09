@@ -1,21 +1,28 @@
 <?php
 require('config.php');
 
-$valueForm = $_GET['citySelect']; 
+if (!empty($_GET['city'])){
+$valueForm = $_GET['city']; 
+$querySelect = "SELECT *  FROM events WHERE eventCity = '$valueForm' ";
+$result2 = mysqli_query($conn, $querySelect);
+$eventSelect = mysqli_fetch_all($result2, MYSQLI_ASSOC);
+} else {
+    $eventSelect = [];
+}
+
 
 // Create Query
 $cityQuery = 'SELECT DISTINCT eventCity FROM events';
 
-$querySelect = "SELECT *  FROM events WHERE eventCity = '$valueForm' ";
 
 
 // Get Result
 $result = mysqli_query($conn, $cityQuery);
-$result2 = mysqli_query($conn, $querySelect);
+
 
 // Fetch Data
 $eventCity = mysqli_fetch_all($result, MYSQLI_ASSOC);
-$eventSelect = mysqli_fetch_all($result2, MYSQLI_ASSOC);
+
 
 
 // Free Result
@@ -52,7 +59,7 @@ include 'header.php';
 
 
     <form action="" method="get">
-        <select name="citySelect">
+        <select name="city">
             <?php foreach($eventCity as $event) : ?>
             <option value="<?php echo $event['eventCity']?>"><?php echo $event['eventCity']?></option>
             <?php endforeach; ?>
@@ -61,6 +68,9 @@ include 'header.php';
     </form>
 
 
+
+
+    
 
     <?php
       foreach($eventSelect as $event) : ?>
