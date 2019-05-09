@@ -86,38 +86,52 @@ include 'header.php';
     </div>
 
 
+   
+    <div class="row">
+    <div class="col-lg-8">
+      <h1 class="search-title">Event Search Results</h1>
     <?php
-      foreach($eventSelect as $event) : ?>
-
-    <div id="cardHomePage" class="col-lg-3">
-        <div class="card">
-            <a href="Event.php?id=<?php echo $event['id']?>"><img class="card-img-top"
-                    src="imagepath/uploads/<?php echo $event['imgName'] ?>" alt="Card image cap"></a>
-            <div class="card-body">
-                <a href="Event.php?id=<?php echo $event['id']?>">
-                    <h5 class="card-title font-weight-bold"><?php echo $event['eventName'] ?></h5>
-                </a>
-                <p class="card-text-homepage overflow-auto"><?php echo substr($event['eventDescription'], 0, 70) ?></p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><?php 
+        foreach($eventSelect as $event) : ?>
+   
+    <div class="card search-events mb-3">
+      <div class="row no-gutters">
+        <div class="col-lg-5">
+          <a href="Event.php?id=<?php echo $event['id']?>"><img class="card-img-top"
+              src="imagepath/uploads/<?php echo $event['imgName'] ?>" alt="Card image cap"></a>
+        </div>
+        <div class="col-lg-7" id = "card-details">
+          <div class="event-details card-body">
+            <div class="event-description">
+              <h1 class="event-title font-weight-bold card-title"><?php echo $event['eventName'] ?></h1>
+            <div class="datetime">
+              <h3 class="event-date card-title"><?php 
+         
             
             $startDate = strtotime($event['startDate']);
             $dt = new DateTime("@$startDate");
-            $convertedStartDate = $dt->format('d-M-Y H:i');
+            $convertedStartDate = $dt->format('d-M-Y');
 
-            echo $convertedStartDate ?></li>
-                <li class="list-group-item"><?php echo $event['eventAddress'] . ' ' . $event['eventCity'] ?></li>
-            </ul>
-            <div class="card-body text-center d-flex ">
-                <a href="Event.php?id=<?php echo $event['id']?>" class="btn btn-block align-self-end">More info</a>
+            echo $convertedStartDate 
+                ?><span> @ <?php echo $event['startTime']?> </span></h3>
+              </div>
+              <p class="event-location card-text"><?php echo $event['eventAddress'] ?><span>, <?php echo $event['eventCity'] ?></span></p>
+          
+              <p class="event-text card-text"><?php echo substr($event['eventDescription'], 0, 70)?><a class="readMore" href="Event.php?id=<?php echo $event['id']?>">...[Read more]</a></p>
             </div>
+           
+          </div>
+          <div class="event-button">
+              <a href="#" class="btn align-self-center">Buy tickets</a>
+
         </div>
+        </div>
+     
+         
     </div>
-    <?php endforeach; ?>
+  </div>
 
 
-
+  <?php endforeach; ?>
 
 
 
