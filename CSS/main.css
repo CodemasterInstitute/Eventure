@@ -258,9 +258,10 @@ h5.logo {
 #explore p {
     text-align: center;
     font-size: 1em;
-    background-color: black;
-    opacity: .7;
+    background-color: white;
+    color: #009f8b;
     padding: 0 50px;
+    opacity: .8;
 }
 
 p.banner-tagline {
@@ -278,6 +279,9 @@ p.banner-tagline {
     justify-content: center;
 }
 
+.category:hover {
+    opacity: .7;
+}
 .category-content {
     position: absolute;
 }
@@ -529,3 +533,18 @@ h1.search-title, h3.event-title {
     font-weight: bold;
 }
 
+.banner-categories {
+    height: calc(50vh - 56px);
+    background: #fff;
+}
+
+.banner-categories .jumbotron {
+    height: calc(50vh - 56px);
+    background: white;
+    width: 100%;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position-y: center !important;
+    margin: 0;
+    padding: 0;
+}
