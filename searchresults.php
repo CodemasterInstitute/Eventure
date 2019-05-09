@@ -35,6 +35,10 @@ if ($_POST['search'] != "") {
   $search_query .= " AND eventName LIKE '%$by_search%' AND eventDescription LIKE '%$by_search%'";
 }
 
+// if ($search_query != ($by_location && $by_eventType && $startDate)) {
+//   $heading = <p>Sorry, there are no events that match your search, please try a broader search <a href="index.php"></a></p>;
+// }
+
 // var_dump($search_query);
 
 // echo "<br><br>";
@@ -117,7 +121,11 @@ if ($_POST['search'] != "") {
     <div class="row">
     <div class="col-lg-8">
       <h1 class="search-title">Event Search Results</h1>
-    <?php
+     <?php if ($search_query != ($by_location && $by_eventType && $startDate)) { ?>
+  <p>Sorry, there are no events that match your search, please try a broader search<a href="index.php" style="color:#009f8b; font-weight:bold;"> here</a></p>
+  
+  
+          <?php }
         foreach($searchEvents as $event) : ?>
    
     <div class="card search-events mb-3">

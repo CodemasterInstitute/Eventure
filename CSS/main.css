@@ -52,7 +52,7 @@ a:hover {
 }
 
 .color-header {
-    background-color: #fee789;
+    background-color: #009f8b
 }
 
 .logo-icon {
@@ -64,14 +64,14 @@ a:hover {
 }
 
 .active-header {
-    background-color: #fee789;
-    color: black;
+    background-color: #009f8b
+ 
 }
 
 /* Med-small screens */
 @media screen and (max-width: 992px) {
     .navbar-collapse {
-        background-color: #fee789;
+        background-color: #009f8b
        
     }
 
