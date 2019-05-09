@@ -258,6 +258,7 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
       </div>
     </div>
   </div>
+</div>
   <hr>
   <!--Upcoming Events Grid-->
   <div class="container" id="upcoming-events">
@@ -303,8 +304,7 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
               </div>
             </div>
           </div>
-        </div>
-      </div>
+       
       <?php endforeach; ?>
 
     </div>
@@ -374,6 +374,9 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
           </ul>
           <div class="card-body text-center">
             <a href="#" class="btn btn-block">Buy tickets</a>
+          </div>
+        </div>
+      </div>
       <hr>
       <div class="container">
         <h3 id="test">Events you may like</h3>
@@ -422,7 +425,7 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
       </div>
     </div>
                   
-        </div>
+        <!-- </div> -->
       </div>
     </div>
   </div>
