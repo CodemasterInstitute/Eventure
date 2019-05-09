@@ -22,24 +22,24 @@ h5 {
 /* Links */
 
 a {
-    color: black;
+    color: #f9f6f0;
 }
 
 a:hover {
     text-decoration: underline;
 /*    text-decoration-color: #f9f6f0;*/
     font-weight: bold;
-    color: black;
+    color: #f9f6f0;
     /* padding-bottom: 1px; */
 }
 
 /* Navbar */
 .navbar-dark .navbar-brand {
-    color: black;
+    color: #f9f6f0;
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: black;
+    color: #f9f6f0;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
@@ -48,7 +48,7 @@ a:hover {
 }
 
 .navbar-dark .navbar-nav .active>.nav-link {
-    color: black;
+    color: #f9f6f0;
 }
 
 .color-header {
@@ -65,12 +65,13 @@ a:hover {
 
 .active-header {
     background-color: #fee789;
+    color: black;
 }
 
 /* Med-small screens */
 @media screen and (max-width: 992px) {
     .navbar-collapse {
-        background-color: #778ba5;
+        background-color: #fee789;
        
     }
 
@@ -170,7 +171,7 @@ a:hover {
 }
 
 footer {
-    background-color: #778ba5;
+    background-color: #009f8b;
     margin-top: 50px;
 
 }
@@ -402,9 +403,7 @@ transition: all .2s ease-in-out;
 transform: scale(1.1);
 }
 
-h1.event-title {
-    font-size: 1em;
-}
+
 #searchNav {
     visibility: hidden;
     width: 0;
@@ -481,9 +480,6 @@ ul.locations-list {
 
 
 
-.search-events {
-    width: 66%;
-}
 
 /* Search Result Page */
 
@@ -495,3 +491,41 @@ ul.locations-list {
     margin: 10px;
     color: #f9f6f0;
 }
+.search-events {
+    height: 200px
+}
+
+.search-events img {
+    height: 200px;
+}
+#card-details {
+    padding: 0 20px;
+}
+.event-details {
+    padding: 10px;
+}
+.event-date, .event-location {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.datetime {
+    display: flex;
+}
+
+.sponsors {
+    text-align: center;
+}
+
+.event-title {
+    color: #009f8b;
+    font-size: 1em;
+}
+
+h1.search-title, h3.event-title {
+    font-size: 2em;
+    color: #009f8b;
+    font-weight: bold;
+}
+

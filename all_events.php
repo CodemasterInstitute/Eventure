@@ -60,57 +60,81 @@ $query = 'SELECT * FROM events';
     
       <?php
         foreach($allEvents as $event) : ?>
-        <div class="card mb-3">
-       <div class="row no-gutters">
-        <div class="col-lg-4">
-            <a href="Event.php?id=<?php echo $event['id']?>" ><img class="card-img" src="https://via.placeholder.com/150" alt="Card image cap"></a>
+        <div class="card search-events mb-3">
+      <div class="row no-gutters">
+        <div class="col-lg-3">
+          <a href="Event.php?id=<?php echo $event['id']?>"><img class="card-img-top"
+              src="imagepath/uploads/<?php echo $event['imgName'] ?>" alt="Card image cap"></a>
         </div>
-        <div class="col-lg-8">
+        <div class="col-lg-5">
           <div class="event-details card-body">
+            <div class="event-description">
               <h1 class="event-title font-weight-bold card-title"><?php echo $event['eventName'] ?></h1>
+            <div class="datetime">
               <h3 class="event-date card-title"><?php 
          
             
             $startDate = strtotime($event['startDate']);
             $dt = new DateTime("@$startDate");
-            $convertedStartDate = $dt->format('d-M-Y H:i');
+            $convertedStartDate = $dt->format('d-M-Y');
 
             echo $convertedStartDate 
-                ?></h3>
-              <p class="event-location card-text"><?php echo $event['eventAddress'] ?></p>
-              <p class="event-description card-text"><?php echo substr($event['eventDescription'], 0, 70) ?></p>
+                ?><span> @ <?php echo $event['startTime']?> </span></h3>
+              </div>
+              <p class="event-location card-text"><?php echo $event['eventAddress'] ?><span>, <?php echo $event['eventCity'] ?></span></p>
+          
+              <p class="event-description card-text"><?php echo substr($event['eventDescription'], 0, 70)?><a class="readMore" href="Event.php?id=<?php echo $event['id']?>">...[Read more]</a></p>
+            </div>
+            <div class="event-button">
+              <a href="#" class="btn align-self-center">Buy tickets</a>
+            </div>
           </div>
-          <a href="#" class="btn align-self-center">Buy tickets</a>
-        </div>
-    
         </div>
       </div>
-
-   
-         
-        <?php endforeach; ?>
-           
-    
     </div>
-      
-     
-       
-        
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
- 
+   
 
 
-  </body>
-  <?php
-    include 'footer.php';
-      ?>
+    <?php endforeach; ?>
+  </div>
+    <div class="col-lg-4">
+        <div class="sponsors aside">
+          <h1>Sponsors</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <?php 
+include'footer.php';
+?>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
+    <script src="main.js"></script>    
+</body>
 </html>

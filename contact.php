@@ -1,3 +1,21 @@
+<?php 
+
+require_once('config.php');
+if((isset($_POST['email']) && $_POST['subjects'] && $_POST['messages'])){
+    $email = $conn->real_escape_string($_POST['email']);
+    $subjects = $conn->real_escape_string($_POST['subjects']);
+    $messages = $conn->real_escape_string($_POST['messages']);
+
+    $sql = "INSERT INTO contact (email, subjects, messages) VALUES ('$email','$subjects','$messages')";
+    
+    if (!$result = $conn->query($sql)){
+        die('There was an error running the query [' .$conn->error . ']');
+    }
+    
+        $success =  "Thank you for contacting us! We will contact you as soon as we review your messages.";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,17 +38,17 @@
            include 'header.php';
            ?>
 <div class = "contactUsInner">
-    <form>
+    <form method="POST">
     <h1>Contact Us</h1>
     <div class = "form-row">
             <div class="form-group col-lg-4">
                 <label for="inputEmail">Email</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Your email">
+                <input type="text" class="form-control" id="inputAddress" placeholder="Your email" name="email">
             </div>
         </div>
             <div class="form-row">
             <div class="form-group col-lg-4">
-                    <select id="numberOfTickets" class="form-control">
+                    <select id="numberOfTickets" class="form-control" name="subjects">
                         <option selected>What's this about?</option>
                         <option>General Question</option>
                         <option>Work Opportunities</option>
@@ -42,11 +60,14 @@
             <!--Need to add textarea and centre all the form things col4 in centre of page-->
             <div class="form-row">
                 <div class="form-group col-lg-4">
-                    <textarea class="form-control" rows="4" placeholder="Write something..."></textarea> 
+                    <textarea class="form-control" rows="4" placeholder="Write something..." name="messages"></textarea> 
                 </div>
             </div>
             <input class="btn btn-primary" type="submit" value="Submit">
 </form>
+<br>
+    <?php echo $success ?>
+
 </div>
 </div>
     <?php

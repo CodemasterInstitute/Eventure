@@ -112,56 +112,65 @@ if ($_POST['search'] != "") {
   <div class="container-fluid" id="all-events">
     <div class="search-banner">
       <h1>Find your Eventure</h1>
-  </div>
-  <h1>Event Search Results</h1>
+    </div>
+   
+    <div class="row">
+    <div class="col-lg-8">
+      <h1 class="search-title">Event Search Results</h1>
     <?php
         foreach($searchEvents as $event) : ?>
-        
+   
     <div class="card search-events mb-3">
       <div class="row no-gutters">
-        <div class="col-lg-3">
-          <a href="Event.php?id=<?php echo $event['id']?>"><img class="card-img" src="https://via.placeholder.com/150"
-              alt="Card image cap"></a>
-        </div>
         <div class="col-lg-5">
+          <a href="Event.php?id=<?php echo $event['id']?>"><img class="card-img-top"
+              src="imagepath/uploads/<?php echo $event['imgName'] ?>" alt="Card image cap"></a>
+        </div>
+        <div class="col-lg-7" id = "card-details">
           <div class="event-details card-body">
-            <div class="event-title">
-            <h1 class="event-title font-weight-bold card-title"><?php echo $event['eventName'] ?></h1>
-
-            <h3 class="event-date card-title"><?php 
+            <div class="event-description">
+              <h1 class="event-title font-weight-bold card-title"><?php echo $event['eventName'] ?></h1>
+            <div class="datetime">
+              <h3 class="event-date card-title"><?php 
          
             
             $startDate = strtotime($event['startDate']);
             $dt = new DateTime("@$startDate");
-            $convertedStartDate = $dt->format('d-M-Y H:i');
+            $convertedStartDate = $dt->format('d-M-Y');
 
             echo $convertedStartDate 
-                ?></h3>
-            <p class="event-location card-text"><?php echo $event['eventAddress'] ?></p>
-            <p class="event-location card-text"><?php echo $event['eventCity'] ?></p>
-            <p class="event-description card-text"><?php echo substr($event['eventDescription'], 0, 70) ?></p>
-          </div>
-          <a href="#" class="btn align-self-center">Buy tickets</a>
-        </div>
-        
-
-      </div>
-      <div class="col-lg-4">
+                ?><span> @ <?php echo $event['startTime']?> </span></h3>
+              </div>
+              <p class="event-location card-text"><?php echo $event['eventAddress'] ?><span>, <?php echo $event['eventCity'] ?></span></p>
           
+              <p class="event-text card-text"><?php echo substr($event['eventDescription'], 0, 70)?><a class="readMore" href="Event.php?id=<?php echo $event['id']?>">...[Read more]</a></p>
+            </div>
+           
+          </div>
+          <div class="event-button">
+              <a href="#" class="btn align-self-center">Buy tickets</a>
+            <!-- </div>
+          </div> -->
         </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col-lg-12"> -->
+         
     </div>
   </div>
+   
 
 
     <?php endforeach; ?>
-
-
-
-
-
   </div>
-
-
+  <div class="col-lg-4">
+      <div class="sponsors aside">
+        <h1 class="search-title">Sponsors</h1>
+      </div>
+    </div>
+  </div>
+  
+    </div>
 
 
 
@@ -179,6 +188,12 @@ if ($_POST['search'] != "") {
 include'footer.php';
 ?>
 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
+    <script src="main.js"></script>    
 </body>
-
 </html>
