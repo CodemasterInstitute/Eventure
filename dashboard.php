@@ -151,10 +151,10 @@ if (isset($_SESSION['username'])) {?>
                 </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fas fa-bullhorn"></i> Create New Event</a>
+              <a class="nav-link" href="create-an-event.php"><i class="fas fa-bullhorn"></i> Create New Event</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" tabindex="-1" ><i class="fas fa-question"></i> Help</a>
+              <a class="nav-link" href="faq.php" tabindex="-1" ><i class="fas fa-question"></i> Help</a>
             </li>
           </ul>  
     </div>
