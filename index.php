@@ -187,14 +187,16 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
     <h3 class="event-title">Events to Explore</h3>
     <div class="row">
       <div class="col-12 col-lg-4 category">
+      <a href="all_events.php">
         <img src="CSS/images/pineapple-all.jpg" class="img-fluid" alt="fireworks image">
+     </a>
         <div class="category-content">
           <div class="category-text">
             <p>Explore All</p>
           </div>
-          <div class="search-bar">
-            <a href="all_events.php" class="fas fa-search"></a>
-          </div>
+          <!-- <div class="search-bar">
+           
+          </div> -->
         </div>
       </div>
       <div class="col-12 col-lg-4 category">
@@ -203,9 +205,9 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
           <div class="category-text">
             <p>Free</p>
           </div>
-          <div class="search-bar">
+          <!-- <div class="search-bar">
             <a href="/free" class="fas fa-search"></a>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="col-12 col-lg-4 category">
@@ -213,11 +215,11 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
       <img src="CSS/images/music.jpg" class="img-fluid" alt="concert">
       <div class="category-content">
         <div class="category-text">
-          <p>Music</p>
+          <p>Music</a>
         </div>
-        <div class="search-bar">
+        <!-- <div class="search-bar">
           <a href="/music" class="fas fa-search"></a>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -229,9 +231,9 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
         <div class="category-text">
           <p>Comedy</p>
         </div>
-        <div class="search-bar">
+        <!-- <div class="search-bar">
           <a href="/comedy" class="fas fa-search"></a>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="col-12 col-lg-4 category">
@@ -241,9 +243,9 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
         <div class="category-text">
           <p>Sport</p>
         </div>
-        <div class="search-bar">
+        <!-- <div class="search-bar">
           <a href="/sport" class="fas fa-search"></a>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="col-12 col-lg-4 category">
@@ -253,9 +255,9 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
         <div class="category-text">
           <p>Food & Wine</p>
         </div>
-        <div class="search-bar">
+        <!-- <div class="search-bar">
           <a href="/food" class="fas fa-search"></a>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
