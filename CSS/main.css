@@ -529,3 +529,18 @@ h1.search-title, h3.event-title {
     font-weight: bold;
 }
 
+.banner-categories {
+    height: calc(50vh - 56px);
+    background: #fff;
+}
+
+.banner-categories .jumbotron {
+    height: calc(50vh - 56px);
+    background: white;
+    width: 100%;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position-y: center !important;
+    margin: 0;
+    padding: 0;
+}

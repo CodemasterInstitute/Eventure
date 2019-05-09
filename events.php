@@ -1,13 +1,17 @@
 <?php
 require('config.php');
 
+
 if (!empty($_GET['city'])){
 $valueForm = $_GET['city']; 
 $querySelect = "SELECT *  FROM events WHERE eventCity = '$valueForm' ";
 $result2 = mysqli_query($conn, $querySelect);
 $eventSelect = mysqli_fetch_all($result2, MYSQLI_ASSOC);
 } else {
-    $eventSelect = [];
+    $valueForm = $_GET['city']; 
+    $querySelect = "SELECT *  FROM events";
+    $result2 = mysqli_query($conn, $querySelect);
+    $eventSelect = mysqli_fetch_all($result2, MYSQLI_ASSOC);    
 }
 
 
@@ -61,9 +65,17 @@ include 'header.php';
         <div class="row banner-categories">
             <div class="col-lg-12 p-0">
                 <div class="jumbotron jumbotron-fluid d-flex justify-content-center"
-                    style="background: url('./CSS/images/<?php echo $_GET['city']?>.jpg')">
+                    style="background: url('./CSS/images/<?php 
+                    
+                    if (!empty($_GET['city'])){
+                    echo $_GET['city'];
+                    }
+                    else {
+                    echo 'Perth';
+                    }
+                ?>.jpg')">
                     <form action="" method="get">
-                        <h1 class="p-2 text-center text-white" style="text-shadow: 2px 2px black;">Search events in:
+                        <h1 class="p-2 text-center text-white" style="text-shadow: 2px 2px black;">Find events in:
                         </h1>
                         <select class="form-control m-1 mt-4 w-100" name="city">
                             <?php foreach($eventCity as $event) : ?>
@@ -83,7 +95,7 @@ include 'header.php';
    
     <div class="row">
     <div class="col-lg-8">
-      <h1 class="search-title">Events</h1>
+      <h1 class="search-title mt-3">Events <?php echo $_GET['city'] ?> </h1>
     <?php
         foreach($eventSelect as $event) : ?>
    
