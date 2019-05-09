@@ -403,11 +403,7 @@ transition: all .2s ease-in-out;
 transform: scale(1.1);
 }
 
-#all-events h1 {
-    font-size: 1.5em;
-    color: #009f8b;
-    font-weight: bold;
-}
+
 #searchNav {
     visibility: hidden;
     width: 0;
@@ -502,25 +498,20 @@ ul.locations-list {
 .search-events img {
     height: 200px;
 }
-.event-details {
-    display: flex;
+#card-details {
+    padding: 0 20px;
 }
-
+.event-details {
+    padding: 10px;
+}
 .event-date, .event-location {
     font-size: 1em;
     font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .datetime {
     display: flex;
-}
-
-.event-description {
-    font-size: 1em;
-}
-
-.event-button {
-    width: 100%;
 }
 
 .sponsors {
@@ -529,4 +520,12 @@ ul.locations-list {
 
 .event-title {
     color: #009f8b;
+    font-size: 1em;
 }
+
+h1.search-title {
+    font-size: 2em;
+    color: #009f8b;
+    font-weight: bold;
+}
+

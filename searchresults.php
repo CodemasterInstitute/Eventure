@@ -113,19 +113,20 @@ if ($_POST['search'] != "") {
     <div class="search-banner">
       <h1>Find your Eventure</h1>
     </div>
-    <h1>Event Search Results</h1>
+   
     <div class="row">
     <div class="col-lg-8">
+      <h1 class="search-title">Event Search Results</h1>
     <?php
         foreach($searchEvents as $event) : ?>
    
     <div class="card search-events mb-3">
       <div class="row no-gutters">
-        <div class="col-lg-3">
+        <div class="col-lg-5">
           <a href="Event.php?id=<?php echo $event['id']?>"><img class="card-img-top"
               src="imagepath/uploads/<?php echo $event['imgName'] ?>" alt="Card image cap"></a>
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-7" id = "card-details">
           <div class="event-details card-body">
             <div class="event-description">
               <h1 class="event-title font-weight-bold card-title"><?php echo $event['eventName'] ?></h1>
@@ -142,35 +143,34 @@ if ($_POST['search'] != "") {
               </div>
               <p class="event-location card-text"><?php echo $event['eventAddress'] ?><span>, <?php echo $event['eventCity'] ?></span></p>
           
-              <p class="event-description card-text"><?php echo substr($event['eventDescription'], 0, 70)?><a class="readMore" href="Event.php?id=<?php echo $event['id']?>">...[Read more]</a></p>
+              <p class="event-text card-text"><?php echo substr($event['eventDescription'], 0, 70)?><a class="readMore" href="Event.php?id=<?php echo $event['id']?>">...[Read more]</a></p>
             </div>
-            <div class="event-button">
-              <a href="#" class="btn align-self-center">Buy tickets</a>
-            </div>
+           
           </div>
+          <div class="event-button">
+              <a href="#" class="btn align-self-center">Buy tickets</a>
+            <!-- </div>
+          </div> -->
         </div>
-      </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col-lg-12"> -->
+         
     </div>
+  </div>
    
 
 
     <?php endforeach; ?>
   </div>
-    <div class="col-lg-4">
-        <div class="sponsors aside">
-          <h1>Sponsors</h1>
-        </div>
+  <div class="col-lg-4">
+      <div class="sponsors aside">
+        <h1 class="search-title">Sponsors</h1>
       </div>
     </div>
   </div>
-
-
-
-
-
-  </div>
-
-
+  
+    </div>
 
 
 
