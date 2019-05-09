@@ -1,3 +1,8 @@
+
+<?php
+include ('registrationLogin.php');
+if (isset($_SESSION['username'])) {?>
+	
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -121,6 +126,10 @@
   <div class="row">
     <div class="dash-nav col-lg-3" id="mainDash">
       <h2>Members Dashboard</h2>
+      <div class="logged_in_info">
+		<span>welcome <?php echo $_SESSION['username'] ?></span>
+		<span><a href="logout.php">logout</a></span>
+	</div>
         <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link active" href="#"><i class="fas fa-user-edit"></i> Account Information</a>
@@ -328,3 +337,7 @@
     <script src="main.js"></script>    
 </body>
 </html>
+<?php } else {
+  //page for unsuccessful login
+}
+  ?>

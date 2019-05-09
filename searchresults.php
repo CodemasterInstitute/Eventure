@@ -10,7 +10,7 @@ if (isset($_POST['location']) && $_POST['location'] != "") {
   if (isset($_GET['location'])) {
     $by_location = $_GET['location']; 
     $search_query .= " AND eventCity LIKE '%$by_location%'";
-}
+  }
 }
 
 if ($_POST['category'] != "all") {
@@ -28,7 +28,12 @@ $startDate = $_POST['date'];
 $search_query .= " AND startDate = '$startDate'";
 
 }
+// search field by keyword //
 
+if ($_POST['search'] != "") {
+  $by_search = $_POST['search'];
+  $search_query .= " AND eventName LIKE '%$by_search%' AND eventDescription LIKE '%$by_search%'";
+}
 
 // var_dump($search_query);
 
@@ -104,11 +109,14 @@ $search_query .= " AND startDate = '$startDate'";
 ?>
 
 <body>
-  <div class="container" id="all-events">
-
-
+  <div class="container-fluid" id="all-events">
+    <div class="search-banner">
+      <h1>Find your Eventure</h1>
+  </div>
+  <h1>Event Search Results</h1>
     <?php
         foreach($searchEvents as $event) : ?>
+        
     <div class="card search-events mb-3">
       <div class="row no-gutters">
         <div class="col-lg-3">
