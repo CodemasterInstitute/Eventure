@@ -181,9 +181,10 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
       </div>
     </div>
   </div>
+  <hr>
   <!--Container with event categories-->
   <div class="container" id="explore">
-    <h1>Events to Explore</h1>
+    <h3 class="event-title">Events to Explore</h3>
     <div class="row">
       <div class="col-12 col-lg-4 category">
         <img src="CSS/images/pineapple-all.jpg" class="img-fluid" alt="fireworks image">
@@ -262,7 +263,7 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
   <hr>
   <!--Upcoming Events Grid-->
   <div class="container" id="upcoming-events">
-    <h3>Upcoming Events</h3>
+    <h3 class="event-title">Upcoming Events</h3>
     <div class="row">
       <?php
       foreach($upcomingEvents as $event) : ?>
@@ -311,7 +312,7 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
   </div>
   <hr>
   <div class="container">
-    <h3 id="test">New Events</h3>
+    <h3 id="test" class="event-title">New Events</h3>
     <div class="row">
       <div class="col-lg-3">
         <div class="card">
@@ -379,7 +380,7 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
       </div>
       <hr>
       <div class="container">
-        <h3 id="test">Events you may like</h3>
+        <h3 id="test" class="event-title">Events you may like</h3>
         <div class="row">
           <?php
       foreach($randomEvents as $event) : ?>

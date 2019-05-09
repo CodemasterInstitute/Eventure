@@ -22,7 +22,7 @@ h5 {
 /* Links */
 
 a {
-    color: #009f8b;
+    color: #f9f6f0;
 }
 
 a:hover {
@@ -171,7 +171,7 @@ a:hover {
 }
 
 footer {
-    background-color: #778ba5;
+    background-color: #009f8b;
     margin-top: 50px;
 
 }
@@ -523,7 +523,7 @@ ul.locations-list {
     font-size: 1em;
 }
 
-h1.search-title {
+h1.search-title, h3.event-title {
     font-size: 2em;
     color: #009f8b;
     font-weight: bold;
