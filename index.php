@@ -273,7 +273,7 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
                   src="imagepath/uploads/<?php echo $event['imgName'] ?>" alt="Card image cap"></a>
               <div class="card-body">
                 <a href="Event.php?id=<?php echo $event['id']?>">
-                  <h5 class="card-title font-weight-bold"><?php 
+                  <h5 class="event-title card-title font-weight-bold"><?php 
                   
                   if (strlen($event['eventName']) > 45) {
                     echo substr($event['eventName'], 0, 45)?>...

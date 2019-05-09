@@ -22,24 +22,24 @@ h5 {
 /* Links */
 
 a {
-    color: black;
+    color: #009f8b;
 }
 
 a:hover {
     text-decoration: underline;
 /*    text-decoration-color: #f9f6f0;*/
     font-weight: bold;
-    color: black;
+    color: #f9f6f0;
     /* padding-bottom: 1px; */
 }
 
 /* Navbar */
 .navbar-dark .navbar-brand {
-    color: black;
+    color: #f9f6f0;
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: black;
+    color: #f9f6f0;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
@@ -48,7 +48,7 @@ a:hover {
 }
 
 .navbar-dark .navbar-nav .active>.nav-link {
-    color: black;
+    color: #f9f6f0;
 }
 
 .color-header {
@@ -65,12 +65,13 @@ a:hover {
 
 .active-header {
     background-color: #fee789;
+    color: black;
 }
 
 /* Med-small screens */
 @media screen and (max-width: 992px) {
     .navbar-collapse {
-        background-color: #778ba5;
+        background-color: #fee789;
        
     }
 
@@ -402,8 +403,10 @@ transition: all .2s ease-in-out;
 transform: scale(1.1);
 }
 
-h1.event-title {
-    font-size: 1em;
+#all-events h1 {
+    font-size: 1.5em;
+    color: #009f8b;
+    font-weight: bold;
 }
 #searchNav {
     visibility: hidden;
@@ -481,9 +484,6 @@ ul.locations-list {
 
 
 
-.search-events {
-    width: 66%;
-}
 
 /* Search Result Page */
 
@@ -494,4 +494,39 @@ ul.locations-list {
     height: 40vh;
     margin: 10px;
     color: #f9f6f0;
+}
+.search-events {
+    height: 200px
+}
+
+.search-events img {
+    height: 200px;
+}
+.event-details {
+    display: flex;
+}
+
+.event-date, .event-location {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.datetime {
+    display: flex;
+}
+
+.event-description {
+    font-size: 1em;
+}
+
+.event-button {
+    width: 100%;
+}
+
+.sponsors {
+    text-align: center;
+}
+
+.event-title {
+    color: #009f8b;
 }
