@@ -57,20 +57,34 @@ mysqli_close($conn);
 include 'header.php';
 ?>
 
+    <div class="container-fluid">
+        <div class="row banner-categories">
+            <div class="col-lg-3">
 
-    <form action="" method="get">
-        <select name="city">
-            <?php foreach($eventCity as $event) : ?>
-            <option value="<?php echo $event['eventCity']?>"><?php echo $event['eventCity']?></option>
-            <?php endforeach; ?>
-        </select>
-        <input type="submit">
-    </form>
+                <!-- <h4 class="mt-5">Upcoming sporting events in:</h4>
+                <h1 class="mt-4"><?php  echo $_GET['city']?> </h1> -->
 
+            </div>
+            <div class="col-lg-12 p-0">
+                <div class="jumbotron jumbotron-fluid d-flex justify-content-center"
+                    style="background: url('./CSS/images/<?php echo $_GET['city']?>.jpg')">
+                    <form action="" method="get">
+                        <h1 class="p-2 text-center text-white" style="text-shadow: 2px 2px black;">Search events in:
+                        </h1>
+                        <select class="form-control m-1 mt-4 w-100" name="city">
+                            <?php foreach($eventCity as $event) : ?>
+                            <option value="<?php echo $event['eventCity']?>"><?php echo $event['eventCity']?></option>
+                            <?php endforeach; ?>
+                        </select>
+                        <div class="text-center"> <input class="btn ml-1 w-50" type="submit" value="Search">
+                        </div>
+                    </form>
+                </div>
 
+            </div>
+        </div>
+    </div>
 
-
-    
 
     <?php
       foreach($eventSelect as $event) : ?>

@@ -70,7 +70,7 @@ a:hover {
 @media screen and (max-width: 992px) {
     .navbar-collapse {
         background-color: #778ba5;
-       
+
     }
 
 }
@@ -88,15 +88,15 @@ a:hover {
     background-color: #3E4E50;
     border-color: #3E4E50;
     opacity: 1;
-    color:  #f9f6f0 !important;
+    color: #f9f6f0 !important;
     text-decoration: underline;
-   
+
 }
 
 
 .eventJumbo {
     background-size: contain;
-    background-position: center; 
+    background-position: center;
     background-repeat: no-repeat;
     height: 50vh;
     background-color: #f9f6f0;
@@ -282,10 +282,10 @@ p.banner-tagline {
 .dash-nav {
     float: inherit;
     margin-top: 70px;
-    
+
     height: 90%;
-    border: 1px solid rgb(110, 110, 184);   
-    
+    border: 1px solid rgb(110, 110, 184);
+
 
 }
 
@@ -320,15 +320,15 @@ p.banner-tagline {
 
 #cardHomePage .btn {
     bottom: 5px;
-   position: relative;
+    position: relative;
 }
 
 #cardHomePage .card {
     height: 450px;
     margin: 20px 0;
     -webkit-box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.75) !important;
-    -moz-box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.75)!important;
-    box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.75)!important;
+    -moz-box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.75) !important;
+    box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.75) !important;
 }
 
 #cardHomePage .card-img-top {
@@ -346,16 +346,18 @@ p.banner-tagline {
 .all-event-card {
     border: 2px black solid;
 }
+
 .card {
-box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.75)!important;
-transition: all .2s ease-in-out;
+    box-shadow: 5px 4px 8px 0px rgba(0, 0, 0, 0.75) !important;
+    transition: all .2s ease-in-out;
 }
 
 .card h5 {
     color: black;
 }
-.card:hover{
-transform: scale(1.1);
+
+.card:hover {
+    transform: scale(1.1);
 }
 
 #searchNav {
@@ -373,7 +375,7 @@ transform: scale(1.1);
 
 /*Login Form Page*/
 
-#login-form{
+#login-form {
     padding: 30px;
     margin: 50px 0;
     border: 3px dashed aquamarine;
@@ -382,36 +384,42 @@ transform: scale(1.1);
 
 
 #resultsTable {
-        border-collapse: collapse;
-        width: 240px;
-      }
+    border-collapse: collapse;
+    width: 240px;
+}
 
 #rating {
-        font-size: 13px;
-        font-family: Arial Unicode MS;
-      }
+    font-size: 13px;
+    font-family: Arial Unicode MS;
+}
+
 .iw_table_row {
-        height: 18px;
-      }
+    height: 18px;
+}
+
 .iw_attribute_name {
-        font-weight: bold;
-        text-align: right;
-      }
+    font-weight: bold;
+    text-align: right;
+}
+
 .iw_table_icon {
-        text-align: right;
-      }
+    text-align: right;
+}
+
 #country {
-        width: 100%;
-      }
+    width: 100%;
+}
+
 .placeIcon {
-        width: 20px;
-        height: 34px;
-        margin: 4px;
-      }
+    width: 20px;
+    height: 34px;
+    margin: 4px;
+}
+
 .hotelIcon {
-        width: 24px;
-        height: 24px;
-      }
+    width: 24px;
+    height: 24px;
+}
 
 ul.locations-list {
     margin: 0;
@@ -424,5 +432,18 @@ ul.locations-list {
     color: black !important;
 }
 
+.banner-categories {
+    height: calc(50vh - 56px);
+    background: #fff;
+}
 
-
+.banner-categories .jumbotron {
+    height: calc(50vh - 56px);
+    background: white;
+    width: 100%;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position-y: center !important;
+    margin: 0;
+    padding: 0;
+}
