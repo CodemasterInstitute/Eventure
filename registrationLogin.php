@@ -1,4 +1,5 @@
 <?php 
+session_start();
 
 // OOP I did it again
     // variable declaration
@@ -113,21 +114,23 @@ function esc($data) {
 
             if ($result = $stmt->get_result()) {
                 $user = $result->fetch_assoc();
+                $_SESSION['username'] = $user['username'];
                 echo 'success';
             } else {
                 echo $mysqli->error;
             }
             
+            
         }
     }
             // INCLUDE so user can navigate between pages without having to log in again
-			// $result = mysqli_query($mysqli, $sql);
+			//$result = mysqli_query($mysqli, $sql);
 			// if (mysqli_num_rows($result) > 0) {
 			// 	// get id of created user
 			// 	$reg_user_id = mysqli_fetch_assoc($result)['id']; 
 
-			// 	// put logged in user into session array
-			// 	$_SESSION['user'] = getUserById($reg_user_id); 
+				// put logged in user into session array
+				 
 
 			// 	// if user is admin, redirect to admin area
 			// 	if ( in_array($_SESSION['user']['role'], ["Admin", "Author"])) {
@@ -147,7 +150,7 @@ function esc($data) {
 	// 	}
 	// }
 
-	// // Get user info from user id
+	// Get user info from user id
 	// function getUserById($id)
 	// {
 	// 	global $mysqli;

@@ -31,7 +31,9 @@
     
     <?php
     include 'header.php';
-    include 'registrationLogin.php';
+    //include 'registrationLogin.php';
+
+    echo $_SESSION['username'];
       ?>
   
     <div class="container">
