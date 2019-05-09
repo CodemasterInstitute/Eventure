@@ -27,10 +27,10 @@
 
       <ul class="list-unstyled">
         <li>
-          <a href="#!">Home</a>
+          <a href="index.php">Home</a>
         </li>
         <li>
-          <a href="#!">FAQs</a>
+          <a href="faq.php">FAQs</a>
         </li>
         <li>
           <a href="#!">Contact</a>
@@ -51,13 +51,13 @@
 
       <ul class="list-unstyled">
         <li>
-          <a href="#!">Sign In</a>
+          <a href="logIn.php">Sign In</a>
         </li>
         <li>
-          <a href="#!">My Dashboard</a>
+          <a href="dashboard.php">My Dashboard</a>
         </li>
         <li>
-          <a href="#!">Create An Event</a>
+          <a href="create-an-event.php">Create An Event</a>
         </li>
 
       </ul>
@@ -79,7 +79,7 @@
     <h5 class="mb-1">Register for free</h5>
   </li>
   <li class="list-inline-item">
-    <a href="#!" class="btn btn-danger btn-rounded">Sign up!</a>
+    <a href="signUp.php" class="btn btn-danger btn-rounded">Sign up!</a>
   </li>
 </ul>
 <!-- Call to action -->

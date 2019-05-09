@@ -63,7 +63,7 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
 
   <div class="row">
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark navbar-scroll">
-      <a class="navbar-brand" href="index.html"><img src="CSS/images/eventure logo 3.2.png" class="logo-icon"></a>
+      <a class="navbar-brand" href="index.html"><img src="CSS/images/eventure logo 4.2.png" class="logo-icon"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -88,14 +88,14 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
             </div>
           </li>
           <li class="nav-item active">
-            <a class="nav-link " href="#">
+            <a class="nav-link " href="dashboard.php">
               Members
             </a>
 
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#" tabindex="-1">Log In/ Sign Up</a>
+            <a class="nav-link" href="logIn.php" tabindex="-1">Log In/ Sign Up</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0" method="post" action="searchresults.php">
@@ -471,13 +471,13 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
 
           <ul class="list-unstyled">
             <li>
-              <a href="index.html">Home</a>
+              <a href="index.php">Home</a>
             </li>
             <li>
-              <a href="HTML/faq.html">FAQs</a>
+              <a href="faq.php">FAQs</a>
             </li>
             <li>
-              <a href="HTML/contact.html">Contact</a>
+              <a href="contact.php">Contact</a>
             </li>
           </ul>
 
@@ -517,10 +517,10 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
 
           <ul class="list-unstyled">
             <li>
-              <a href="#!">Sign In</a>
+              <a href="logIn.php">Sign In</a>
             </li>
             <li>
-              <a href="HTML/dashboard.html">My Dashboard</a>
+              <a href="dashboard.php">My Dashboard</a>
             </li>
             <li>
               <a href="create-an-event.php">Create An Event</a>
@@ -545,7 +545,7 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
         <h5 class="mb-1">Register for free</h5>
       </li>
       <li class="list-inline-item">
-        <a href="#!" class="btn btn-danger btn-rounded">Sign up!</a>
+        <a href="signUp.php" class="btn btn-danger btn-rounded">Sign up!</a>
       </li>
     </ul>
     <!-- Call to action -->

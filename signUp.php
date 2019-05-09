@@ -36,7 +36,7 @@
   
     <div class="container-fluid">
         <h1>Sign Up:</h1>
-            <form id="signup-form" method = "POST" action = "" class="needs-validation" id="signup-form" novalidate>
+            <form id="signup-form" method = "POST" action = "dashboard.php" class="needs-validation" id="signup-form" novalidate>
             <?php include ('errors.php') ?>
                 <div class="form-row">
                     <div class="form-group col-md-6 mb-3">

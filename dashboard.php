@@ -1,3 +1,8 @@
+
+<?php
+include ('registrationLogin.php');
+if (isset($_SESSION['username'])) {?>
+	
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -114,7 +119,6 @@
     
     <?php
     include 'header.php';
-    include 'registrationLogin.php';
       ?>
   
   <div class="container-fluid" >
@@ -122,6 +126,10 @@
   <div class="row">
     <div class="dash-nav col-lg-3" id="mainDash">
       <h2>Members Dashboard</h2>
+      <div class="logged_in_info">
+		<span>welcome <?php echo $_SESSION['username'] ?></span>
+		<span><a href="logout.php">logout</a></span>
+	</div>
         <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link active" href="#"><i class="fas fa-user-edit"></i> Account Information</a>
@@ -329,3 +337,46 @@
     <script src="main.js"></script>    
 </body>
 </html>
+<?php } else { 
+  //page for unsuccessful login ?>
+ <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Eventure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="CSS/main.css">
+    <style>
+
+.container {
+  margin-top: 50px;
+  position: relative;
+  text-align: center;
+}
+
+   /* Centered text */
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  color: white;
+  opacity: 0.8;
+  font-size: 38px;
+  border-radius: 10px;
+}
+    </style>
+    </head>
+  <?php
+  include 'header.php'; ?>
+  <div class="container">
+  <img src="CSS/images/pineapple-all.jpg" alt="pineapple" style="width:100%;">
+  
+  <div class="text">Your login was unsuccessful. Please <a href = "login.php" style="color:white">try again.</a></div>
+</div>
+  <?php
+  include 'footer.php';
+}
+  ?>
