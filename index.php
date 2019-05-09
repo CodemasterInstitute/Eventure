@@ -471,13 +471,13 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
 
           <ul class="list-unstyled">
             <li>
-              <a href="index.html">Home</a>
+              <a href="index.php">Home</a>
             </li>
             <li>
-              <a href="HTML/faq.html">FAQs</a>
+              <a href="faq.php">FAQs</a>
             </li>
             <li>
-              <a href="HTML/contact.html">Contact</a>
+              <a href="contact.php">Contact</a>
             </li>
           </ul>
 
@@ -517,10 +517,10 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
 
           <ul class="list-unstyled">
             <li>
-              <a href="#!">Sign In</a>
+              <a href="logIn.php">Sign In</a>
             </li>
             <li>
-              <a href="HTML/dashboard.html">My Dashboard</a>
+              <a href="dashboard.php">My Dashboard</a>
             </li>
             <li>
               <a href="create-an-event.php">Create An Event</a>
@@ -545,7 +545,7 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
         <h5 class="mb-1">Register for free</h5>
       </li>
       <li class="list-inline-item">
-        <a href="#!" class="btn btn-danger btn-rounded">Sign up!</a>
+        <a href="signUp.php" class="btn btn-danger btn-rounded">Sign up!</a>
       </li>
     </ul>
     <!-- Call to action -->
