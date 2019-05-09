@@ -115,7 +115,7 @@ function esc($data) {
             if ($result = $stmt->get_result()) {
                 $user = $result->fetch_assoc();
                 $_SESSION['username'] = $user['username'];
-                echo 'success';
+                // echo 'success';
             } else {
                 echo $mysqli->error;
             }
