@@ -88,14 +88,14 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
             </div>
           </li>
           <li class="nav-item active">
-            <a class="nav-link " href="#">
+            <a class="nav-link " href="dashboard.php">
               Members
             </a>
 
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#" tabindex="-1">Log In/ Sign Up</a>
+            <a class="nav-link" href="logIn.php" tabindex="-1">Log In/ Sign Up</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0" method="post" action="searchresults.php">

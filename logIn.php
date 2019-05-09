@@ -52,7 +52,7 @@
             <button type="login" class="btn btn-primary">Login</button>
             <div class="form-group">
                 <label for="signUpButton">Don't have an account yet? Make one today!!</label>
-                <button class="btn btn-primary" href="signUp.php" id="signUpButton">Create New Account</button>
+                <a type="signUp" class="btn btn-success" role="button" href="signUp.php" id="signUpButton">Create New Account</a>
             </div>
             </form>
 
