@@ -45,6 +45,7 @@ $query = 'SELECT * FROM events';
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+  <link rel="shortcut icon" href="CSS\images\eventure favcon 1.ico" type="image/x-icon">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <!-- <link rel="stylesheet" type="text/css" href="CSS/main.css"> -->
   <link rel="stylesheet" href="CSS/main.css">
