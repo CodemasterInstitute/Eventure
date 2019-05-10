@@ -289,7 +289,8 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
             
             $startDate = strtotime($event['startDate']);
             $dt = new DateTime("@$startDate");
-            $convertedStartDate = $dt->format('d-M-Y H:i');
+            $startTime = ($event['startTime']);
+            $convertedStartDate = $dt->format('d-M-Y') . ' ' . $startTime;
 
             echo $convertedStartDate ?></li>
                 <li class="list-group-item"><?php 
@@ -406,7 +407,8 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
             
             $startDate = strtotime($event['startDate']);
             $dt = new DateTime("@$startDate");
-            $convertedStartDate = $dt->format('d-M-Y H:i');
+            $startTime = ($event['startTime']);
+            $convertedStartDate = $dt->format('d-M-Y') . ' ' . $startTime;
 
             echo $convertedStartDate ?></li>
                 <li class="list-group-item"><?php 
