@@ -99,7 +99,7 @@ include 'header.php';
                                 <h2 class="search-title">Location</h2>
                                 <p><?php echo $event['eventAddress'] . '<br> ' . $event['eventCity'] . ' ' . $event['eventPostcode']?></p>
 
-                                <h2>Share this Event!</h2>
+                                <h2 class="search-title">Share this Event!</h2>
                                 <a class="socialMedia" target="_blank" href="<?php echo $event['eventTwitter']?>"><span><i class="fab fa-twitter text-center"></i></span></a>
                                 <a class="socialMedia" target="_blank" href="<?php echo $event['eventFacebook']?>"><span><i class="fab fa-facebook text-center"></i></span></a>
                                 <a class="socialMedia" target="_blank" href="<?php echo $event['eventInstagram']?>"><span><i class="fab fa-instagram text-center"></i></span></a>

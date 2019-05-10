@@ -14,24 +14,28 @@ if (isset($_POST['location']) != "") {
 $query = 'SELECT * FROM events ORDER BY startDate ASC LIMIT 8';
 $randomQuery = 'SELECT * FROM events ORDER BY RAND() LIMIT 4'; 
 $locationquery = 'SELECT DISTINCT eventCity FROM events';
+$newEventsQuery = 'SELECT * FROM events ORDER BY eventCreation ASC LIMIT 4';
 
 	// Get Result
   $result = mysqli_query($conn, $query);
   $locationresult = mysqli_query($conn, $locationquery);
   $searchresult = mysqli_query($conn, $search_query);
   $randomResult = mysqli_query($conn, $randomQuery);
+  $newEventsResult = mysqli_query($conn, $newEventsQuery);
 
 	// Fetch Data
 	$upcomingEvents = mysqli_fetch_all($result, MYSQLI_ASSOC);
   $locationEvents = mysqli_fetch_all($locationresult, MYSQLI_ASSOC);
   $searchEvents = mysqli_fetch_all($searchresult, MYSQLI_ASSOC);
   $randomEvents = mysqli_fetch_all($randomResult, MYSQLI_ASSOC);
+  $newEvents = mysqli_fetch_all($newEventsResult, MYSQLI_ASSOC);
 
 	// Free Result
     mysqli_free_result($result);
     mysqli_free_result($locationresult);
     mysqli_free_result($searchresult);
     mysqli_free_result($randomResult);
+    mysqli_free_result($newEvents);
 
     
 
@@ -315,70 +319,50 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
   <div class="container">
     <h3 id="test" class="event-title">New Events</h3>
     <div class="row">
-      <div class="col-lg-3">
-        <div class="card">
-          <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Event Name</h5>
-            <p class="card-text">Event description</p>
+    <?php
+      foreach($newEvents as $event) : ?>
+
+          <div id="cardHomePage" class="col-lg-3">
+            <div class="card">
+              <a href="Event.php?id=<?php echo $event['id']?>"><img class="card-img-top"
+                  src="imagepath/uploads/<?php echo $event['imgName'] ?>" alt="Card image cap"></a>
+              <div class="card-body">
+                <a href="Event.php?id=<?php echo $event['id']?>">
+                  <h5 class="event-title card-title font-weight-bold"><?php 
+                  
+                  if (strlen($event['eventName']) > 45) {
+                    echo substr($event['eventName'], 0, 45)?>...
+                    <?php
+                  } else
+                  echo $event['eventName']?></h5>
+                </a>
+                <p class="card-text-homepage overflow-auto"><?php echo substr($event['eventDescription'], 0, 70)?><a class="readMore" href="Event.php?id=<?php echo $event['id']?>">...[Read more]</a></p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><?php 
+            
+            $startDate = strtotime($event['startDate']);
+            $dt = new DateTime("@$startDate");
+            $startTime = ($event['startTime']);
+            $convertedStartDate = $dt->format('d-M-Y') . ' ' . $startTime;
+
+            echo $convertedStartDate ?></li>
+                <li class="list-group-item"><?php 
+                  
+                  if (strlen($event['eventAddress']) > 45) {
+                    echo substr($event['eventAddress'], 0, 45)?>...
+                    <?php
+                  } else
+                  echo $event['eventAddress']?></li>
+              </ul>
+              <div class="card-body text-center d-flex ">
+                <a href="Event.php?id=<?php echo $event['id']?>" class="btn btn-block align-self-end">More info</a>
+              </div>
+            </div>
           </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Date & Time</li>
-            <li class="list-group-item">Location</li>
-          </ul>
-          <div class="card-body text-center">
-            <a href="#" class="btn btn-block">Buy tickets</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="card">
-          <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Event Name</h5>
-            <p class="card-text">Event description</p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Date & Time</li>
-            <li class="list-group-item">Location</li>
-          </ul>
-          <div class="card-body text-center">
-            <a href="#" class="btn btn-block">Buy tickets</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="card">
-          <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Event Name</h5>
-            <p class="card-text">Event description</p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Date & Time</li>
-            <li class="list-group-item">Location</li>
-          </ul>
-          <div class="card-body text-center">
-            <a href="#" class="btn btn-block">Buy tickets</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="card">
-          <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Event Name</h5>
-            <p class="card-text">Event description</p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Date & Time</li>
-            <li class="list-group-item">Location</li>
-          </ul>
-          <div class="card-body text-center">
-            <a href="#" class="btn btn-block">Buy tickets</a>
-          </div>
-        </div>
-      </div>
+       
+      <?php endforeach; ?>
+
       <hr>
       <div class="container">
         <h3 id="test" class="event-title">Events you may like</h3>
