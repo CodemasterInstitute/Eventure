@@ -12,6 +12,7 @@ if (isset($_SESSION['username'])) {?>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="shortcut icon" href="CSS\images\eventure favcon 1.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" media="screen" href="CSS/main.css">
     <style>
      
@@ -151,10 +152,10 @@ if (isset($_SESSION['username'])) {?>
                 </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fas fa-bullhorn"></i> Create New Event</a>
+              <a class="nav-link" href="create-an-event.php"><i class="fas fa-bullhorn"></i> Create New Event</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" tabindex="-1" ><i class="fas fa-question"></i> Help</a>
+              <a class="nav-link" href="faq.php" tabindex="-1" ><i class="fas fa-question"></i> Help</a>
             </li>
           </ul>  
     </div>

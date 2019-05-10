@@ -22,11 +22,14 @@
 
     $startDate = strtotime($event['startDate']);
     $dt = new DateTime("@$startDate");
-    $convertedStartDate = $dt->format('d-M-Y H:i');
+    $startTime = ($event['startTime']);
+    $convertedStartDate = $dt->format('d-M-Y') . ' ' . $startTime;
   
     $endDate = strtotime($event['endDate']);
     $dt = new DateTime("@$endDate");
-    $convertedEndDate = $dt->format('d-M-Y H:i');
+    $endTime = ($event['endTime']);
+    $convertedEndDate = $dt->format('d-M-Y') . ' ' . $endTime ;
+
 
 
     
@@ -66,7 +69,7 @@ include 'header.php';
 
 
                     <div id="eventInformation" class="col-lg-4 text-center">
-                        <h1 class="pt-2"><?php echo $event['eventName']?></h1>
+                        <h1 class="pt-2 search-title"><?php echo $event['eventName']?></h1>
                         <p class="text-center font-italic"><?php echo $convertedStartDate?></p>
                         <p><?php echo '$' . $event['price']?></p>
                         <button class="btn-block btn">Buy Tickets</button>
@@ -81,22 +84,22 @@ include 'header.php';
 
                 <div class="row">
                     <div class="col-lg-8">
-                        <h1><?php echo $event['eventName']?></h1>
+                        <h1 class="search-title"><?php echo $event['eventName']?></h1>
                         <p><?php echo $event['eventDescription']?></p>
 
 
                     </div>
                     <div class="col-lg-4">
 
-                        <h2>Time & Date</h2>
+                        <h2 class="search-title">Time & Date</h2>
                         <p>From<p>
                                 <p><?php echo $convertedStartDate?><br></p>
                                 <p>Till</p>
                                 <p><?php echo $convertedEndDate?><br></p>
-                                <h2>Location</h2>
+                                <h2 class="search-title">Location</h2>
                                 <p><?php echo $event['eventAddress'] . '<br> ' . $event['eventCity'] . ' ' . $event['eventPostcode']?></p>
 
-                                <h2>Share this Event!</h2>
+                                <h2 class="search-title">Share this Event!</h2>
                                 <a class="socialMedia" target="_blank" href="<?php echo $event['eventTwitter']?>"><span><i class="fab fa-twitter text-center"></i></span></a>
                                 <a class="socialMedia" target="_blank" href="<?php echo $event['eventFacebook']?>"><span><i class="fab fa-facebook text-center"></i></span></a>
                                 <a class="socialMedia" target="_blank" href="<?php echo $event['eventInstagram']?>"><span><i class="fab fa-instagram text-center"></i></span></a>
@@ -111,7 +114,7 @@ include 'header.php';
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h2 class="text-center pt-4">Get Ready</h2>
+                        <h2 class="text-center pt-4 search-title">Get Ready</h2>
                     </div>
                 </div>
                 <div class="row">
@@ -172,7 +175,7 @@ include 'header.php';
                 <div class="row">
                     <div class="col-lg-12">
                         <hr>
-                        <h2 class="text-center m-4">Location</h2>
+                        <h2 class="text-center m-4 search-title">Location</h2>
 
                         <div id="map"></div>
                         <script>
