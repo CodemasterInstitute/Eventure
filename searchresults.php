@@ -122,11 +122,12 @@ if ($_POST['search'] != "") {
     <div class="row">
     <div class="col-lg-8">
       <h1 class="search-title">Event Search Results</h1>
-     <?php if ($search_query != ($by_location && $by_eventType && $startDate && $by_search)) { ?>
+     <?php if ($searchEvents === []) { ?>
   <p>Sorry, there are no events that match your search, please try a broader search<a href="index.php" style="color:#009f8b; font-weight:bold;"> here</a></p>
   
   
-          <?php }
+          <?php
+          }
         foreach($searchEvents as $event) : ?>
    
     <div class="card search-events mb-3">
