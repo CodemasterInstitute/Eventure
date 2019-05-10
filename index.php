@@ -447,17 +447,15 @@ $newEventsQuery = 'SELECT * FROM events ORDER BY eventCreation ASC LIMIT 4';
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
     $(function () {
-      var cities = [ < ? php
+      var cities = [ <?php
 
         foreach($locationEvents as $city) {
           if ($city["eventCity"] != "") {
-            $cityList. = "\"".$city["eventCity"].
-            "\",";
+            $cityList .= "\"".$city["eventCity"]."\",";
 
           }
         }
-        echo $cityList; ?
-        >
+        echo $cityList; ?>
 
 
       ]
