@@ -428,143 +428,10 @@ $newEventsQuery = 'SELECT * FROM events ORDER BY eventCreation ASC LIMIT 4';
 
 
   </div>
-  <!-- Footer -->
-  <footer class="page-footer font-small stylish-color-dark pt-4">
-    <!-- Footer Links -->
-    <div class="container text-center text-md-left">
+  <?php include ('footer.php');
+  ?>
 
-      <!-- Grid row -->
-      <div class="row">
-
-        <!-- Grid column -->
-        <div class="col-md-4 mx-auto">
-
-          <!-- Content -->
-          <!-- <h5 class="font-weight-bold text-uppercase mt-3 mb-4 logo-icon">EVENTURE</h5> -->
-
-          <img src="CSS/images/eventure logo 2.4(white).png" class="logo-icon footer">
-          <p style="padding-top: 20px">Make Adventures Possible.</p>
-
-        </div>
-        <!-- Grid column -->
-
-        <hr class="clearfix w-100 d-md-none">
-
-        <!-- Grid column -->
-        <div class="col-md-2 mx-auto">
-
-          <!-- Links -->
-          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Eventure</h5>
-
-          <ul class="list-unstyled">
-            <li>
-              <a href="index.php">Home</a>
-            </li>
-            <li>
-              <a href="faq.php">FAQs</a>
-            </li>
-            <li>
-              <a href="contact.php">Contact</a>
-            </li>
-          </ul>
-
-        </div>
-        <!-- Grid column -->
-
-        <hr class="clearfix w-100 d-md-none">
-
-        <!-- Grid column -->
-        <div class="col-md-2 mx-auto">
-
-          <!-- Links -->
-          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Events</h5>
-
-          <ul class="list-unstyled">
-            <li>
-              <a href="#!">Events By Category</a>
-            </li>
-            <li>
-              <a href="#!">Events Near You</a>
-            </li>
-            <li>
-              <a href="#!">Events This Week</a>
-            </li>
-          </ul>
-
-        </div>
-        <!-- Grid column -->
-
-        <hr class="clearfix w-100 d-md-none">
-
-        <!-- Grid column -->
-        <div class="col-md-2 mx-auto">
-
-          <!-- Links -->
-          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">My Account</h5>
-
-          <ul class="list-unstyled">
-            <li>
-              <a href="logIn.php">Sign In</a>
-            </li>
-            <li>
-              <a href="dashboard.php">My Dashboard</a>
-            </li>
-            <li>
-              <a href="create-an-event.php">Create An Event</a>
-            </li>
-
-          </ul>
-
-        </div>
-        <!-- Grid column -->
-
-      </div>
-      <!-- Grid row -->
-
-    </div>
-    <!-- Footer Links -->
-
-    <hr>
-
-    <!-- Call to action -->
-    <ul class="list-unstyled list-inline text-center py-2">
-      <li class="list-inline-item">
-        <h5 class="mb-1">Register for free</h5>
-      </li>
-      <li class="list-inline-item">
-        <a href="signUp.php" class="btn btn-danger btn-rounded">Sign up!</a>
-      </li>
-    </ul>
-    <!-- Call to action -->
-
-    <hr>
-
-    <!-- Social buttons -->
-    <ul class="list-unstyled list-inline text-center">
-      <li class="list-inline-item">
-        <a class="btn-floating btn-fb mx-1">
-          <i class="fab fa-facebook"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn-floating btn-tw mx-1">
-          <i class="fab fa-twitter"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn-floating btn-inst mx-1">
-          <i class="fab fa-instagram"> </i>
-        </a>
-      </li>
-    </ul>
-    <!-- Social buttons -->
-
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2019 Copyright: AAA Team
-    </div>
-    <!-- Copyright -->
-
-  </footer>
+  
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -580,17 +447,15 @@ $newEventsQuery = 'SELECT * FROM events ORDER BY eventCreation ASC LIMIT 4';
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
     $(function () {
-      var cities = [ < ? php
+      var cities = [ <?php
 
         foreach($locationEvents as $city) {
           if ($city["eventCity"] != "") {
-            $cityList. = "\"".$city["eventCity"].
-            "\",";
+            $cityList .= "\"".$city["eventCity"]."\",";
 
           }
         }
-        echo $cityList; ?
-        >
+        echo $cityList; ?>
 
 
       ]
