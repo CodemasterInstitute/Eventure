@@ -527,7 +527,7 @@ ul.locations-list {
     font-size: 1em;
 }
 
-h1.search-title, h3.event-title {
+h1.search-title, h2.search-title, h3.event-title {
     font-size: 2em;
     color: #009f8b;
     font-weight: bold;
