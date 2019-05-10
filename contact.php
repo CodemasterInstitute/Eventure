@@ -1,12 +1,13 @@
 <?php 
 
 require_once('config.php');
-if((isset($_POST['email']) && $_POST['subjects'] && $_POST['messages'])){
+if((isset($_POST['names']) && $_POST['email'] && $_POST['subjects'] && $_POST['messages'])){
+    $names = $conn->real_escape_string($_POST['names']);
     $email = $conn->real_escape_string($_POST['email']);
     $subjects = $conn->real_escape_string($_POST['subjects']);
     $messages = $conn->real_escape_string($_POST['messages']);
 
-    $sql = "INSERT INTO contact (email, subjects, messages) VALUES ('$email','$subjects','$messages')";
+    $sql = "INSERT INTO contact (names ,email, subjects, messages) VALUES ('$names','$email','$subjects','$messages')";
     
     if (!$result = $conn->query($sql)){
         die('There was an error running the query [' .$conn->error . ']');
@@ -41,14 +42,19 @@ if((isset($_POST['email']) && $_POST['subjects'] && $_POST['messages'])){
 <div class = "contactUsInner">
     <form method="POST">
     <h1>Contact Us</h1>
+    <div class="form-row">
+        <div class="form-group col-lg-3">
+            <input type="text" class="form-control" placeholder="Your name" name="names">
+        </div>
+    </div>
     <div class = "form-row">
-            <div class="form-group col-lg-4">
-                <label for="inputEmail">Email</label>
+            <div class="form-group col-lg-3">
+                <!-- <label for="inputEmail">Email</label> -->
                 <input type="text" class="form-control" id="inputAddress" placeholder="Your email" name="email">
             </div>
         </div>
             <div class="form-row">
-            <div class="form-group col-lg-4">
+            <div class="form-group col-lg-3">
                     <select id="numberOfTickets" class="form-control" name="subjects">
                         <option selected>What's this about?</option>
                         <option>General Question</option>
@@ -60,7 +66,7 @@ if((isset($_POST['email']) && $_POST['subjects'] && $_POST['messages'])){
             </div>
             <!--Need to add textarea and centre all the form things col4 in centre of page-->
             <div class="form-row">
-                <div class="form-group col-lg-4">
+                <div class="form-group col-lg-3">
                     <textarea class="form-control" rows="4" placeholder="Write something..." name="messages"></textarea> 
                 </div>
             </div>

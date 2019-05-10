@@ -75,18 +75,8 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
           <li class="nav-item ">
             <a class="nav-link" href="events.php">Events <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="categories.php" id="navbarDropdown" role="button"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Categories
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Free</a>
-              <a class="dropdown-item" href="#">Music</a>
-              <a class="dropdown-item" href="#">Comedy</a>
-              <a class="dropdown-item" href="#">Sport</a>
-              <a class="dropdown-item" href="#">Food & Wine</a>
-            </div>
+          <li class="nav-item ">
+            <a class="nav-link" href="categories.php">Categories <span class="sr-only"></span></a>
           </li>
           <li class="nav-item active">
             <a class="nav-link " href="dashboard.php">
@@ -188,9 +178,8 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
     <h3 class="event-title">Events to Explore</h3>
     <div class="row">
       <div class="col-12 col-lg-4 category">
-      <a href="all_events.php">
+      <a href="categories.php">
         <img src="CSS/images/pineapple-all.jpg" class="img-fluid" alt="fireworks image">
-     </a>
         <div class="category-content">
           <div class="category-text">
             <p>Explore All</p>
@@ -198,26 +187,31 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
           <!-- <div class="search-bar">
            
           </div> -->
+          </a>
         </div>
+    
       </div>
       <div class="col-12 col-lg-4 category">
+      <a href="categories.php?eventType=Free">
         <img src="CSS/images/free.jpg" class="img-fluid" alt="free image">
         <div class="category-content">
           <div class="category-text">
             <p>Free</p>
           </div>
+          </a>
           <!-- <div class="search-bar">
             <a href="/free" class="fas fa-search"></a>
           </div> -->
         </div>
       </div>
       <div class="col-12 col-lg-4 category">
-
+      <a href="categories.php?eventType=Music">
       <img src="CSS/images/music.jpg" class="img-fluid" alt="concert">
       <div class="category-content">
         <div class="category-text">
-          <p>Music</a>
+          <p>Music</p>
         </div>
+</a>
         <!-- <div class="search-bar">
           <a href="/music" class="fas fa-search"></a>
         </div> -->
@@ -226,36 +220,39 @@ $locationquery = 'SELECT DISTINCT eventCity FROM events';
   </div>
   <div class="row">
     <div class="col-12 col-lg-4 category">
-
+    <a href="categories.php?eventType=Comedy">
       <img src="CSS/images/laugh.jpg" class="img-fluid" alt="laugh">
       <div class="category-content">
         <div class="category-text">
           <p>Comedy</p>
         </div>
+    </a>
         <!-- <div class="search-bar">
           <a href="/comedy" class="fas fa-search"></a>
         </div> -->
       </div>
     </div>
     <div class="col-12 col-lg-4 category">
-
+    <a href="categories.php?eventType=Sport">
       <img src="CSS/images/sport.jpg" class="img-fluid" alt="tennis game">
       <div class="category-content">
         <div class="category-text">
           <p>Sport</p>
         </div>
+</a>
         <!-- <div class="search-bar">
           <a href="/sport" class="fas fa-search"></a>
         </div> -->
       </div>
     </div>
     <div class="col-12 col-lg-4 category">
-
+    <a href="categories.php?eventType=Food%2C+Wine">
       <img src="CSS/images/food.jpg" class="img-fluid" alt="tacos">
       <div class="category-content">
         <div class="category-text">
           <p>Food & Wine</p>
         </div>
+</a>
         <!-- <div class="search-bar">
           <a href="/food" class="fas fa-search"></a>
         </div> -->
