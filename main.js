@@ -1,5 +1,7 @@
 
                 $(document).ready(function() {
+
+// Member Dashboard 'suggested events' carousel slide
           $("#myCarousel").on("slide.bs.carousel", function(e) {
             var $e = $(e.relatedTarget);
             var idx = $e.index();
