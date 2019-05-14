@@ -1,5 +1,45 @@
 
 <?php
+require('config.php');
+
+// Getting upcoming events
+
+$search_query = "SELECT * FROM events WHERE 1";
+
+if (isset($_POST['location']) != "") {
+  $by_location = $_POST['location']; 
+  $search_query .= " AND eventCity LIKE '%$by_location%'";
+}
+
+
+$query = 'SELECT * FROM events ORDER BY startDate ASC LIMIT 8';
+$randomQuery = 'SELECT * FROM events ORDER BY RAND() LIMIT 4'; 
+$locationquery = 'SELECT DISTINCT eventCity FROM events';
+$newEventsQuery = 'SELECT * FROM events ORDER BY eventCreation ASC LIMIT 4';
+
+	// Get Result
+  $result = mysqli_query($conn, $query);
+  $locationresult = mysqli_query($conn, $locationquery);
+  $searchresult = mysqli_query($conn, $search_query);
+  $randomResult = mysqli_query($conn, $randomQuery);
+  $newEventsResult = mysqli_query($conn, $newEventsQuery);
+
+	// Fetch Data
+	
+  $searchEvents = mysqli_fetch_all($searchresult, MYSQLI_ASSOC);
+  $randomEvents = mysqli_fetch_all($randomResult, MYSQLI_ASSOC);
+  
+
+	// Free Result
+    
+    mysqli_free_result($randomResult);
+    mysqli_free_result($newEvents);
+
+    
+
+
+    mysqli_close($conn); 
+
 include ('registrationLogin.php');
 if (isset($_SESSION['username'])) {?>
 	
@@ -94,10 +134,12 @@ if (isset($_SESSION['username'])) {?>
   }
 
 
-  /*#carouselimage{
+  /**/
+  #carouselimage{
     
-    height: 85%;
-  }*/
+    height: 230px;
+    object-fit: cover;
+  }
 }
     </style>
     
@@ -238,79 +280,51 @@ if (isset($_SESSION['username'])) {?>
 
         <!--Events you might like container-->
         <div class="container-fluid">
-          <h2 class="text-center mb-3">Events you may like..</h2>
+          <h3 class="text-center mb-3">Events you may like..</h3>
           <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner row w-100 mx-auto">
+                <?php
+            foreach($randomEvents as $events) :?>
+
               <div class="carousel-item col-md-4 active">
                 <div class="card">
-                  <img class="card-img-top img-fluid" id="carouselimage" src="CSS/images/free-event.jpg"  alt="Card image cap">
+                  <a href="Event.php?id=<?php echo $event ['id']?>"><img class="card-img-top img-fluid"
+                   id="carouselimage" src="imagepath/upload/<?php echo $event['imgName'] ?>"  alt="Card image cap"></a>
+                  
                   <div class="card-body">
-                    <h4 class="card-title">Event 1</h4>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <a href="Event.php?id=<?php echo $event['id']?>">
+                      <h5 class="card-title font-weight-bold"><?php 
+                      
+                      if (strlen($event['eventName']) > 45) {
+                        echo substr($event['eventName'], 0, 45)?>...
+                        <?php
+                      } else
+                      echo $event['eventName']?></h5>
+                    </a>
+                    <p class="card-text overflow-auto"><?php echo substr($event['eventDescription'], 0, 70)?><a class="readMore" href="Event.php?id=<?php echo $event['id']?>">...[Read more]</a></p>
+                  
                   </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><?php 
+                  
+                  $startDate = strtotime($event['startDate']);
+                  $dt = new DateTime("@$startDate");
+                  $startTime = ($event['startTime']);
+                  $convertedStartDate = $dt->format('d-M-Y') . ' ' . $startTime;
+
+                  echo $convertedStartDate ?></li>
+                      <li class="list-group-item"><?php 
+                        
+                      if (strlen($event['eventAddress']) > 45) {
+                        echo substr($event['eventAddress'], 0, 45)?>...
+                        <?php
+                      } else
+                      echo $event['eventAddress']?></li>
+                  </ul>
                 </div>
+                <?php endforeach; ?>
               </div>
-              <div class="carousel-item col-md-4">
-                <div class="card">
-                  <img class="card-img-top img-fluid" id="carouselimage" src="CSS/images/carousel-sport.jpg"  alt="Card image cap">
-                  <div class="card-body">
-                    <h4 class="card-title">Event 2</h4>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item col-md-4">
-                <div class="card">
-                  <img class="card-img-top img-fluid" id="carouselimage" src="CSS/images/music.jpg"  alt="Card image cap">
-                  <div class="card-body">
-                    <h4 class="card-title">Event 3</h4>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item col-md-4">
-                <div class="card">
-                  <img class="card-img-top img-fluid" id="carouselimage" src="CSS/images/laugh.jpg"  alt="Card image cap">
-                  <div class="card-body">
-                    <h4 class="card-title">Event 4</h4>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item col-md-4">
-                <div class="card">
-                  <img class="card-img-top img-fluid" id="carouselimage" src="CSS/images/bubbles.jpg"  alt="Card image cap">
-                  <div class="card-body">
-                    <h4 class="card-title">Event 5</h4>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item col-md-4">
-                <div class="card">
-                  <img class="card-img-top img-fluid" id="carouselimage" src="CSS/images/carousel1.jpg"  alt="Card image cap">
-                  <div class="card-body">
-                    <h4 class="card-title">Event 6</h4>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item col-md-4">
-                <div class="card">
-                  <img class="card-img-top img-fluid" id="carouselimage" src="CSS/images/carousel4-laughter.jpg"  alt="Card image cap">
-                  <div class="card-body">
-                    <h4 class="card-title">Event 7</h4>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
-                </div>
-              </div>
+              
             </div>
             <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev" id="carIcon">
               <span class="carousel-control-prev-icon" aria-hidden="true" ></span>
