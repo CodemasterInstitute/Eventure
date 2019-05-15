@@ -13,9 +13,9 @@ if (isset($_POST['location']) != "") {
 
 
 $query = 'SELECT * FROM events ORDER BY startDate ASC LIMIT 8';
-$randomQuery = 'SELECT * FROM events ORDER BY RAND() LIMIT 4'; 
+$randomQuery = 'SELECT * FROM events ORDER BY RAND() LIMIT 7'; 
 $locationquery = 'SELECT DISTINCT eventCity FROM events';
-$newEventsQuery = 'SELECT * FROM events ORDER BY eventCreation ASC LIMIT 4';
+$newEventsQuery = 'SELECT * FROM events ORDER BY eventCreation ASC LIMIT 7';
 
 	// Get Result
   $result = mysqli_query($conn, $query);
@@ -31,7 +31,7 @@ $newEventsQuery = 'SELECT * FROM events ORDER BY eventCreation ASC LIMIT 4';
   
 
 	// Free Result
-    
+    mysqli_free_result($result);
     mysqli_free_result($randomResult);
     mysqli_free_result($newEvents);
 
@@ -279,17 +279,17 @@ if (isset($_SESSION['username'])) {?>
         <hr>
 
         <!--Events you might like container-->
-        <div class="container-fluid">
+        <div class="container">
           <h3 class="text-center mb-3">Events you may like..</h3>
           <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner row w-100 mx-auto">
                 <?php
-            foreach($randomEvents as $events) :?>
+        foreach($randomEvents as $event) : ?>
 
               <div class="carousel-item col-md-4 active">
                 <div class="card">
                   <a href="Event.php?id=<?php echo $event ['id']?>"><img class="card-img-top img-fluid"
-                   id="carouselimage" src="imagepath/upload/<?php echo $event['imgName'] ?>"  alt="Card image cap"></a>
+                   id="carouselimage" src="imagepath/uploads/<?php echo $event['imgName'] ?>"  alt="Card image cap"></a>
                   
                   <div class="card-body">
                     <a href="Event.php?id=<?php echo $event['id']?>">
@@ -322,10 +322,11 @@ if (isset($_SESSION['username'])) {?>
                       echo $event['eventAddress']?></li>
                   </ul>
                 </div>
-                <?php endforeach; ?>
+                
               </div>
-              
+              <?php endforeach; ?>
             </div>
+              
             <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev" id="carIcon">
               <span class="carousel-control-prev-icon" aria-hidden="true" ></span>
               <span class="sr-only">Previous</span>
@@ -335,7 +336,9 @@ if (isset($_SESSION['username'])) {?>
               <span class="sr-only">Next</span>
             </a>
           </div>
+          
         </div>
+        
       
     <?php
     include 'footer.php';
