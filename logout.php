@@ -26,8 +26,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: #009f8b;
   opacity: 0.8;
   font-size: 38px;
   border-radius: 10px;

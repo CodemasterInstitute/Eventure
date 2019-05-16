@@ -373,8 +373,8 @@ if (isset($_SESSION['username'])) {?>
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: #009f8b;
   opacity: 0.8;
   font-size: 38px;
   border-radius: 10px;
@@ -386,7 +386,7 @@ if (isset($_SESSION['username'])) {?>
   <div class="container">
   <img src="CSS/images/pineapple-all.jpg" alt="pineapple" style="width:100%;">
   
-  <div class="text">Your login was unsuccessful. Please <a href = "login.php" style="color:white">try again.</a></div>
+  <div class="text">Your login was unsuccessful. Please <a href = "login.php" style="color:#009f8b">try again.</a></div>
 </div>
   <?php
   include 'footer.php';
