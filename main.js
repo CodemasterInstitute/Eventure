@@ -29,13 +29,13 @@
             $(window).on("scroll", function() {
                 if($(window).scrollTop() > 200) {
                     $(".navbar-scroll").addClass("active-header");
-                    $(".nav-link").attr("style","color: black");
+                    //$(".nav-link").attr("style","color: black");
                 
 
                 } else {
                     //remove the background property so it comes transparent again 
                    $(".navbar-scroll").removeClass("active-header");
-                   $(".nav-link").attr("style","color: white");
+                  // $(".nav-link").attr("style","color: white");
                 }
             });
         });

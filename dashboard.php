@@ -50,8 +50,8 @@ if (isset($_SESSION['username'])) {?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Eventure</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">      
     <link rel="shortcut icon" href="CSS\images\eventure favcon 1.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" media="screen" href="CSS/main.css">
     <style>
@@ -170,28 +170,22 @@ if (isset($_SESSION['username'])) {?>
     <div class="dash-nav col-lg-3" id="mainDash">
       <h2>Members Dashboard</h2>
       <div class="logged_in_info">
-		<span>welcome <?php echo $_SESSION['username'] ?></span>
-		<span><a href="logout.php">logout</a></span>
-	</div>
-        <ul class="nav flex-column">
+        <span>welcome <?php echo $_SESSION['username'] ?></span>
+        <span><a href="logout.php">logout</a></span>
+	    </div>
+        <ul class="nav flex-sm-column">
             <li class="nav-item">
               <a class="nav-link active" href="#"><i class="fas fa-user-edit"></i> Account Information</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#"><i class="fas fa-calendar-week"></i> My Events</a>
             </li>
-            <li class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <a class="nav-link" href="#"><i class="fas fa-map-pin"></i> Selected Catagories</a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Sport</a>
-                  <a class="dropdown-item" href="#">Comedy</a>
-                  <a class="dropdown-item" href="#">Design</a>
-                  <a class="dropdown-item" href="#">Workout</a>
-                  <a class="dropdown-item" href="#">E-Sport</a>
-                  <a class="dropdown-item" href="#">Surfing</a>
-                  <a class="dropdown-item" href="#">Band</a>
-                  <a class="dropdown-item" href="#">HvZ</a>
-                </div>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-map-pin"></i> Selected Catagories</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Comedy</a>
+                <a class="dropdown-item" href="#">Music</a>
+              </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="create-an-event.php"><i class="fas fa-bullhorn"></i> Create New Event</a>
@@ -362,8 +356,8 @@ if (isset($_SESSION['username'])) {?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Eventure</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="CSS/main.css">
     <style>
 
