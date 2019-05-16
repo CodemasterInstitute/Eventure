@@ -67,10 +67,11 @@ session_start();
             $query->execute();
             
 			// get id of created user
-			$reg_user_id = mysqli_insert_id($mysqli); 
+			$id = $mysqli->insert_id; 
 
 			// put logged in user into session array
-			// $_SESSION['user'] = getUserById($reg_user_id);
+            $_SESSION['username'] = $username;
+            $_SESSION['id'] = $id;
 
 			
 			}
@@ -116,7 +117,8 @@ function esc($data) {
             if ($result = $stmt->get_result()) {
                 $user = $result->fetch_assoc();
                 $_SESSION['username'] = $user['username'];
-                //echo 'success';
+                $_SESSION['id'] = $user['id'];
+                // echo 'success';
             } else {
                 echo $mysqli->error;
             }

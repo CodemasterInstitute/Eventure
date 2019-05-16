@@ -127,10 +127,17 @@
                     <label for="availableTickets">Available Tickets</label>
                     <input type="number" class="form-control" name = "availableTickets" id = "availableTickets" required>
                 </div>
-                <div class="form-group col-lg-8">
-                    <label for="organiserID">Organiser ID</label>
-                    <input type="number" class="form-control" name = "organiserID" id = "organiserID" required>
+                <div class="form-group col-lg-4">
+                    <label for="price">Ticket Price</label>
+                    <input type="text" class="form-control" id="price" name = "price"  required>
                 </div>
+                <div class="form-group col-lg-4">
+                    <label for="imgName">Upload Photo</label>
+                    <input type="file" accept="image/x-png,image/gif,image/jpeg" class="form-control"
+                        id="imgName" name = "imgName" required>
+                </div>
+                
+               
             </div>
             <div class = "form-row">
             <div class = "form-group col-lg-4">
@@ -150,16 +157,8 @@
                 
 
                 
-                <div class="form-group col-lg-4">
-                    <label for="imgName">Upload Photo</label>
-                    <input type="file" accept="image/x-png,image/gif,image/jpeg" class="form-control"
-                        id="imgName" name = "imgName" required>
-                </div>
-                <div class="form-group col-lg-4">
-                    <label for="price">Ticket Price</label>
-                    <input type="text" class="form-control" id="price" name = "price"  required>
-                </div>
-                <div class="form-group col-lg-4">
+                
+                <div class="form-group col-lg-12">
 
                     <h4>Type of Event</h4>
                     <h5>Check all that apply</h5>
