@@ -50,10 +50,11 @@ session_start();
 			if ($user['username'] === $username) {
 			  array_push($errors, "Username already exists");
 			}
-			if ($user['email'] === $email) {
+			if ($user['emailAddress'] === $email) {
 			  array_push($errors, "Email already exists");
 			}
         }
+        
         
 		// register user if there are no errors in the form
 		if (count($errors) == 0) {
@@ -88,7 +89,7 @@ function esc($data) {
 
     // LOG USER IN
     // need to have SESSION, dashboard page needs to not show data unless user is logged in, if stmt around all on dashboard
-    // need to have session_start() and session_destroy() etc -> see how they did it in the blog
+    // need to have session_start() and session_destroy() 
     if (isset($_POST['login_btn'])) {
 	 	$email = esc($_POST['email']);
          $password = esc($_POST['password']);
@@ -115,7 +116,7 @@ function esc($data) {
             if ($result = $stmt->get_result()) {
                 $user = $result->fetch_assoc();
                 $_SESSION['username'] = $user['username'];
-                // echo 'success';
+                //echo 'success';
             } else {
                 echo $mysqli->error;
             }
@@ -123,44 +124,4 @@ function esc($data) {
             
         }
     }
-            // INCLUDE so user can navigate between pages without having to log in again
-			//$result = mysqli_query($mysqli, $sql);
-			// if (mysqli_num_rows($result) > 0) {
-			// 	// get id of created user
-			// 	$reg_user_id = mysqli_fetch_assoc($result)['id']; 
-
-				// put logged in user into session array
-				 
-
-			// 	// if user is admin, redirect to admin area
-			// 	if ( in_array($_SESSION['user']['role'], ["Admin", "Author"])) {
-			// 		$_SESSION['message'] = "You are now logged in";
-			// 		// redirect to admin area
-			// 		header('location: ' . BASE_URL . '/admin/dashboard.php');
-			// 		exit(0);
-			// 	} else {
-			// 		$_SESSION['message'] = "You are now logged in";
-			// 		// redirect to public area
-			// 		header('location: index.php');				
-			// 		exit(0);
-			// 	}
-			// } else {
-			// 	array_push($errors, 'Wrong credentials');
-	// 		// }
-	// 	}
-	// }
-
-	// Get user info from user id
-	// function getUserById($id)
-	// {
-	// 	global $mysqli;
-	// 	$sql = "SELECT * FROM users WHERE id=$id LIMIT 1";
-
-	// 	$result = mysqli_query($mysqli, $sql);
-	// 	$user = mysqli_fetch_assoc($result);
-
-	// 	// returns user in an array format: 
-	// 	// ['id'=>1 'username' => 'Awa', 'email'=>'a@a.com', 'password'=> 'mypass']
-	// 	return $user; 
-	// }
 ?>
