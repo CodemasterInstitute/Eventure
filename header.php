@@ -1,6 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Eventure</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
+  <link rel="shortcut icon" href="CSS\images\eventure favcon 1.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/main.css">
+
+</head>
+
 <header>
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark color-header">
-        <a class="navbar-brand" href="index.php"><img src="CSS/images/eventure logo 4.2.png" class="logo-icon"></a>
+    <a class="navbar-brand nav-link logo-icon" href="index.php">Eventure
+       <!-- <img src="CSS/images/eventure logo 4.2.png" class="logo-icon"> -->
+      </a> 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -22,7 +43,10 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="logIn.php" tabindex="-1">Log In/ Sign Up</a>
+                    <a class="nav-link" href="logIn.php" tabindex="-1">Log In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="signUp.php">Sign Up</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0" method="post" action="searchresults.php">

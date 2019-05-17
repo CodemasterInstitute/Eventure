@@ -56,7 +56,9 @@ a:hover {
 }
 
 .logo-icon {
-    width: 150px;
+    /* width: 150px; */
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.75em;
 }
 
 .logo-icon.footer {

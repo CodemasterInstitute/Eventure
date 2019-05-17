@@ -11,7 +11,7 @@
     <div class="col-md-4 mx-auto">
 
       <!-- Content -->
-      <img src="CSS/images/eventure logo 2.4(white).png" class="logo-icon footer">
+      <a href="index.html" class="logo-icon footer">Eventure</a>
       <p style="padding-top: 20px">Make Adventures Possible.</p>
 
     </div>
