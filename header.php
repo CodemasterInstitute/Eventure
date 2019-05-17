@@ -30,23 +30,23 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item ">
-                    <a class="nav-link" href="events.php">Events <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" id="main-nav" href="events.php">Events <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="categories.php">Categories <span class="sr-only"></span></a>
+                    <a class="nav-link" id="main-nav" href="categories.php">Categories <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link " href="dashboard.php">
+                    <a class="nav-link " id="main-nav" href="dashboard.php">
                         Members
                     </a>
 
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="logIn.php" tabindex="-1">Log In</a>
+                    <a class="nav-link" id="main-nav" href="logIn.php" tabindex="-1">Log In</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="signUp.php">Sign Up</a>
+                    <a class="nav-link" id="main-nav" href="signUp.php">Sign Up</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0" method="post" action="searchresults.php">

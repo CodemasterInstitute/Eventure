@@ -33,7 +33,7 @@
                 } else {
                     //remove the background property so it comes transparent again 
                    $(".navbar-scroll").removeClass("active-header");
-                   $(".nav-link").attr("style","color: white");
+                   $("#main-nav").attr("style","color: white");
                 }
             });
         });
