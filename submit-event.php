@@ -1,7 +1,7 @@
 <?php
                     // define variables and set to empty values
                     // variables do NOT need to have the same names as the DB names but it does make it easier to read
-                    $eventName = $organiserID = $startDate = $startTime = $endDate = $endTime = $eventAddress = $eventCity = $eventPostcode = $price = $eventDescription = $imgName = $availableTickets = $eventType = $error = $eventTwitter = $eventFacebook = $eventInstagram = "";
+                    $eventName = $startDate = $startTime = $endDate = $endTime = $eventAddress = $eventCity = $eventPostcode = $price = $eventDescription = $imgName = $availableTickets = $eventType = $error = $eventTwitter = $eventFacebook = $eventInstagram = "";
                     
                     if(isset($_POST['eventName'])) {
                         $eventName = test_input($_POST["eventName"]);
@@ -9,11 +9,8 @@
                             $eventName = "";
                         }
                     
-                    if(isset($_POST['organiserID'])) {
-                        $organiserID = test_input($_POST["organiserID"]);
-                        } else {
-                            $organiserID = "";
-                        }
+                            $organiserID = $_SESSION['id'];
+                    
                     
                     if(isset($_POST['startDate'])) {
                         $startDate = test_input($_POST["startDate"]);
@@ -170,7 +167,10 @@
                     $stmt->bind_param('sissssssssssissss', $eventName, $organiserID, $startDate, $startTime, $endDate, $endTime, $eventAddress, $eventCity, $eventPostcode, $price, $eventDescription, $imgName, $availableTickets, $eventType, $eventFacebook, $eventTwitter, $eventInstagram);
 
                     if($stmt->execute()) { ?>
-                        <html><h1>Your event has been successfully created.</h1></html><?php;
+<html>
+<h1>Your event has been successfully created.</h1>
+
+</html><?php
                       } else {
                           $heading = "failure";
                       }
@@ -201,10 +201,10 @@
 
 <body>
     <!--Entire width header/hero-->
-  <?php
+    <?php
   include 'header.php';
   ?>
-<?php
+    <?php
     echo $heading;
 ?>
 
