@@ -12,9 +12,9 @@ if (isset($_POST['location']) != "") {
 
 
 $query = 'SELECT * FROM events ORDER BY startDate ASC LIMIT 8';
-$randomQuery = 'SELECT * FROM events ORDER BY RAND() LIMIT 3'; 
+$randomQuery = 'SELECT * FROM events ORDER BY RAND() LIMIT 7'; 
 $locationquery = 'SELECT DISTINCT eventCity FROM events';
-$newEventsQuery = 'SELECT * FROM events ORDER BY eventCreation ASC LIMIT 3';
+$newEventsQuery = 'SELECT * FROM events ORDER BY eventCreation ASC LIMIT 7';
 
 	// Get Result
   $result = mysqli_query($conn, $query);
@@ -54,7 +54,7 @@ if (isset($_SESSION['username'])) {?>
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link rel="shortcut icon" href="CSS\images\eventure favcon 1.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="CSS\images\eventure favcon 2.ico" type="image/x-icon">
   <link rel="stylesheet" type="text/css" media="screen" href="CSS/main.css">
   <style>
     /*carousel*/
@@ -87,6 +87,7 @@ if (isset($_SESSION['username'])) {?>
         z-index: -1;
         display: block;
         visibility: visible;
+        color: rgb(0, 159, 139);
       }
 
       /* left or forward direction */
@@ -107,6 +108,7 @@ if (isset($_SESSION['username'])) {?>
         z-index: -1;
         display: block;
         visibility: visible;
+        color: rgb(0, 159, 139);
       }
 
       /* right or prev direction */
@@ -124,11 +126,13 @@ if (isset($_SESSION['username'])) {?>
 
 
 
-      .carousel-item {
-        margin-right: 0;
+      #cItem {
+        margin-right: inherit;
       }
 
-
+      #arrow span{
+        color: rgb(0, 159, 139);
+      }
 
       #carouselimage {
 
@@ -169,6 +173,8 @@ if (isset($_SESSION['username'])) {?>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="#">Comedy</a>
               <a class="dropdown-item" href="#">Music</a>
+              <a class="dropdown-item" href="#">Sport</a>
+              <a class="dropdown-item" href="#">Party</a>
             </div>
           </li>
           <li class="nav-item">
@@ -268,9 +274,10 @@ if (isset($_SESSION['username'])) {?>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner row w-100 mx-auto">
         <?php
+        $idx = 0;
         foreach($randomEvents as $event) : ?>
 
-        <div class="carousel-item col-md-4 active">
+        <div class="carousel-item col-md-4 <?php echo ($idx == 0 ? 'active' : '') ?>" id="cItem">
           <div class="card">
             <a href="Event.php?id=<?php echo $event ['id']?>"><img class="card-img-top img-fluid" id="carouselimage"
                 src="imagepath/uploads/<?php echo $event['imgName'] ?>" alt="Card image cap"></a>
@@ -309,15 +316,19 @@ if (isset($_SESSION['username'])) {?>
           </div>
 
         </div>
-        <?php endforeach; ?>
+        
+      <?php 
+          $idx++;
+        endforeach; 
+      ?>
       </div>
 
       <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev" id="carIcon">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="carousel-control-prev-icon" aria-hidden="true" id="arrow"></span>
         <span class="sr-only">Previous</span>
       </a>
       <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next" id="carIcon">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="carousel-control-next-icon" aria-hidden="true" id="arrow"></span>
         <span class="sr-only">Next</span>
       </a>
     </div>
