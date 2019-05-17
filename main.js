@@ -24,6 +24,10 @@
               }
             }
           });
+
+// Dashboard menu dropdown
+          //$('.dropdown-toggle').dropdown()
+
 // Header background color on scroll
           $(function() {
             $(window).on("scroll", function() {
@@ -35,7 +39,7 @@
                 } else {
                     //remove the background property so it comes transparent again 
                    $(".navbar-scroll").removeClass("active-header");
-                  // $(".nav-link").attr("style","color: white");
+                   //$(".nav-link").attr("style","color: white");
                 }
             });
         });

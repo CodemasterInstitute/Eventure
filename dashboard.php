@@ -134,7 +134,7 @@ if (isset($_SESSION['username'])) {?>
   }
 
 
-  /**/
+
   #carouselimage{
     
     height: 230px;
@@ -145,20 +145,7 @@ if (isset($_SESSION['username'])) {?>
     
 </head>
 <body>
-    <!--Entire width header/hero
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-
-            </div>
-        </div>
-    </div>-->
-    <!--Main Container with auto margins
-    <div class="container">
-
-    </div>-->
- <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
     
     <?php
     include 'header.php';
@@ -173,7 +160,7 @@ if (isset($_SESSION['username'])) {?>
         <span>welcome <?php echo $_SESSION['username'] ?></span>
         <span><a href="logout.php">logout</a></span>
 	    </div>
-        <ul class="nav flex-sm-column">
+        <ul class="nav flex-lg-column">
             <li class="nav-item">
               <a class="nav-link active" href="#"><i class="fas fa-user-edit"></i> Account Information</a>
             </li>
@@ -181,8 +168,8 @@ if (isset($_SESSION['username'])) {?>
               <a class="nav-link" href="#"><i class="fas fa-calendar-week"></i> My Events</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#pageDropmen" role="button" data-toggle="collapse" aria-haspopup="true" aria-expanded="false"><i class="fas fa-map-pin"></i> Selected Catagories</a>
-              <div class="dropdown-menu" id="pageDropmen">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-map-pin"></i> Selected Catagories</a>
+              <div class="dropdown-menu">
                 <a class="dropdown-item" href="#">Comedy</a>
                 <a class="dropdown-item" href="#">Music</a>
               </div>
@@ -346,7 +333,13 @@ if (isset($_SESSION['username'])) {?>
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
-    <script src="main.js"></script>    
+    <script src="main.js"></script>
+    <script>
+    $(document).ready(function (){
+      $('.dropdown-toggle').dropdown();
+    });
+    </script>
+      
 </body>
 </html>
 <?php } else { 
