@@ -17,6 +17,7 @@
 
 </head>
 
+<body>
 <header>
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark color-header">
     <a class="navbar-brand nav-link logo-icon" href="index.php">Eventure
