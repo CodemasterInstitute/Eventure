@@ -231,9 +231,12 @@ h5.logo {
 }
 
 /* Homepage Carousel*/
-.event-slider .banner-slide {
+.event-slider .banner-slide img{
     height: 100vh;
+    
+    
 }
+
 
 .banner-slide h1 {
     letter-spacing: 5px;

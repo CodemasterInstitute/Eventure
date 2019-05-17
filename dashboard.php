@@ -13,9 +13,9 @@ if (isset($_POST['location']) != "") {
 
 
 $query = 'SELECT * FROM events ORDER BY startDate ASC LIMIT 8';
-$randomQuery = 'SELECT * FROM events ORDER BY RAND() LIMIT 7'; 
+$randomQuery = 'SELECT * FROM events ORDER BY RAND() LIMIT 3'; 
 $locationquery = 'SELECT DISTINCT eventCity FROM events';
-$newEventsQuery = 'SELECT * FROM events ORDER BY eventCreation ASC LIMIT 7';
+$newEventsQuery = 'SELECT * FROM events ORDER BY eventCreation ASC LIMIT 3';
 
 	// Get Result
   $result = mysqli_query($conn, $query);
@@ -130,7 +130,7 @@ if (isset($_SESSION['username'])) {?>
   
 
   .carousel-item {
-    margin-right: inherit
+    margin-right: 0;
   }
 
 

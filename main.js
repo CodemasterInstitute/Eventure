@@ -25,8 +25,7 @@
             }
           });
 
-// Dashboard menu dropdown
-          //$('.dropdown-toggle').dropdown()
+
 
 // Header background color on scroll
           $(function() {
