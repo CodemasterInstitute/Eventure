@@ -32,7 +32,7 @@
             $(window).on("scroll", function() {
                 if($(window).scrollTop() > 200) {
                     $(".navbar-scroll").addClass("active-header");
-                    //$(".nav-link").attr("style","color: black");
+                    $(".#main-nav").attr("style","color: black");
                 
 
                 } else {
