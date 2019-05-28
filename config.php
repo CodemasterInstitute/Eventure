@@ -4,7 +4,11 @@ error_reporting(E_ALL);
 	define('DB_HOST', '54.153.169.253');
 	define('DB_USER', 'eventureadmin');
 	define('DB_PASS', 'iiirnkejbrw');
-    define('DB_NAME', 'eventure');
+	define('DB_NAME', 'eventure');
+	// define('DB_HOST', 'localhost');
+	// define('DB_USER', 'root');
+	// define('DB_PASS', 'root');
+    // define('DB_NAME', 'events');
     
     	// Create Connection
 	$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
