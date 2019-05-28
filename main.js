@@ -1,5 +1,7 @@
 
                 $(document).ready(function() {
+
+// Member Dashboard 'suggested events' carousel slide
           $("#myCarousel").on("slide.bs.carousel", function(e) {
             var $e = $(e.relatedTarget);
             var idx = $e.index();
@@ -22,12 +24,15 @@
               }
             }
           });
+
+
+
 // Header background color on scroll
           $(function() {
             $(window).on("scroll", function() {
                 if($(window).scrollTop() > 200) {
                     $(".navbar-scroll").addClass("active-header");
-                    $(".nav-link").attr("style","color: black");
+                    //$(".nav-link").attr("style","color: black");
                 
 
                 } else {

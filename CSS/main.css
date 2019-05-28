@@ -197,7 +197,9 @@ h5.logo {
     width: 100%;
     position: absolute;
     top: 10%;
+    left:0;
     z-index: 10;
+    
 }
 
 .searchbar h1 {
@@ -231,9 +233,12 @@ h5.logo {
 }
 
 /* Homepage Carousel*/
-.event-slider .banner-slide {
+.event-slider .banner-slide img{
     height: 100vh;
+    
+    
 }
+
 
 .banner-slide h1 {
     letter-spacing: 5px;
@@ -324,15 +329,15 @@ p.banner-tagline {
 .dash-nav {
     float: inherit;
     margin-top: 70px;
-    
+    margin-bottom: 50px;
     height: 90%;
-    border: 1px solid rgb(110, 110, 184);   
+    border: 1px solid rgb(0, 159, 139);   
     
 
 }
 
 .dash-nav a {
-    color: rgb(110, 110, 184);
+    color: rgb(0, 159, 139);
 }
 
 
@@ -343,6 +348,9 @@ p.banner-tagline {
     border: 1px solid white;
     border-radius: 20px;
 }
+
+
+
 
 
 .searchforms {
@@ -497,9 +505,9 @@ ul.locations-list {
     margin: 10px;
     color: #f9f6f0;
 }
-.search-events {
+/*.search-events {
     height: 200px
-}
+}*/
 
 .search-events img {
     height: 200px;

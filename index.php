@@ -466,6 +466,21 @@ $newEventsQuery = 'SELECT * FROM events ORDER BY eventCreation ASC LIMIT 4';
         source: cities
       });
     });
+
+    /* $(function() {
+            $(window).on("scroll", function() {
+                if($(window).scrollTop() > 200) {
+                    $(".navbar-scroll").addClass("active-header");
+                    $(".nav-link").attr("style","color: black");
+                
+
+                } else {
+                    //remove the background property so it comes transparent again 
+                   $(".navbar-scroll").removeClass("active-header");
+                   $(".nav-link").attr("style","color: white");
+                }
+            });
+        });*/
   </script>
   <script src="main.js"></script>
 </body>
